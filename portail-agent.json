@@ -1,0 +1,159 @@
+{
+  "map-layers": [], 
+  "pages": [
+    {
+      "fields": {
+        "picture": "", 
+        "redirect_url": "", 
+        "exclude_from_navigation": false, 
+        "parent": null, 
+        "title": "Accueil", 
+        "last_update_timestamp": "2018-01-04T09:53:29.194Z", 
+        "template_name": "standard-sidebar", 
+        "public": false, 
+        "groups": [], 
+        "order": 1, 
+        "slug": "index"
+      }, 
+      "cells": [
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-01-04T09:59:04.564Z", 
+            "text": "<h2>Bienvenue</h2>\r\n", 
+            "order": 0, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": "services"
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-01-04T10:53:20.155Z", 
+            "text": "<h2>Recherche usager</h2>\r\n", 
+            "order": 1, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-01-04T10:53:24.233Z", 
+            "order": 2, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "usersearch.usersearchcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-01-04T10:53:43.316Z", 
+            "text": "<h2>Menu</h2>\r\n", 
+            "order": 3, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "link_page": [
+              ""
+            ], 
+            "title": "Accueil", 
+            "last_update_timestamp": "2018-01-04T10:53:24.227Z", 
+            "public": true, 
+            "anchor": "", 
+            "url": "", 
+            "groups": [], 
+            "order": 4, 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "data.linkcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "link_page": [
+              "aide"
+            ], 
+            "title": "Aide", 
+            "last_update_timestamp": "2018-01-04T10:53:24.229Z", 
+            "public": true, 
+            "anchor": "", 
+            "url": "", 
+            "groups": [], 
+            "order": 5, 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "data.linkcell"
+        }
+      ]
+    }, 
+    {
+      "fields": {
+        "picture": "", 
+        "redirect_url": "", 
+        "exclude_from_navigation": false, 
+        "parent": null, 
+        "title": "Aide", 
+        "last_update_timestamp": "2018-01-04T09:57:27.834Z", 
+        "template_name": "standard-sidebar", 
+        "public": false, 
+        "groups": [], 
+        "order": 2, 
+        "slug": "aide"
+      }, 
+      "cells": [
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-01-04T09:56:50.177Z", 
+            "text": "<h1>Aide</h1>\r\n\r\n<p>Aide &agrave; l&#39;utilisation</p>\r\n", 
+            "order": 1, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-01-04T09:57:58.178Z", 
+            "order": 3, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "data.parentcontentcell"
+        }
+      ]
+    }
+  ]
+}
