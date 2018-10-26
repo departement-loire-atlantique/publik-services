@@ -1,0 +1,226 @@
+{
+  "map-layers": [], 
+  "pages": [
+    {
+      "fields": {
+        "sub_slug": "", 
+        "picture": "", 
+        "slug": "index", 
+        "description": "", 
+        "parent": null, 
+        "title": "Accueil", 
+        "last_update_timestamp": "2018-09-24T16:31:14.734Z", 
+        "template_name": "standard-sidebar", 
+        "public": true, 
+        "snapshot": null, 
+        "redirect_url": "", 
+        "groups": [], 
+        "order": 1, 
+        "exclude_from_navigation": false
+      }, 
+      "cells": [
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-21T07:51:16.752Z", 
+            "wcs_site": "", 
+            "order": 0, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "sidebar", 
+            "slug": ""
+          }, 
+          "model": "wcs.trackingcodeinputcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-28T12:14:08.290Z", 
+            "text": "<h1>Tableau de bord de vos d&eacute;marches</h1>\r\n", 
+            "order": 1, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-28T12:14:32.008Z", 
+            "text": "<p>Vous &ecirc;tes connect&eacute;</p>\r\n", 
+            "order": 2, 
+            "public": false, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": true, 
+            "last_update_timestamp": "2018-10-02T16:08:10.453Z", 
+            "text": "<p>&nbsp;</p>\r\n\r\n<p>Vous &ecirc;tes d&eacute;connect&eacute;. Connectez-vous afin de suivre vos demandes.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a class=\"button\" href=\"https://demarches-validation.loire-atlantique.fr/login/\">Me connecter</a></p>\r\n\r\n<p><a class=\"button\" href=\" https://demarches-validation.loire-atlantique.fr/login/\">M&#39;inscrire</a></p>\r\n\r\n", 
+            "order": 3, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-28T12:14:16.085Z", 
+            "wcs_site": "", 
+            "order": 4, 
+            "public": false, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "wcs.wcscurrentdraftscell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "done_forms": false, 
+            "current_forms": true, 
+            "last_update_timestamp": "2018-09-28T12:14:16.172Z", 
+            "wcs_site": "", 
+            "order": 5, 
+            "public": false, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": "", 
+            "categories": {}
+          }, 
+          "model": "wcs.wcscurrentformscell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "done_forms": true, 
+            "current_forms": false, 
+            "last_update_timestamp": "2018-09-28T12:14:16.276Z", 
+            "wcs_site": "", 
+            "order": 6, 
+            "public": false, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": "", 
+            "categories": {
+              "data": []
+            }
+          }, 
+          "model": "wcs.wcscurrentformscell"
+        }
+      ]
+    }, 
+    {
+      "fields": {
+        "sub_slug": "", 
+        "picture": "", 
+        "slug": "aide", 
+        "description": "", 
+        "parent": null, 
+        "title": "Aide", 
+        "last_update_timestamp": "2018-09-10T09:28:37.835Z", 
+        "template_name": "standard", 
+        "public": true, 
+        "snapshot": null, 
+        "redirect_url": "", 
+        "groups": [], 
+        "order": 2, 
+        "exclude_from_navigation": false
+      }, 
+      "cells": [
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-10T09:28:32.884Z", 
+            "order": 0, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "footer", 
+            "slug": ""
+          }, 
+          "model": "data.parentcontentcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "no-border", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-21T10:56:08.139Z", 
+            "text": "<h2>Vos guides d&#39;utilisation&nbsp;:</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Guides vid&eacute;o&nbsp;:</strong></p>\r\n\r\n<p><a href=\"http://test\"><em>Je souhaite cr&eacute;er mon compte usager</em></a></p>\r\n\r\n<p><a href=\"http://test\"><em>Je r&eacute;alise une d&eacute;marche en ligne</em></a></p>\r\n\r\n<p><a href=\"http://test\"><em>Je suis l&#39;avancement de mon dossier</em></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Autre guides&nbsp;:</strong></p>\r\n\r\n<p>- <a href=\"http://mon.alfortville.fr/aide/faq/\">F</a><a href=\"https://mon.alfortville.fr/aide/faq/\" target=\"_blank\">oire aux questions</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Support en ligne&nbsp;:</strong></p>\r\n\r\n<div class=\"cell textcell   \" data-ajax-cell-loading-message=\"Chargement\u2026\" data-ajax-cell-url=\"/ajax/cell/11/data_textcell-38/\">\r\n<div>\r\n<p>Poser vos questions en ligne <a href=\"https://demarches.alfortville.fr/autres-demandes/demande-d-informations-ou-reclamations/\" target=\"_blank\">ici</a></p>\r\n\r\n<p>&nbsp;</p>\r\n</div>\r\n</div>\r\n", 
+            "order": 1, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }
+      ]
+    }, 
+    {
+      "fields": {
+        "sub_slug": "", 
+        "picture": "", 
+        "slug": "avis", 
+        "description": "", 
+        "parent": null, 
+        "title": "Avis", 
+        "last_update_timestamp": "2018-09-21T10:56:50.068Z", 
+        "template_name": "standard", 
+        "public": true, 
+        "snapshot": null, 
+        "redirect_url": "", 
+        "groups": [], 
+        "order": 3, 
+        "exclude_from_navigation": false
+      }, 
+      "cells": [
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-21T10:56:39.883Z", 
+            "order": 0, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "footer", 
+            "slug": ""
+          }, 
+          "model": "data.parentcontentcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "no-border", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2018-09-21T11:17:23.149Z", 
+            "text": "<p>... &agrave; compl&eacute;ter ...</p>\r\n\r\n<p>(Formulaire SPHINX ou GRU\u202f?)</p>\r\n", 
+            "order": 1, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }
+      ]
+    }
+  ], 
+  "assets": []
+}
