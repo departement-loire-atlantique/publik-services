@@ -1,4 +1,8 @@
 {
+  "pwa": {
+    "navigation": [], 
+    "settings": {}
+  }, 
   "map-layers": [], 
   "pages": [
     {
@@ -9,7 +13,7 @@
         "description": "", 
         "parent": null, 
         "title": "Accueil", 
-        "last_update_timestamp": "2018-09-24T16:31:14.734Z", 
+        "last_update_timestamp": "2018-12-13T13:25:59.667Z", 
         "template_name": "standard-sidebar", 
         "public": true, 
         "snapshot": null, 
@@ -23,13 +27,13 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-21T07:51:16.752Z", 
+            "last_update_timestamp": "2018-12-04T14:29:37.124Z", 
             "wcs_site": "", 
             "order": 0, 
             "public": true, 
             "groups": [], 
             "placeholder": "sidebar", 
-            "slug": ""
+            "slug": "panneau-code-suivi"
           }, 
           "model": "wcs.trackingcodeinputcell"
         }, 
@@ -37,8 +41,8 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-28T12:14:08.290Z", 
-            "text": "<h1>Tableau de bord de vos d&eacute;marches</h1>\r\n", 
+            "last_update_timestamp": "2018-11-30T15:52:16.814Z", 
+            "text": "<h1 class=\"maintitle\">Tableau de bord de vos d&eacute;marches</h1>\r\n", 
             "order": 1, 
             "public": true, 
             "groups": [], 
@@ -64,10 +68,31 @@
         {
           "fields": {
             "extra_css_class": "", 
-            "restricted_to_unlogged": true, 
-            "last_update_timestamp": "2018-10-02T16:08:10.453Z", 
-            "text": "<p>&nbsp;</p>\r\n\r\n<p>Vous &ecirc;tes d&eacute;connect&eacute;. Connectez-vous afin de suivre vos demandes.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a class=\"button\" href=\"https://demarches-validation.loire-atlantique.fr/login/\">Me connecter</a></p>\r\n\r\n<p><a class=\"button\" href=\" https://demarches-validation.loire-atlantique.fr/login/\">M&#39;inscrire</a></p>\r\n\r\n", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2019-01-15T10:17:04.671Z", 
+            "placeholder": "content", 
+            "public": false, 
+            "ordering": "alpha", 
             "order": 3, 
+            "limit": null, 
+            "groups": [
+              "Support technique"
+            ], 
+            "manual_order": {
+              "data": []
+            }, 
+            "category_reference": "eservices:aide", 
+            "slug": ""
+          }, 
+          "model": "wcs.wcsformsofcategorycell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": true, 
+            "last_update_timestamp": "2019-01-15T10:58:49.484Z", 
+            "text": "<div id=\"intro-text-non-connecte\">\r\n<p>Vous &ecirc;tes d&eacute;connect&eacute;. Connectez-vous afin de suivre vos demandes.</p>\r\n<a class=\"button\" href=\"/login/\">Me connecter</a>\r\n\r\n<p>Vous n&#39;avez pas encore de compte\u202f?<br />\r\nCr&eacute;er un compte vous permet de suivre plus simplement vos d&eacute;marches en ligne.</p>\r\n<a class=\"button\" href=\"/accounts-register\">Cr&eacute;er un compte</a></div>\r\n", 
+            "order": 4, 
             "public": true, 
             "groups": [], 
             "placeholder": "content", 
@@ -79,13 +104,13 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-28T12:14:16.085Z", 
+            "last_update_timestamp": "2018-12-13T13:26:05.472Z", 
             "wcs_site": "", 
-            "order": 4, 
+            "order": 5, 
             "public": false, 
             "groups": [], 
             "placeholder": "content", 
-            "slug": ""
+            "slug": "demarches-brouillon"
           }, 
           "model": "wcs.wcscurrentdraftscell"
         }, 
@@ -95,13 +120,13 @@
             "restricted_to_unlogged": false, 
             "done_forms": false, 
             "current_forms": true, 
-            "last_update_timestamp": "2018-09-28T12:14:16.172Z", 
+            "last_update_timestamp": "2018-12-13T13:26:05.553Z", 
             "wcs_site": "", 
-            "order": 5, 
+            "order": 6, 
             "public": false, 
             "groups": [], 
             "placeholder": "content", 
-            "slug": "", 
+            "slug": "demarches-encours", 
             "categories": {}
           }, 
           "model": "wcs.wcscurrentformscell"
@@ -112,13 +137,13 @@
             "restricted_to_unlogged": false, 
             "done_forms": true, 
             "current_forms": false, 
-            "last_update_timestamp": "2018-09-28T12:14:16.276Z", 
+            "last_update_timestamp": "2018-12-13T13:26:05.631Z", 
             "wcs_site": "", 
-            "order": 6, 
+            "order": 7, 
             "public": false, 
             "groups": [], 
             "placeholder": "content", 
-            "slug": "", 
+            "slug": "demarches-terminees", 
             "categories": {
               "data": []
             }
@@ -131,25 +156,25 @@
       "fields": {
         "sub_slug": "", 
         "picture": "", 
-        "slug": "aide", 
+        "slug": "accounts-register", 
         "description": "", 
         "parent": null, 
-        "title": "Aide", 
-        "last_update_timestamp": "2018-09-10T09:28:37.835Z", 
+        "title": "Redirection authentic accounts register", 
+        "last_update_timestamp": "2019-01-15T11:11:41.999Z", 
         "template_name": "standard", 
         "public": true, 
         "snapshot": null, 
-        "redirect_url": "", 
+        "redirect_url": "https://compte.loire-atlantique.fr/accounts/register/", 
         "groups": [], 
-        "order": 2, 
-        "exclude_from_navigation": false
+        "order": 4, 
+        "exclude_from_navigation": true
       }, 
       "cells": [
         {
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-10T09:28:32.884Z", 
+            "last_update_timestamp": "2019-01-15T10:59:46.302Z", 
             "order": 0, 
             "public": true, 
             "groups": [], 
@@ -157,67 +182,6 @@
             "slug": ""
           }, 
           "model": "data.parentcontentcell"
-        }, 
-        {
-          "fields": {
-            "extra_css_class": "no-border", 
-            "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-21T10:56:08.139Z", 
-            "text": "<h2>Vos guides d&#39;utilisation&nbsp;:</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Guides vid&eacute;o&nbsp;:</strong></p>\r\n\r\n<p><a href=\"http://test\"><em>Je souhaite cr&eacute;er mon compte usager</em></a></p>\r\n\r\n<p><a href=\"http://test\"><em>Je r&eacute;alise une d&eacute;marche en ligne</em></a></p>\r\n\r\n<p><a href=\"http://test\"><em>Je suis l&#39;avancement de mon dossier</em></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Autre guides&nbsp;:</strong></p>\r\n\r\n<p>- <a href=\"http://mon.alfortville.fr/aide/faq/\">F</a><a href=\"https://mon.alfortville.fr/aide/faq/\" target=\"_blank\">oire aux questions</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Support en ligne&nbsp;:</strong></p>\r\n\r\n<div class=\"cell textcell   \" data-ajax-cell-loading-message=\"Chargement\u2026\" data-ajax-cell-url=\"/ajax/cell/11/data_textcell-38/\">\r\n<div>\r\n<p>Poser vos questions en ligne <a href=\"https://demarches.alfortville.fr/autres-demandes/demande-d-informations-ou-reclamations/\" target=\"_blank\">ici</a></p>\r\n\r\n<p>&nbsp;</p>\r\n</div>\r\n</div>\r\n", 
-            "order": 1, 
-            "public": true, 
-            "groups": [], 
-            "placeholder": "content", 
-            "slug": ""
-          }, 
-          "model": "data.textcell"
-        }
-      ]
-    }, 
-    {
-      "fields": {
-        "sub_slug": "", 
-        "picture": "", 
-        "slug": "avis", 
-        "description": "", 
-        "parent": null, 
-        "title": "Avis", 
-        "last_update_timestamp": "2018-09-21T10:56:50.068Z", 
-        "template_name": "standard", 
-        "public": true, 
-        "snapshot": null, 
-        "redirect_url": "", 
-        "groups": [], 
-        "order": 3, 
-        "exclude_from_navigation": false
-      }, 
-      "cells": [
-        {
-          "fields": {
-            "extra_css_class": "", 
-            "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-21T10:56:39.883Z", 
-            "order": 0, 
-            "public": true, 
-            "groups": [], 
-            "placeholder": "footer", 
-            "slug": ""
-          }, 
-          "model": "data.parentcontentcell"
-        }, 
-        {
-          "fields": {
-            "extra_css_class": "no-border", 
-            "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-21T11:17:23.149Z", 
-            "text": "<p>... &agrave; compl&eacute;ter ...</p>\r\n\r\n<p>(Formulaire SPHINX ou GRU\u202f?)</p>\r\n", 
-            "order": 1, 
-            "public": true, 
-            "groups": [], 
-            "placeholder": "content", 
-            "slug": ""
-          }, 
-          "model": "data.textcell"
         }
       ]
     }
