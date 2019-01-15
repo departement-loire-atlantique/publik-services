@@ -69,7 +69,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2019-01-15T10:17:04.671Z", 
+            "last_update_timestamp": "2019-01-15T13:17:03.593Z", 
             "placeholder": "content", 
             "public": false, 
             "ordering": "alpha", 
@@ -90,7 +90,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": true, 
-            "last_update_timestamp": "2019-01-15T10:58:49.484Z", 
+            "last_update_timestamp": "2019-01-15T13:07:04.946Z", 
             "text": "<div id=\"intro-text-non-connecte\">\r\n<p>Vous &ecirc;tes d&eacute;connect&eacute;. Connectez-vous afin de suivre vos demandes.</p>\r\n<a class=\"button\" href=\"/login/\">Me connecter</a>\r\n\r\n<p>Vous n&#39;avez pas encore de compte\u202f?<br />\r\nCr&eacute;er un compte vous permet de suivre plus simplement vos d&eacute;marches en ligne.</p>\r\n<a class=\"button\" href=\"/accounts-register\">Cr&eacute;er un compte</a></div>\r\n", 
             "order": 4, 
             "public": true, 
@@ -160,30 +160,16 @@
         "description": "", 
         "parent": null, 
         "title": "Redirection authentic accounts register", 
-        "last_update_timestamp": "2019-01-15T11:11:41.999Z", 
+        "last_update_timestamp": "2019-01-15T13:05:50.307Z", 
         "template_name": "standard", 
         "public": true, 
         "snapshot": null, 
-        "redirect_url": "https://compte.loire-atlantique.fr/accounts/register/", 
+        "redirect_url": "{{authentic_url}}/accounts/register", 
         "groups": [], 
         "order": 4, 
         "exclude_from_navigation": true
       }, 
-      "cells": [
-        {
-          "fields": {
-            "extra_css_class": "", 
-            "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2019-01-15T10:59:46.302Z", 
-            "order": 0, 
-            "public": true, 
-            "groups": [], 
-            "placeholder": "footer", 
-            "slug": ""
-          }, 
-          "model": "data.parentcontentcell"
-        }
-      ]
+      "cells": []
     }
   ], 
   "assets": []
