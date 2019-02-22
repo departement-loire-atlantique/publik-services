@@ -189,8 +189,11 @@ subvention_obtenue:
     - Oui
     - Ne sais pas
 
+precedent_dossier_texte: >
+  Si oui et si vous connaissez le n° du précédent dossier, merci de l'indiquer.
+
 precedent_dossier: >
-  Si oui et si vous connaissez le n° du précédent dossier, merci de l'indiquer
+  N° dossier
 
 logement_reconnu_insalubre_texte: >
     Le logement doit être reconnu insalubre. Le caractère insalubre de l’habitation doit être constaté sur la base 

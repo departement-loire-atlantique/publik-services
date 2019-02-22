@@ -50,6 +50,8 @@ page page_eligibilite
 
     liste* subvention_obtenue
 
+    texte precedent_dossier_texte
+
     champ_texte precedent_dossier
 
     texte logement_reconnu_insalubre_texte

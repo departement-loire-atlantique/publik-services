@@ -60,6 +60,8 @@ page page_eligibilite
 
     liste* subvention_obtenue
 
+    texte precedent_dossier_texte
+
     champ_texte precedent_dossier
 
     titre travaux_a_engager_titre
