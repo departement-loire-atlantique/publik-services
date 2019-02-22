@@ -334,4 +334,6 @@ page page_pieces_justificatives
 
     fichier documents_autorisations_secteur_sauvegarde
 
+    fichier documents_autre
+
     champ_texte_long documents_autres_observations

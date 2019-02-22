@@ -810,6 +810,9 @@ documents_autorisations_secteur_sauvegarde_texte: >
   *Si le logement est en secteur sauvegardé, vous devez fournir les autorisations administratives préalables 
   requises par la réglementation en vigueur et nécessaire à l'instruction des dossiers.*
 
+documents_autre: >
+  Autre pièce justificative
+
 documents_autres_texte: >
   *Autres justificatifs*
 
