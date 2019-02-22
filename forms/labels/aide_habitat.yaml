@@ -162,7 +162,7 @@ eligibilite_beneficiaire_apa:
     - Non
 
 eligibilite_beneficiaire_retraite:
-  L'un des occupant du logement est-il bénéficiaire d'une aide d'une caisse de retraite ?:
+  L'un des occupants du logement est-il bénéficiaire d'une aide d'une caisse de retraite ?:
     - Oui
     - Non
 
