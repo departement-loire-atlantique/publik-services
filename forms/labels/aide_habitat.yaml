@@ -222,7 +222,7 @@ travaux_a_engager_texte_moteur_recherche_operateur_insa: >
 travaux_a_engager_insa:
   Les travaux pour lesquels l'aide est demandée sont-ils de type:
     - Rénovation complète du logement dans le cadre d’une « grande insalubrité » (selon l'Anah)
-    - Travaux de mise aux norme dans le cadre d’une « petite insalubrité » (selon l'Anah)
+    - Travaux de mise aux normes dans le cadre d’une « petite insalubrité » (selon l'Anah)
 
 travaux_a_engager_ascenceur_pa: 
   Ascenseur / Monte personne:
