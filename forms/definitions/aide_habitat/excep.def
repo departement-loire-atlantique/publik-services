@@ -221,24 +221,17 @@ page page_procuration
 
     titre procuration_soustitre_beneficiaire
 
-    # TODO préremplir civilite
-    liste* procurationbeneficiaire:civilite
+    texte procuration:procuration_rappel_civilite
 
-    # TODO les champs "procurationbeneficiaire:xxx" sont préremplis et ne doivent pas être modifiables
-    champ_texte procurationbeneficiaire:nom
-        préremplir procurationbeneficiaire:nom avec beneficiaire:nom
+    texte procuration:procuration_rappel_nom
 
-    champ_texte procurationbeneficiaire:prenom
-        préremplir procurationbeneficiaire:prenom avec beneficiaire:prenom
+    texte procuration:procuration_rappel_prenom
 
-    champ_texte_long procurationbeneficiaire:adresse
-        préremplir procurationbeneficiaire:adresse avec beneficiaire:adresse
+    texte procuration:procuration_rappel_adresse
 
-    champ_texte procurationbeneficiaire:codepostal
-        préremplir procurationbeneficiaire:codepostal avec beneficiaire:codepostal
+    texte procuration:procuration_rappel_codepostal
 
-    champ_texte procurationbeneficiaire:commune
-        préremplir procurationbeneficiaire:commune avec beneficiaire:commune
+    texte procuration:procuration_rappel_commune
 
     titre procuration_soustitre_represente
 

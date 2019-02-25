@@ -583,6 +583,24 @@ procuration_titre_texte: >
 
 procuration_soustitre_beneficiaire: Le bénéficiaire
 
+procuration_rappel_civilite: >
+  Civilité : {{form_var_beneficiaire___civilite}}
+
+procuration_rappel_nom: >
+  Nom : {{form_var_beneficiaire___nom}}
+
+procuration_rappel_prenom: >
+  Prénom : {{form_var_beneficiaire___prenom}}
+
+procuration_rappel_adresse: >
+  Adresse : {{form_var_beneficiaire___adresse}}
+
+procuration_rappel_codepostal: >
+  Code postal : {{form_var_beneficiaire___codepostal}}
+
+procuration_rappel_commune: >
+  Commune : {{form_var_beneficiaire___commune}}
+
 procuration_soustitre_represente: Représenté par
 
 procuration_adresse_immeuble: >

@@ -109,6 +109,8 @@ page page_complement_info
     
     titre proprietaire_bailleur_tel_titre
     
+    texte MSG_COMPIN_TELEPHONE
+
     telephone tel_fixe
 
     telephone tel_portable
