@@ -188,17 +188,7 @@ page page_procuration
 
     titre procuration_soustitre_beneficiaire
 
-    texte procuration:procuration_rappel_civilite
-
-    texte procuration:procuration_rappel_nom
-
-    texte procuration:procuration_rappel_prenom
-
-    texte procuration:procuration_rappel_adresse
-
-    texte procuration:procuration_rappel_codepostal
-
-    texte procuration:procuration_rappel_commune
+    texte procuration_rappel_coordonnees_beneficiaire
 
     titre procuration_soustitre_represente
 
