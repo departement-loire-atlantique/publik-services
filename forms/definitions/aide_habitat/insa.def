@@ -114,7 +114,7 @@ page page_complement_info
 
     si qui_saisit_list contient "ou un de ses proches" alors masquer le champ complement_titre_referent_operateur
 
-    champ_texte complement_referent_operateur
+    champ_texte* complement_referent_operateur
 
     si qui_saisit_list contient "ou un de ses proches" alors masquer le champ complement_referent_operateur
 

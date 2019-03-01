@@ -121,6 +121,14 @@ page page_complement_info
 
     liste_deroulante proprietaire_bailleur_type_appartement_list
 
+    titre complement_titre_referent_operateur
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ complement_titre_referent_operateur
+
+    champ_texte* complement_referent_operateur
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ complement_referent_operateur
+
     # Messages d'erreurs
 
     si tel_fixe est vide et tel_portable est vide alors afficher le message MSG_COMPIN_TELEPHONE
