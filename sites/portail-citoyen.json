@@ -69,15 +69,13 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2019-01-15T13:17:03.593Z", 
+            "last_update_timestamp": "2019-03-04T14:17:03.358Z", 
             "placeholder": "content", 
             "public": false, 
             "ordering": "alpha", 
             "order": 3, 
             "limit": null, 
-            "groups": [
-              "Support technique"
-            ], 
+            "groups": [], 
             "manual_order": {
               "data": []
             }, 
@@ -170,6 +168,53 @@
         "exclude_from_navigation": true
       }, 
       "cells": []
+    }, 
+    {
+      "fields": {
+        "sub_slug": "", 
+        "picture": "", 
+        "slug": "mentions-legales", 
+        "description": "", 
+        "parent": null, 
+        "title": "Mentions l\u00e9gales", 
+        "last_update_timestamp": "2019-01-24T17:01:25.689Z", 
+        "template_name": "standard", 
+        "public": true, 
+        "snapshot": null, 
+        "redirect_url": "", 
+        "groups": [], 
+        "order": 5, 
+        "exclude_from_navigation": false
+      }, 
+      "cells": [
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2019-01-24T17:01:17.197Z", 
+            "order": 0, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "footer", 
+            "slug": ""
+          }, 
+          "model": "data.parentcontentcell"
+        }, 
+        {
+          "fields": {
+            "extra_css_class": "", 
+            "restricted_to_unlogged": false, 
+            "last_update_timestamp": "2019-01-24T17:51:57.689Z", 
+            "text": "<h1>Cr&eacute;dits</h1>\r\n\r\n<p><strong>Directeur de la publication\u00a0:</strong> Philippe Grosvalet, Pr&eacute;sident du Conseil d&eacute;partemental de Loire-Atlantique</p>\r\n\r\n<p><strong>Codirecteurs de la publication </strong>: Arnaud Bourdin, Dominique Robin</p>\r\n\r\n<p><strong>Cr&eacute;dits Photos (sauf mentions particuli&egrave;res) </strong>: Paul Pascal, Coralie Monnet, Simon B&eacute;n&eacute;teau.</p>\r\n\r\n<p><strong>Centre d&#39;&eacute;ducation &agrave; l&#39;environnement de Grand Lieu\u00a0:</strong> Myluckypixel, G.Morin\u202f; Arc-en-Sc&egrave;ne</p>\r\n\r\n<p><strong>Cr&eacute;dits Vid&eacute;os (sauf mentions particuli&egrave;res)\u00a0:</strong> Simon B&eacute;n&eacute;teau, Annabelle Jaunet, Paul Pascal.</p>\r\n\r\n<p><strong>Datavisualisation budget 2017\u00a0:</strong> &nbsp;Datcha\u00a0: http://www.agence-datcha.com&nbsp;</p>\r\n\r\n<h1>Conception et r&eacute;alisation</h1>\r\n\r\n<p><strong>Conception globale </strong>: Direction communication, p&ocirc;le innovation et multim&eacute;dia</p>\r\n\r\n<p><strong>Conception &eacute;ditoriale\u00a0:</strong> Direction communication, p&ocirc;le &eacute;ditorial</p>\r\n\r\n<p><strong>Graphisme\u00a0: </strong>Opixido <a href=\"http://www.opixido.fr/\">http://www.opixido.fr/</a></p>\r\n\r\n<p><strong>D&eacute;veloppement et int&eacute;gration\u00a0: </strong>Micropole <a href=\"http://www.micropole.com\">http://www.micropole.com</a>. Direction des solutions num&eacute;riques D&eacute;partement de Loire-Atlantique</p>\r\n\r\n<p><strong>H&eacute;bergement\u00a0:</strong> Direction des solutions num&eacute;riques - D&eacute;partement de Loire-Atlantique</p>\r\n\r\n<h1>Mentions l&eacute;gales</h1>\r\n\r\n<h2>Droits d&#39;auteurs</h2>\r\n\r\n<p>Tous les &eacute;l&eacute;ments &eacute;ditoriaux, graphiques, photographiques, sonores et vid&eacute;os pr&eacute;sents sur ce site sont la propri&eacute;t&eacute; du D&eacute;partement de Loire-Atlantique ou de tiers ayant autoris&eacute; le D&eacute;partement de Loire-Atlantique &agrave; les utiliser. En cons&eacute;quence et en application de la loi du 11 mars 1957 (art. 41) et du code de la propri&eacute;t&eacute; intellectuelle toute reproduction partielle ou totale d&#39;un de ces &eacute;l&eacute;ments sans l&#39;autorisation explicite d&#39;une personne autoris&eacute;e repr&eacute;sentant le D&eacute;partement de Loire-Atlantique est interdite et constitue un d&eacute;lit de contrefa&ccedil;on passible de poursuites.</p>\r\n\r\n<h2>Protection des donn&eacute;es personnelles</h2>\r\n\r\n<p>En application de la loi n&ordm; 78-17 du 6 janvier 1978 relative &agrave; l&#39;informatique, aux fichiers et aux libert&eacute;s, vous disposez des droits d&#39;opposition, d&#39;acc&egrave;s et de rectification des donn&eacute;es vous concernant. Ainsi, vous pouvez demander une mise &agrave; jour ou une suppression des informations vous concernant si elles s&#39;av&egrave;rent inexactes, incompl&egrave;tes, &eacute;quivoques, p&eacute;rim&eacute;es ou si leur collecte ou leur utilisation, communication ou conservation est interdite.</p>\r\n\r\n<p><strong>Pour faire valoir vos droits, vous pouvez nous contacter &agrave; l&#39;adresse suivante\u00a0:</strong></p>\r\n\r\n<p>P&ocirc;le Innovation et Multim&eacute;dia / Direction Communication,<br />\r\nD&eacute;partement de Loire Atlantique<br />\r\n3 Quai Ceineray, CS 94109<br />\r\n44041 Nantes Cedex 1</p>\r\n\r\n<br />\r\n\r\n<div style=\"border: 2px solid rgb(174, 201, 0); background-color: rgb(237, 236, 236); padding: 10px;\">\r\n<p><strong>Information g&eacute;n&eacute;rale\u00a0:</strong><br />\r\nLe D&eacute;partement de Loire-Atlantique effectue des mises &agrave; jour quotidiennes de son site internet.&nbsp;<br />\r\nNous rappelons donc que le contenu du site peut comporter des inexactitudes ou omissions, et que ses contenus sont susceptibles d&#39;&ecirc;tre modifi&eacute;s mis &agrave; jour ou supprim&eacute;s &agrave; tout moment.<br />\r\nSi vous constatez un probl&egrave;me technique, une information erron&eacute;e ou incompl&egrave;te, n&#39;h&eacute;sitez pas &agrave; le signaler &agrave; notre administrateur du site via le formulaire contact de notre site.<br />\r\nLe D&eacute;partement de Loire-Atlantique d&eacute;cline toute responsabilit&eacute; quant aux sites Internet r&eacute;f&eacute;renc&eacute;s sur son site.<br />\r\n&nbsp;</p>\r\n</div>\r\n\r\n<br /><br />\r\n\r\n<div style=\"border: 2px solid rgb(174, 201, 0); background-color: rgb(237, 236, 236); padding: 10px;\">\r\n<p><strong>Cookies</strong></p>\r\n\r\n<p>Ce site utilise Google Analytics, un service d&#39;analyse de site internet fourni par Google Inc. (\u00ab\u202fGoogle\u202f\u00bb). Google Analytics utilise des cookies , qui sont des fichiers texte plac&eacute;s sur votre ordinateur, pour aider le site internet &agrave; analyser l&#39;utilisation du site par ses utilisateurs. Les donn&eacute;es g&eacute;n&eacute;r&eacute;es par les cookies concernant votre utilisation du site (y compris votre adresse IP) seront transmises et stock&eacute;es par Google sur des serveurs situ&eacute;s aux Etats-Unis. Vous pouvez d&eacute;sactiver l&#39;utilisation de cookies en s&eacute;lectionnant les param&egrave;tres appropri&eacute;s de votre navigateur. Cependant, une telle d&eacute;sactivation pourrait emp&ecirc;cher l&#39;utilisation de certaines fonctionnalit&eacute;s de ce site. En utilisant ce site internet, vous consentez express&eacute;ment au traitement de vos donn&eacute;es nominatives par Google dans les conditions et pour les finalit&eacute;s d&eacute;crites ci-dessus.</p>\r\n</div>", 
+            "order": 1, 
+            "public": true, 
+            "groups": [], 
+            "placeholder": "content", 
+            "slug": ""
+          }, 
+          "model": "data.textcell"
+        }
+      ]
     }
   ], 
   "assets": []
