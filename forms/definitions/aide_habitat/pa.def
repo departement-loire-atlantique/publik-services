@@ -311,6 +311,8 @@ page page_engagement_beneficiaire
 
     si engagement_beneficiaire est vide alors afficher le message MSG_ENGAGEMENT
 
+    texte page_engagement_beneficiaire:intro_textes_obligatoires
+
     texte engagement_beneficiaire_texte
 
     liste_choix_multiple* engagement_beneficiaire

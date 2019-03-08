@@ -193,6 +193,8 @@ page page_engagement_beneficiaire
 
     texte page_engagement_beneficiaire:intro_textes_obligatoires
 
+    texte engagement_beneficiaire_texte
+
     liste_choix_multiple* engagement_beneficiaire_thermique
 
 page page_pieces_justificatives
