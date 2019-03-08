@@ -239,12 +239,36 @@ page page_mandat_personne
 
     titre procuration_donne_mandat_personne_sous_titre
 
-    nom_prenom_civilite* mandant:nom mandant:prenom mandat:civilite
+    liste* mandat:civilite
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:civilite
+
+    champ_texte* mandat:nom
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:nom
+
+    champ_texte*  mandat:prenom
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:prenom
+
+    champ_texte_long* mandat:adresse
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:adresse
+
+    champ_texte* mandat:codepostal
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:codepostal
+
+    champ_texte* mandat:commune
+
+    si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:commune
+
+    texte page_mandat_personne:procuration_rappel_coordonnees_beneficiaire
+
+    si qui_saisit_list ne contient pas "ou un de ses proches" alors masquer le champ page_mandat_personne:procuration_rappel_coordonnees_beneficiaire
 
     champ_texte procuration:qualite
         aide à la saisie qualite_aide
-
-    adresse* mandant:adresse mandant:codepostal mandant:commune
 
     champ_texte* page_mandat_personne:procuration_sms_telephone
 
