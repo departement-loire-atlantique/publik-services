@@ -4,6 +4,22 @@ formulaire metadata_name_aide_habitat_insa
     description metadata_description_aide_habitat_insa 
     identifiant metadata_internal_identifier_aide_habitat_insa
 
+    workflow_id metadata_workflow_id
+    workflow_name metadata_workflow_name
+
+    category_id metadata_category_id
+    category_name metadata_category_name
+
+    user_roles_id metadata_user_roles_id
+    user_roles_name metadata_user_roles_name
+
+    backoffice_submission_roles_id metadata_backoffice_submission_roles_id
+    backoffice_submission_roles_name metadata_backoffice_submission_roles_name
+
+    roles_id metadata_roles_id
+    roles_key metadata_roles_key
+    roles_name metadata_roles_name
+
 page page_preambule
 
     texte page_preambule:intro_textes_obligatoires

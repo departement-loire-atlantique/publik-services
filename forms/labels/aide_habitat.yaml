@@ -9,7 +9,7 @@
 metadata_name_aide_habitat_pa: Adaptation des logements de personnes âgées (BETA)
 metadata_url_name_aide_habitat_pa: aide-habitat-pa-beta
 metadata_description_aide_habitat_pa: description adaptation des logements de personnes âgées
-metadata_internal_identifier_aide_habitat_pa: aide-habitat-pa-beta
+metadata_internal_identifier_aide_habitat_pa: aide-habitat-pa-beta2
 
 metadata_name_aide_habitat_ph: Adaptation des logements de personnes en situation de handicap (BETA)
 metadata_url_name_aide_habitat_ph: aide-habitat-ph-beta
@@ -30,6 +30,22 @@ metadata_name_aide_habitat_therm: Aide à l'amélioration thermique de logements
 metadata_url_name_aide_habitat_therm: aide-habitat-thermique-beta
 metadata_description_aide_habitat_therm: description aide à l'amélioration thermique de logements locatifs conventionnés privés
 metadata_internal_identifier_aide_habitat_therm: aide-habitat-thermique-beta
+
+metadata_workflow_id: "15"
+metadata_workflow_name: Aides habitat
+
+metadata_category_id: "1"
+metadata_category_name: Aides à l'habitat
+
+metadata_user_roles_id: logged-users
+metadata_user_roles_name: logged-users
+
+metadata_backoffice_submission_roles_id: 9e4dacfc848045b2a22773f3de3fbd67
+metadata_backoffice_submission_roles_name: Service habitat
+
+metadata_roles_id: 9e4dacfc848045b2a22773f3de3fbd67
+metadata_roles_key: _receiver
+metadata_roles_name: Service habitat
 
 # metadata_name_aide_habitat_pa: Adaptation des logements de personnes âgées
 # metadata_url_name_aide_habitat_pa: aide-habitat-pa
