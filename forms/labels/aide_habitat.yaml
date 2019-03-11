@@ -577,13 +577,14 @@ procuration_titre_texte: >
 procuration_soustitre_beneficiaire: Le bénéficiaire
 
 procuration_rappel_coordonnees_beneficiaire: >
-  **Civilité** : {{form_var_beneficiaire___civilite}}
+
+  **Civilité** : {{form_var_civilite}}
 
 
-  **Nom** : {{form_var_beneficiaire___nom}}
+  **Nom** : {{form_var_prenom}}
 
 
-  **Prénom** : {{form_var_beneficiaire___prenom}}
+  **Prénom** : {{form_var_nom}}
 
 
   **Adresse** : {{form_var_beneficiaire___adresse}}

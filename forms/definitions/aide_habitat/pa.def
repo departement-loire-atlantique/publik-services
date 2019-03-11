@@ -57,13 +57,11 @@ page page_eligibilite
 
     liste* eligibilite_beneficiaire_retraite
 
-    liste* beneficiaire:civilite
-    
-    nom_prenom* beneficiaire:nom beneficiaire:prenom
-    
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir beneficiaire:nom avec profil:nom
+    nom_prenom_civilite* nom prenom civilite
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir beneficiaire:prenom avec profil:prenom
+    si qui_saisit_list contient "ou un de ses proches" alors préremplir nom avec profil:nom
+
+    si qui_saisit_list contient "ou un de ses proches" alors préremplir prenom avec profil:prenom
 
     courriel courriel
 
