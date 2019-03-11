@@ -4,8 +4,7 @@ formulaire metadata_name_aide_habitat_ph
     description metadata_description_aide_habitat_ph
     identifiant metadata_internal_identifier_aide_habitat_ph
 
-    workflow_id metadata_workflow_id
-    workflow_name metadata_workflow_name
+    workflow workflow
 
     category_id metadata_category_id
     category_name metadata_category_name

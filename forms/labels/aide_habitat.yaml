@@ -3,7 +3,7 @@
 # v1.9 du 16/11/2018
 # ---------------------------------------------------------------------------
 
-# Libellés généraux
+# Métadonnées
 # --------------------------------------------------
 
 metadata_name_aide_habitat_pa: Adaptation des logements de personnes âgées (BETA)
@@ -31,8 +31,7 @@ metadata_url_name_aide_habitat_therm: aide-habitat-thermique-beta
 metadata_description_aide_habitat_therm: description aide à l'amélioration thermique de logements locatifs conventionnés privés
 metadata_internal_identifier_aide_habitat_therm: aide-habitat-thermique-beta
 
-metadata_workflow_id: "15"
-metadata_workflow_name: Aides habitat
+workflow: Aides habitat
 
 metadata_category_id: "1"
 metadata_category_name: Aides à l'habitat
@@ -47,30 +46,8 @@ metadata_roles_id: 9e4dacfc848045b2a22773f3de3fbd67
 metadata_roles_key: _receiver
 metadata_roles_name: Service habitat
 
-# metadata_name_aide_habitat_pa: Adaptation des logements de personnes âgées
-# metadata_url_name_aide_habitat_pa: aide-habitat-pa
-# metadata_description_aide_habitat_pa: description adaptation des logements de personnes âgées
-# metadata_internal_identifier_aide_habitat_pa: aide-habitat-pa
-
-# metadata_name_aide_habitat_ph: Adaptation des logements de personnes en situation de handicap
-# metadata_url_name_aide_habitat_ph: aide-habitat-ph
-# metadata_description_aide_habitat_ph: description adaptation des logements de personnes en situation de handicap
-# metadata_internal_identifier_aide_habitat_ph: aide-habitat-ph
-
-# metadata_name_aide_habitat_insa: Aide pour des travaux de sortie d'insalubrité
-# metadata_url_name_aide_habitat_insa: aide-habitat-insalubrite
-# metadata_description_aide_habitat_insa: description aide pour des travaux de sortie d'insalubrité
-# metadata_internal_identifier_aide_habitat_insa: aide-habitat-insalubrite
-
-# metadata_name_aide_habitat_excep: Aide exceptionnelle pour l'adaptation des logements
-# metadata_url_name_aide_habitat_excep: aide-habitat-exceptionnelle
-# metadata_description_aide_habitat_excep: description aide exceptionnelle pour l'adaptation des logements
-# metadata_internal_identifier_aide_habitat_excep: aide-habitat-exceptionnelle
-
-# metadata_name_aide_habitat_therm: Aide à l'amélioration thermique de logements locatifs conventionnés privés
-# metadata_url_name_aide_habitat_therm: aide-habitat-thermique
-# metadata_description_aide_habitat_therm: description aide à l'amélioration thermique de logements locatifs conventionnés privés
-# metadata_internal_identifier_aide_habitat_therm: aide-habitat-thermique
+# Libellés généraux
+# --------------------------------------------------
 
 page_preambule: Préambule
 
