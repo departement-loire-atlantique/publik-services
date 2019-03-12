@@ -1,6 +1,18 @@
 intro_textes_obligatoires: >
   Les champs suivis d'un astérisque * sont obligatoires.
 
+format_courriel: >
+  Format : test@test.com
+
+format_tel_fixe: >
+  Format : 0201020304
+
+format_tel_portable: >
+  Format : 0601020304
+
+format_montant: >
+  Format : montant arrondi à l'euro le plus proche, sans virgule ni point.
+
 civilite:
   Civilité:
     - M.

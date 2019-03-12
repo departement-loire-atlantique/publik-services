@@ -56,6 +56,7 @@ page page_eligibilite
     si qui_saisit_list contient "ou un de ses proches" alors préremplir prenom avec profil:prenom
   
     courriel courriel
+        aide à la saisie format_courriel
     
     adresse* beneficiaire:adresse beneficiaire:codepostal beneficiaire:commune
 
@@ -120,8 +121,10 @@ page page_complement_info
     texte MSG_COMPIN_TELEPHONE
     
     telephone tel_fixe
+        aide à la saisie format_tel_fixe
 
     telephone tel_portable
+        aide à la saisie format_tel_portable
 
     texte MSG_COMPIN_SMS
 
