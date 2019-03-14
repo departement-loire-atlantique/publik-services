@@ -692,7 +692,7 @@ MSG_PROCU_ORGANISME: >
 # --------------------------------------------------
 
 engagement_operateur_texte: >
-  En tant qu'opérateur, j'ai signalé au bénéficiaire qu'il s'engage à
+  **En tant qu'opérateur, j'ai signalé au bénéficiaire qu'il s'engage à :**
 
     - Attendre, si possible, le courrier de notification de subvention avant de démarrer les travaux. Il est toutefois autorisé de démarrer les travaux une fois reçu l'accusé de réception du dossier complet. Mais seul le courrier de notification garantit l'attribution de l'aide.
 
@@ -713,7 +713,7 @@ engagement_operateur_texte: >
     - Tout bénéficiaire d'une subvention à l'amélioration de l'habitat privé dispose d'un délai de 4 ans pour présenter sa demande de versement. La subvention n'est donc plus valable au 31 décembre de la quatrième année qui suit son attribution.
 
 engagement_operateur_texte_aide_exceptionnelle: >
-  En tant qu'opérateur, j'ai signalé au bénéficiaire qu'il s'engage à
+  **En tant qu'opérateur, j'ai signalé au bénéficiaire qu'il s'engage à :**
 
     - Attendre, si possible, le courrier de notification de subvention avant de démarrer les travaux. Il est toutefois autorisé de démarrer les travaux une fois reçu l'accusé de réception du dossier complet. Mais seul le courrier de notification garantit l'attribution de l'aide.
 
@@ -736,7 +736,7 @@ engagement_operateur:
   En tant qu'opérateur, en validant ce formulaire, je deviens responsable des informations qui y sont saisies:
     - Je m'engage à pouvoir fournir au Département la preuve de l'accord du bénéficiaire en cas de contrôle
 
-engagement_operateur_modele_accord: Vous pouvez télécharger un modèle d'accord du bénéficiaire [en cliquant ici](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire)
+engagement_operateur_modele_accord: [Télécharger un modèle d'accord du bénéficiaire](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire)
 
 MSG_ENGAGEMENT: Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.
 
