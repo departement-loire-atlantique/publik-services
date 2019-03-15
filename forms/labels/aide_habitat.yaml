@@ -736,7 +736,8 @@ engagement_operateur:
   En tant qu'opérateur, en validant ce formulaire, je deviens responsable des informations qui y sont saisies:
     - Je m'engage à pouvoir fournir au Département la preuve de l'accord du bénéficiaire en cas de contrôle
 
-engagement_operateur_modele_accord: [Télécharger un modèle d'accord du bénéficiaire](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire)
+engagement_operateur_modele_accord: >
+  [Télécharger un modèle d'accord du bénéficiaire](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire)
 
 MSG_ENGAGEMENT: Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.
 
