@@ -23,7 +23,7 @@ page page_preambule
 
     texte page_preambule:intro_textes_obligatoires
 
-    liste* qui_saisit_list
+    liste_importante* qui_saisit_list
 
     texte qui_saisit_conseil
 
