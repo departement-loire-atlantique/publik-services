@@ -339,7 +339,13 @@ page page_pieces_justificatives
 
     fichier* documents_rib
 
-    texte documents_rib_texte
+    texte documents_rib_texte_si_aucune_procuration
+
+    si procuration_perception_subventions contient "ne fait pas de procuration" alors masquer le champ documents_rib_texte_si_procuration
+
+    texte documents_rib_texte_si_procuration
+
+    si procuration_perception_subventions ne contient pas "ne fait pas de procuration" alors masquer le champ documents_rib_texte_si_aucune_procuration
 
     fichier* documents_apa
 
