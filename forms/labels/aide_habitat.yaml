@@ -307,6 +307,8 @@ nature_travaux: Nature des travaux
 
 couts_ht: Coûts HT
 
+couts_ht_aide: Montant arrondi (chiffre entier, sans point ni virgule)
+
 amenagement_prioritaire:
   Aménagement prioritaire:
     - Oui

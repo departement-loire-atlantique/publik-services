@@ -85,7 +85,7 @@ page page_rapport_situation
 
     champ_texte_long* travaux_1:nature_travaux
 
-    montant* travaux_1:couts_ht
+    nombre* travaux_1:couts_ht
 
     liste* travaux_1:amenagement_prioritaire
 
@@ -93,7 +93,7 @@ page page_rapport_situation
 
     champ_texte_long travaux_2:nature_travaux
 
-    montant travaux_2:couts_ht
+    nombre travaux_2:couts_ht
 
     liste travaux_2:amenagement_prioritaire
 
@@ -101,7 +101,7 @@ page page_rapport_situation
 
     champ_texte_long travaux_3:nature_travaux
 
-    montant travaux_3:couts_ht
+    nombre travaux_3:couts_ht
 
     liste travaux_3:amenagement_prioritaire
 
@@ -109,7 +109,7 @@ page page_rapport_situation
 
     champ_texte_long travaux_4:nature_travaux
 
-    montant travaux_4:couts_ht
+    nombre travaux_4:couts_ht
 
     liste travaux_4:amenagement_prioritaire
 
@@ -117,7 +117,7 @@ page page_rapport_situation
 
     champ_texte_long travaux_5:nature_travaux
 
-    montant travaux_5:couts_ht
+    nombre travaux_5:couts_ht
 
     liste travaux_5:amenagement_prioritaire
 
