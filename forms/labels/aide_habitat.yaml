@@ -781,7 +781,7 @@ engagement_beneficiaire_thermique:
 documents_rib: Relevé d'Identité Bancaire
 
 documents_rib_texte_si_aucune_procuration: >
-  RIB au nom du bénéficiaire (ou au double nom « M ou Mme ») si celui-ci perçoit directement les subventions
+  RIB au nom du bénéficiaire (ou au double nom « M ou Mme ») qui perçoit directement les subventions
 
 documents_rib_texte_si_procuration: >
   RIB au nom du mandataire habilité à percevoir les fonds
