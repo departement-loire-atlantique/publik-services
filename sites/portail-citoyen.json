@@ -13,7 +13,7 @@
         "description": "", 
         "parent": null, 
         "title": "Accueil", 
-        "last_update_timestamp": "2018-12-13T13:25:59.667Z", 
+        "last_update_timestamp": "2019-04-23T12:43:14.937Z", 
         "template_name": "standard-sidebar", 
         "public": true, 
         "snapshot": null, 
@@ -27,7 +27,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-12-04T14:29:37.124Z", 
+            "last_update_timestamp": "2019-01-15T14:01:48.624Z", 
             "wcs_site": "", 
             "order": 0, 
             "public": true, 
@@ -41,7 +41,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-11-30T15:52:16.814Z", 
+            "last_update_timestamp": "2019-01-15T14:01:48.870Z", 
             "text": "<h1 class=\"maintitle\">Tableau de bord de vos d&eacute;marches</h1>\r\n", 
             "order": 1, 
             "public": true, 
@@ -55,7 +55,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-09-28T12:14:32.008Z", 
+            "last_update_timestamp": "2019-01-15T14:01:49.071Z", 
             "text": "<p>Vous &ecirc;tes connect&eacute;</p>\r\n", 
             "order": 2, 
             "public": false, 
@@ -68,27 +68,8 @@
         {
           "fields": {
             "extra_css_class": "", 
-            "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2019-03-04T14:17:03.358Z", 
-            "placeholder": "content", 
-            "public": false, 
-            "ordering": "alpha", 
-            "order": 3, 
-            "limit": null, 
-            "groups": [], 
-            "manual_order": {
-              "data": []
-            }, 
-            "category_reference": "eservices:aide", 
-            "slug": ""
-          }, 
-          "model": "wcs.wcsformsofcategorycell"
-        }, 
-        {
-          "fields": {
-            "extra_css_class": "", 
             "restricted_to_unlogged": true, 
-            "last_update_timestamp": "2019-01-15T13:07:04.946Z", 
+            "last_update_timestamp": "2019-01-15T14:01:49.486Z", 
             "text": "<div id=\"intro-text-non-connecte\">\r\n<p>Vous &ecirc;tes d&eacute;connect&eacute;. Connectez-vous afin de suivre vos demandes.</p>\r\n<a class=\"button\" href=\"/login/\">Me connecter</a>\r\n\r\n<p>Vous n&#39;avez pas encore de compte\u202f?<br />\r\nCr&eacute;er un compte vous permet de suivre plus simplement vos d&eacute;marches en ligne.</p>\r\n<a class=\"button\" href=\"/accounts-register\">Cr&eacute;er un compte</a></div>\r\n", 
             "order": 4, 
             "public": true, 
@@ -102,7 +83,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2018-12-13T13:26:05.472Z", 
+            "last_update_timestamp": "2019-01-15T14:01:49.672Z", 
             "wcs_site": "", 
             "order": 5, 
             "public": false, 
@@ -118,7 +99,7 @@
             "restricted_to_unlogged": false, 
             "done_forms": false, 
             "current_forms": true, 
-            "last_update_timestamp": "2018-12-13T13:26:05.553Z", 
+            "last_update_timestamp": "2019-01-15T14:01:49.842Z", 
             "wcs_site": "", 
             "order": 6, 
             "public": false, 
@@ -135,7 +116,7 @@
             "restricted_to_unlogged": false, 
             "done_forms": true, 
             "current_forms": false, 
-            "last_update_timestamp": "2018-12-13T13:26:05.631Z", 
+            "last_update_timestamp": "2019-01-15T14:01:50.018Z", 
             "wcs_site": "", 
             "order": 7, 
             "public": false, 
@@ -177,7 +158,7 @@
         "description": "", 
         "parent": null, 
         "title": "Mentions l\u00e9gales", 
-        "last_update_timestamp": "2019-01-24T17:01:25.689Z", 
+        "last_update_timestamp": "2019-03-15T11:14:33.862Z", 
         "template_name": "standard", 
         "public": true, 
         "snapshot": null, 
@@ -191,7 +172,7 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2019-01-24T17:01:17.197Z", 
+            "last_update_timestamp": "2019-03-15T11:14:16.539Z", 
             "order": 0, 
             "public": true, 
             "groups": [], 
@@ -204,8 +185,8 @@
           "fields": {
             "extra_css_class": "", 
             "restricted_to_unlogged": false, 
-            "last_update_timestamp": "2019-01-24T17:51:57.689Z", 
-            "text": "<h1>Cr&eacute;dits</h1>\r\n\r\n<p><strong>Directeur de la publication\u00a0:</strong> Philippe Grosvalet, Pr&eacute;sident du Conseil d&eacute;partemental de Loire-Atlantique</p>\r\n\r\n<p><strong>Codirecteurs de la publication </strong>: Arnaud Bourdin, Dominique Robin</p>\r\n\r\n<p><strong>Cr&eacute;dits Photos (sauf mentions particuli&egrave;res) </strong>: Paul Pascal, Coralie Monnet, Simon B&eacute;n&eacute;teau.</p>\r\n\r\n<p><strong>Centre d&#39;&eacute;ducation &agrave; l&#39;environnement de Grand Lieu\u00a0:</strong> Myluckypixel, G.Morin\u202f; Arc-en-Sc&egrave;ne</p>\r\n\r\n<p><strong>Cr&eacute;dits Vid&eacute;os (sauf mentions particuli&egrave;res)\u00a0:</strong> Simon B&eacute;n&eacute;teau, Annabelle Jaunet, Paul Pascal.</p>\r\n\r\n<p><strong>Datavisualisation budget 2017\u00a0:</strong> &nbsp;Datcha\u00a0: http://www.agence-datcha.com&nbsp;</p>\r\n\r\n<h1>Conception et r&eacute;alisation</h1>\r\n\r\n<p><strong>Conception globale </strong>: Direction communication, p&ocirc;le innovation et multim&eacute;dia</p>\r\n\r\n<p><strong>Conception &eacute;ditoriale\u00a0:</strong> Direction communication, p&ocirc;le &eacute;ditorial</p>\r\n\r\n<p><strong>Graphisme\u00a0: </strong>Opixido <a href=\"http://www.opixido.fr/\">http://www.opixido.fr/</a></p>\r\n\r\n<p><strong>D&eacute;veloppement et int&eacute;gration\u00a0: </strong>Micropole <a href=\"http://www.micropole.com\">http://www.micropole.com</a>. Direction des solutions num&eacute;riques D&eacute;partement de Loire-Atlantique</p>\r\n\r\n<p><strong>H&eacute;bergement\u00a0:</strong> Direction des solutions num&eacute;riques - D&eacute;partement de Loire-Atlantique</p>\r\n\r\n<h1>Mentions l&eacute;gales</h1>\r\n\r\n<h2>Droits d&#39;auteurs</h2>\r\n\r\n<p>Tous les &eacute;l&eacute;ments &eacute;ditoriaux, graphiques, photographiques, sonores et vid&eacute;os pr&eacute;sents sur ce site sont la propri&eacute;t&eacute; du D&eacute;partement de Loire-Atlantique ou de tiers ayant autoris&eacute; le D&eacute;partement de Loire-Atlantique &agrave; les utiliser. En cons&eacute;quence et en application de la loi du 11 mars 1957 (art. 41) et du code de la propri&eacute;t&eacute; intellectuelle toute reproduction partielle ou totale d&#39;un de ces &eacute;l&eacute;ments sans l&#39;autorisation explicite d&#39;une personne autoris&eacute;e repr&eacute;sentant le D&eacute;partement de Loire-Atlantique est interdite et constitue un d&eacute;lit de contrefa&ccedil;on passible de poursuites.</p>\r\n\r\n<h2>Protection des donn&eacute;es personnelles</h2>\r\n\r\n<p>En application de la loi n&ordm; 78-17 du 6 janvier 1978 relative &agrave; l&#39;informatique, aux fichiers et aux libert&eacute;s, vous disposez des droits d&#39;opposition, d&#39;acc&egrave;s et de rectification des donn&eacute;es vous concernant. Ainsi, vous pouvez demander une mise &agrave; jour ou une suppression des informations vous concernant si elles s&#39;av&egrave;rent inexactes, incompl&egrave;tes, &eacute;quivoques, p&eacute;rim&eacute;es ou si leur collecte ou leur utilisation, communication ou conservation est interdite.</p>\r\n\r\n<p><strong>Pour faire valoir vos droits, vous pouvez nous contacter &agrave; l&#39;adresse suivante\u00a0:</strong></p>\r\n\r\n<p>P&ocirc;le Innovation et Multim&eacute;dia / Direction Communication,<br />\r\nD&eacute;partement de Loire Atlantique<br />\r\n3 Quai Ceineray, CS 94109<br />\r\n44041 Nantes Cedex 1</p>\r\n\r\n<br />\r\n\r\n<div style=\"border: 2px solid rgb(174, 201, 0); background-color: rgb(237, 236, 236); padding: 10px;\">\r\n<p><strong>Information g&eacute;n&eacute;rale\u00a0:</strong><br />\r\nLe D&eacute;partement de Loire-Atlantique effectue des mises &agrave; jour quotidiennes de son site internet.&nbsp;<br />\r\nNous rappelons donc que le contenu du site peut comporter des inexactitudes ou omissions, et que ses contenus sont susceptibles d&#39;&ecirc;tre modifi&eacute;s mis &agrave; jour ou supprim&eacute;s &agrave; tout moment.<br />\r\nSi vous constatez un probl&egrave;me technique, une information erron&eacute;e ou incompl&egrave;te, n&#39;h&eacute;sitez pas &agrave; le signaler &agrave; notre administrateur du site via le formulaire contact de notre site.<br />\r\nLe D&eacute;partement de Loire-Atlantique d&eacute;cline toute responsabilit&eacute; quant aux sites Internet r&eacute;f&eacute;renc&eacute;s sur son site.<br />\r\n&nbsp;</p>\r\n</div>\r\n\r\n<br /><br />\r\n\r\n<div style=\"border: 2px solid rgb(174, 201, 0); background-color: rgb(237, 236, 236); padding: 10px;\">\r\n<p><strong>Cookies</strong></p>\r\n\r\n<p>Ce site utilise Google Analytics, un service d&#39;analyse de site internet fourni par Google Inc. (\u00ab\u202fGoogle\u202f\u00bb). Google Analytics utilise des cookies , qui sont des fichiers texte plac&eacute;s sur votre ordinateur, pour aider le site internet &agrave; analyser l&#39;utilisation du site par ses utilisateurs. Les donn&eacute;es g&eacute;n&eacute;r&eacute;es par les cookies concernant votre utilisation du site (y compris votre adresse IP) seront transmises et stock&eacute;es par Google sur des serveurs situ&eacute;s aux Etats-Unis. Vous pouvez d&eacute;sactiver l&#39;utilisation de cookies en s&eacute;lectionnant les param&egrave;tres appropri&eacute;s de votre navigateur. Cependant, une telle d&eacute;sactivation pourrait emp&ecirc;cher l&#39;utilisation de certaines fonctionnalit&eacute;s de ce site. En utilisant ce site internet, vous consentez express&eacute;ment au traitement de vos donn&eacute;es nominatives par Google dans les conditions et pour les finalit&eacute;s d&eacute;crites ci-dessus.</p>\r\n</div>", 
+            "last_update_timestamp": "2019-04-30T12:28:03.630Z", 
+            "text": "<h1>Cr&eacute;dits</h1>\r\n\r\n<p><strong>Directeur de la publication&nbsp;:</strong> Philippe Grosvalet, Pr&eacute;sident du Conseil d&eacute;partemental de Loire-Atlantique</p>\r\n\r\n<p><strong>Codirecteurs de la publication </strong>: Arnaud Bourdin, Dominique Robin</p>\r\n\r\n<p><strong>Cr&eacute;dits Photos (sauf mentions particuli&egrave;res) </strong>: Paul Pascal, Coralie Monnet, Simon B&eacute;n&eacute;teau.</p>\r\n\r\n<h1>Conception et r&eacute;alisation</h1>\r\n\r\n<p><strong>Conception globale </strong>: Direction solutions num&eacute;rique, Direction communication (p&ocirc;le innovation et multim&eacute;dia)</p>\r\n\r\n<p><strong>Conception &eacute;ditoriale&nbsp;:</strong> Direction communication, p&ocirc;le &eacute;ditorial</p>\r\n\r\n<p><strong>Graphisme&nbsp;: </strong>Opixido <a href=\"http://www.opixido.fr/\">http://www.opixido.fr/</a></p>\r\n\r\n<p><strong>D&eacute;veloppement et int&eacute;gration&nbsp;: </strong>Direction des solutions num&eacute;riques D&eacute;partement de Loire-Atlantique</p>\r\n\r\n<p><strong>H&eacute;bergement&nbsp;:</strong> Direction des solutions num&eacute;riques - D&eacute;partement de Loire-Atlantique</p>\r\n\r\n<h1>Mentions l&eacute;gales</h1>\r\n\r\n<h2>Droits d&#39;auteurs</h2>\r\n\r\n<p>Tous les &eacute;l&eacute;ments &eacute;ditoriaux, graphiques, photographiques, sonores et vid&eacute;os pr&eacute;sents sur ce site sont la propri&eacute;t&eacute; du D&eacute;partement de Loire-Atlantique ou de tiers ayant autoris&eacute; le D&eacute;partement de Loire-Atlantique &agrave; les utiliser. En cons&eacute;quence et en application de la loi du 11 mars 1957 (art. 41) et du code de la propri&eacute;t&eacute; intellectuelle toute reproduction partielle ou totale d&#39;un de ces &eacute;l&eacute;ments sans l&#39;autorisation explicite d&#39;une personne autoris&eacute;e repr&eacute;sentant le D&eacute;partement de Loire-Atlantique est interdite et constitue un d&eacute;lit de contrefa&ccedil;on passible de poursuites.</p>\r\n\r\n<h2>Protection des donn&eacute;es personnelles</h2>\r\n\r\n<p>Les donn&eacute;es personnelles vous concernant sont trait&eacute;es par le D&eacute;partement de Loire-Atlantique afin de vous authentifier pour acc&eacute;der aux t&eacute;l&eacute;services propos&eacute;s par le D&eacute;partement (les donn&eacute;es personnelles qui seront collect&eacute;es et trait&eacute;es dans chaque t&eacute;l&eacute;service font l&rsquo;objet de traitements distincts). Le traitement est n&eacute;cessaire aux fins des int&eacute;r&ecirc;ts l&eacute;gitimes du D&eacute;partement&nbsp;(garantie de fonctionnement des t&eacute;l&eacute;services associ&eacute;s gr&acirc;ce &agrave; l&rsquo;utilisation d&rsquo;une adresse mail certifi&eacute;e). Les destinataires de vos donn&eacute;es sont les services habilit&eacute;s du D&eacute;partement. La dur&eacute;e de conservation de vos donn&eacute;es est d&eacute;finie conform&eacute;ment aux prescriptions des archives de France et/ou des archives d&eacute;partementales. Vous pouvez acc&eacute;der aux donn&eacute;es vous concernant et demander leur rectification ou leur portabilit&eacute;. Vous disposez &eacute;galement, pour des raisons l&eacute;gitimes, d&rsquo;un droit d&rsquo;opposition, d&rsquo;effacement des donn&eacute;es et de limitation du traitement. &nbsp;L&rsquo;exercice de ces droits se fait aupr&egrave;s du D&eacute;l&eacute;gu&eacute; &agrave; la protection des donn&eacute;es, par courriel &agrave; <a data-auth=\"NotApplicable\" href=\"mailto:dpd@loire-atlantique.fr\" rel=\"noopener noreferrer\" target=\"_blank\">dpd@loire-atlantique.fr</a> ou par courrier adress&eacute; au 3 Quai Ceineray, CS 94109, 44041 Nantes Cedex 1.&nbsp;Vous avez le droit d&rsquo;introduire une r&eacute;clamation aupr&egrave;s de l&rsquo;autorit&eacute; de contr&ocirc;le (CNIL - 3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX 07 - <a data-auth=\"NotApplicable\" href=\"http://www.cnil.fr/\" rel=\"noopener noreferrer\" target=\"_blank\" title=\"www.cnil.fr (lien externe)\">www.cnil.fr</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div style=\"border: 2px solid rgb(174, 201, 0); background-color: rgb(237, 236, 236); padding: 10px;\">\r\n<p><strong>Information g&eacute;n&eacute;rale&nbsp;:</strong><br />\r\nLe D&eacute;partement de Loire-Atlantique effectue des mises &agrave; jour quotidiennes de ce service.&nbsp;</p>\r\n\r\n<p>Nous rappelons donc que le contenu du site peut comporter des inexactitudes ou omissions, et que ses contenus sont susceptibles d&#39;&ecirc;tre modifi&eacute;s mis &agrave; jour ou supprim&eacute;s &agrave; tout moment.</p>\r\n\r\n<p>Si vous constatez un probl&egrave;me technique, une information erron&eacute;e ou incompl&egrave;te, n&#39;h&eacute;sitez pas &agrave; le signaler &agrave; notre administrateur du site via le formulaire contact de notre site.</p>\r\n\r\n<p>Le D&eacute;partement de Loire-Atlantique d&eacute;cline toute responsabilit&eacute; quant aux sites Internet r&eacute;f&eacute;renc&eacute;s sur son site.<br />\r\n&nbsp;</p>\r\n</div>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div style=\"border: 2px solid rgb(174, 201, 0); background-color: rgb(237, 236, 236); padding: 10px;\">\r\n<p><strong>Cookies</strong></p>\r\n\r\n<p>Ce site utilise Google Analytics, un service d&#39;analyse de site internet fourni par Google Inc. (&laquo;\u202fGoogle\u202f&raquo;). Google Analytics utilise des cookies , qui sont des fichiers texte plac&eacute;s sur votre ordinateur, pour aider le site internet &agrave; analyser l&#39;utilisation du site par ses utilisateurs. Les donn&eacute;es g&eacute;n&eacute;r&eacute;es par les cookies concernant votre utilisation du site (y compris votre adresse IP) seront transmises et stock&eacute;es par Google sur des serveurs situ&eacute;s aux Etats-Unis. Vous pouvez d&eacute;sactiver l&#39;utilisation de cookies en s&eacute;lectionnant les param&egrave;tres appropri&eacute;s de votre navigateur. Cependant, une telle d&eacute;sactivation pourrait emp&ecirc;cher l&#39;utilisation de certaines fonctionnalit&eacute;s de ce site. En utilisant ce site internet, vous consentez express&eacute;ment au traitement de vos donn&eacute;es nominatives par Google dans les conditions et pour les finalit&eacute;s d&eacute;crites ci-dessus.</p>\r\n</div>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Supprimer | Visibilit&eacute; | Options | Fermer Enregistrer Ajouter une nouvelle cellule Pied de page \u28ff Identique &agrave; la page parente Ajouter une nouvelle cellule Param&egrave;tres Titre\u00a0: Mentions l&eacute;gales (modifier) Slug\u00a0: mentions-legales (modifier) Description\u00a0: aucune (modifier) Mod&egrave;le de page\u00a0: Une colonne (modifier) Visibilit&eacute;\u00a0: Publique (modifier) Exclure de la navigation non (modifier) URL de redirection\u00a0: aucune (modifier) Image\u00a0: aucune (modifier) Combo &mdash; Copyright &copy; Entr&#39;ouvert</p>\r\n", 
             "order": 1, 
             "public": true, 
             "groups": [], 
