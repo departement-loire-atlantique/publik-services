@@ -66,6 +66,8 @@ page page_eligibilite
     courriel courriel
         aide à la saisie format_courriel
 
+    si qui_saisit_list contient "ou un de ses proches" alors préremplir courriel avec profil:courriel
+
     adresse* beneficiaire:adresse beneficiaire:codepostal beneficiaire:commune
 
     titre logement
