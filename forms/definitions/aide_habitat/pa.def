@@ -27,9 +27,19 @@ formulaire metadata_name_aide_habitat_pa
 
 page page_preambule
 
-	texte page_preambule:intro_textes_obligatoires
+    texte page_preambule:intro_textes_obligatoires
 
     liste_importante* qui_saisit_list
+
+    si qui_saisit_list n'est pas égal à "Un opérateur" alors masquer le champ qui_saisit_operateur_list
+
+    si qui_saisit_list n'est pas égal à "Un opérateur" alors masquer le champ qui_saisit_operateur_autre
+
+    liste* qui_saisit_operateur_list
+
+    champ_texte* qui_saisit_operateur_autre
+
+    si qui_saisit_operateur_list n'est pas égal à "Autre" alors masquer le champ qui_saisit_operateur_autre
 
     texte qui_saisit_conseil
 

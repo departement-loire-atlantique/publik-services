@@ -31,6 +31,14 @@ page page_preambule
 
     liste_importante* qui_saisit_list
 
+    si qui_saisit_list n'est pas égal à "Un opérateur" alors masquer le champ qui_saisit_operateur_list
+
+    liste* qui_saisit_operateur_list
+
+    champ_texte* qui_saisit_operateur_autre
+
+    si qui_saisit_operateur_list n'est pas égal à "Autre" alors masquer le champ qui_saisit_operateur_autre
+
     texte qui_saisit_conseil
 
 page page_eligibilite

@@ -114,6 +114,17 @@ qui_saisit_list:
     - Le bénéficiaire ou un de ses proches
     - Un opérateur
 
+qui_saisit_operateur_list:
+  Précisez l'opérateur:
+    - SOLIHA
+    - CITÉMÉTRIE
+    - CARÈNE
+    - UFUT44 (Une Famille Un Toit)
+    - Autre
+
+qui_saisit_operateur_autre: >
+  Autre opérateur, précisez :
+
 qui_saisit_conseil: >
   __Pour simplifier vos démarches, le Département vous invite à faire appel à l'un de ses partenaires opérateurs. 
   Faire appel à un opérateur présente de nombreux avantages. 
