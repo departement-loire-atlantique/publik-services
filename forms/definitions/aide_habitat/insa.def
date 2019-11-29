@@ -286,8 +286,6 @@ page page_mandat_personne
     champ_texte procuration:qualite
         aide à la saisie qualite_aide
 
-    champ_texte* page_mandat_personne:procuration_sms_telephone
-
     si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration papier validée par l'envoi d'un courrier d'un original signé" alors masquer le champ page_mandat_personne:procuration_courrier_description
 
 page page_engagement_operateur

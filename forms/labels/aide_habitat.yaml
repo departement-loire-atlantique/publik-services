@@ -626,8 +626,6 @@ procuration_nom_organisme: Nom de l'organisme ou de l'opérateur
 
 procuration_referent_organisme: Prénom et Nom du référent suivant le dossier au sein de l’organisme
 
-procuration_sms_telephone: Téléphone portable du mandataire
-
 procuration_courrier_description: >
 
   Le document à imprimer permettant de donner procuration est [accessible ici](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-procuration)
