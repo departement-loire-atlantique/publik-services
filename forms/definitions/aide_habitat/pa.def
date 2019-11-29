@@ -145,8 +145,6 @@ page page_complement_info
     telephone tel_portable
         aide à la saisie format_tel_portable
 
-    texte MSG_COMPIN_SMS
-
     titre complement_titre_referent_operateur
 
     si qui_saisit_list contient "ou un de ses proches" alors masquer le champ complement_titre_referent_operateur
@@ -158,8 +156,6 @@ page page_complement_info
     # Messages d'erreurs
 
     si tel_fixe est vide et tel_portable est vide alors afficher le message MSG_COMPIN_TELEPHONE
-
-    si procuration_perception_subventions contient "fait une procuration en ligne" et tel_portable n'est pas rempli alors afficher le message MSG_COMPIN_SMS
 
 page page_plan_financement
 
@@ -256,14 +252,6 @@ page page_mandat_organisme
 
     adresse* organisme:adresse organisme:codepostal organisme:commune
 
-    champ_texte* page_mandat_organisme:procuration_sms_telephone
-
-    si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration en ligne validée par SMS" alors masquer le champ page_mandat_organisme:procuration_sms_telephone
-
-    texte page_mandat_organisme:procuration_sms_description
-
-    si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration en ligne validée par SMS" alors masquer le champ page_mandat_organisme:procuration_sms_description
-
     texte page_mandat_organisme:procuration_courrier_description
 
     si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration papier validée par l'envoi d'un courrier d'un original signé" alors masquer le champ page_mandat_organisme:procuration_courrier_description
@@ -306,14 +294,6 @@ page page_mandat_personne
 
     champ_texte procuration:qualite
         aide à la saisie qualite_aide
-
-    champ_texte* page_mandat_personne:procuration_sms_telephone
-
-    si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration en ligne validée par SMS" alors masquer le champ page_mandat_personne:procuration_sms_telephone
-
-    texte page_mandat_personne:procuration_sms_description
-
-    si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration en ligne validée par SMS" alors masquer le champ page_mandat_personne:procuration_sms_description
 
     texte page_mandat_personne:procuration_courrier_description
 
