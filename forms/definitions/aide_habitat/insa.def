@@ -208,6 +208,12 @@ page page_procuration
 
     titre procuration:procuration_titre
 
+    liste procuration:procuration_impression_choix
+
+    texte procuration:procuration_impression_lien
+
+    si procuration:procuration_impression_choix n'est pas égal à "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire" alors masquer le champ procuration:procuration_impression_lien
+
     texte procuration:procuration_titre_texte
 
     titre procuration_soustitre_beneficiaire
@@ -243,9 +249,9 @@ page page_mandat_organisme
 
     adresse* organisme:adresse organisme:codepostal organisme:commune
 
-    texte page_mandat_organisme:procuration_courrier_description
+    fichier page_mandat_organisme:procuration_fichier
 
-    si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration papier validée par l'envoi d'un courrier d'un original signé" alors masquer le champ page_mandat_organisme:procuration_courrier_description
+    si procuration:procuration_impression_choix n'est pas égal à "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire" alors masquer le champ page_mandat_organisme:procuration_fichier
 
 page page_mandat_personne
 
@@ -263,7 +269,7 @@ page page_mandat_personne
 
     si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:nom
 
-    champ_texte*  mandat:prenom
+    champ_texte* mandat:prenom
 
     si qui_saisit_list contient "ou un de ses proches" alors masquer le champ mandat:prenom
 
@@ -286,7 +292,9 @@ page page_mandat_personne
     champ_texte procuration:qualite
         aide à la saisie qualite_aide
 
-    si procuration_perception_subventions n'est pas égal à "Le bénéficiaire fait une procuration papier validée par l'envoi d'un courrier d'un original signé" alors masquer le champ page_mandat_personne:procuration_courrier_description
+    fichier page_mandat_personne:procuration_fichier
+
+    si procuration:procuration_impression_choix n'est pas égal à "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire" alors masquer le champ page_mandat_personne:procuration_fichier
 
 page page_engagement_operateur
 
