@@ -578,6 +578,14 @@ MSG_PLFIN_EQUILIBRE: >
 
 procuration_titre: Procuration sous seing privé pour la perception des fonds
 
+procuration_impression_choix:
+  Choix de l'impression de la procuration:
+    - Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire
+    - Je souhaite que la procuration soit pré-remplie avec toutes les données définies dans ce formulaire et je la joindrai dans un second temps à ma demande d'aide
+
+procuration_impression_lien: >
+    La procuration vierge (à imprimer, remplir et signer) permettant de donner procuration est [accessible ici](https://www.loire-atlantique.fr/upload/docs/application/pdf/2019-01/aide_habitat_procuration.pdf).
+
 procuration_titre_texte: >
   Vu la délibération de la Commission permanente du Conseil départemental du 5 septembre 2013 relative à l'ajustement 
   du régime des aides destinées à l'amélioration de l'habitat privé,
@@ -622,24 +630,11 @@ procuration_donne_mandat_personne_sous_titre: Donne Mandat à une personne
 
 procuration_donne_mandat_organisme_sous_titre: Donne Mandat à un organisme ou un opérateur
 
+procuration_fichier: Procuration scannée à joindre
+
 procuration_nom_organisme: Nom de l'organisme ou de l'opérateur
 
 procuration_referent_organisme: Prénom et Nom du référent suivant le dossier au sein de l’organisme
-
-procuration_courrier_description: >
-
-  Le document à imprimer permettant de donner procuration est [accessible ici](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-procuration)
-  
-  Il est à retourner sous un mois, complété et signé par les deux parties à l'adresse suivante :
-
-
-    Hôtel du département – service habitat
-
-    3 quai Ceineray
-    
-    CS 94109
-    
-    44041 Nantes cedex
 
 MSG_PROCU_NOMPRENOM: >
   Si le bénéficiaire donne mandat à une personne il est obligatoire de préciser le nom et le prénom de cette personne.
