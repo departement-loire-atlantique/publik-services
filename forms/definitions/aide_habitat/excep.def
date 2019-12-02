@@ -19,6 +19,12 @@ formulaire metadata_name_aide_habitat_excep
     roles_key metadata_roles_key
     roles_name metadata_roles_name
 
+    listing type_proprietaire_list
+    listing revenu_fiscal_reference_beneficiaire
+
+    filter type_proprietaire_list
+    filter revenu_fiscal_reference_beneficiaire
+
 page page_preambule
 
     texte page_preambule:intro_textes_obligatoires

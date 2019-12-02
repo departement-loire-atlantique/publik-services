@@ -21,9 +21,11 @@ formulaire metadata_name_aide_habitat_pa
 
     listing type_proprietaire_list
     listing revenu_fiscal_reference_beneficiaire
+    listing qui_saisit_operateur_list
 
     filter type_proprietaire_list
     filter revenu_fiscal_reference_beneficiaire
+    filter qui_saisit_operateur_list
 
 page page_preambule
 
@@ -36,6 +38,7 @@ page page_preambule
     si qui_saisit_list n'est pas égal à "Un opérateur" alors masquer le champ qui_saisit_operateur_autre
 
     liste* qui_saisit_operateur_list
+        aide à la saisie qui_saisit_operateur_list_aide
 
     champ_texte* qui_saisit_operateur_autre
 

@@ -19,6 +19,10 @@ formulaire metadata_name_aide_habitat_therm
     roles_key metadata_roles_key
     roles_name metadata_roles_name
 
+    listing qui_saisit_operateur_list
+
+    filter qui_saisit_operateur_list
+
 page page_preambule
 
     texte page_preambule:intro_textes_obligatoires
@@ -28,6 +32,7 @@ page page_preambule
     si qui_saisit_list n'est pas égal à "Un opérateur" alors masquer le champ qui_saisit_operateur_list
 
     liste* qui_saisit_operateur_list
+        aide à la saisie qui_saisit_operateur_list_aide
 
     champ_texte* qui_saisit_operateur_autre
 
