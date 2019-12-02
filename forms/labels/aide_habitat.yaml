@@ -115,12 +115,15 @@ qui_saisit_list:
     - Un opérateur
 
 qui_saisit_operateur_list:
-  Précisez l'opérateur:
+  Opérateur:
     - SOLIHA
     - CITÉMÉTRIE
     - CARÈNE
     - UFUT44 (Une Famille Un Toit)
     - Autre
+
+qui_saisit_operateur_list_aide:
+  Précisez l'opérateur
 
 qui_saisit_operateur_autre: >
   Autre opérateur, précisez :
@@ -200,10 +203,10 @@ precedent_dossier: >
   N° dossier
 
 logement_reconnu_insalubre_texte: >
-    Le logement doit être reconnu insalubre. Le caractère insalubre de l’habitation doit être constaté sur la base 
-    d’un rapport réalisé à l’aide de la grille d’évaluation d’insalubrité (ANAH)
+    Le logement doit être reconnu insalubre. Le caractère insalubre de l'habitation doit être constaté sur la base 
+    d'un rapport réalisé à l'aide de la grille d'évaluation d'insalubrité (ANAH)
 
-logement_insa_coef: Coefficient d’insalubrité (en %)
+logement_insa_coef: Coefficient d'insalubrité (en %)
 
 logement_insa_coef_aide: >
   En dessous de 30% le logement n'est pas considéré comme insalubre
@@ -228,8 +231,8 @@ travaux_a_engager_texte_moteur_recherche_operateur_insa: >
 
 travaux_a_engager_insa:
   Les travaux pour lesquels l'aide est demandée sont-ils de type:
-    - Rénovation complète du logement dans le cadre d’une « grande insalubrité » (selon l'Anah)
-    - Travaux de mise aux normes dans le cadre d’une « petite insalubrité » (selon l'Anah)
+    - Rénovation complète du logement dans le cadre d'une « grande insalubrité » (selon l'Anah)
+    - Travaux de mise aux normes dans le cadre d'une « petite insalubrité » (selon l'Anah)
 
 travaux_a_engager_ascenceur_pa: 
   Ascenseur / Monte personne:
@@ -263,16 +266,16 @@ travaux_a_engager_ascenceur_ph:
 travaux_a_engager_unite_vie_complete_ph:
   Création d'une unité de vie complète:
     - Création, modification ou remplacement d'équipements sanitaires et robinetterie et les travaux induits (carrelage, réfection de sols, plâtrerie...)
-    - Revêtements de sol, y compris travaux préparatoires (chapes, isolations...) à l’exception des sols souples (moquettes, lino...)
+    - Revêtements de sol, y compris travaux préparatoires (chapes, isolations...) à l'exception des sols souples (moquettes, lino...)
     - Création, suppression ou modification de cloisons de distribution et cloisons séparatives
     - Travaux de remplacement ou installation de menuiseries intérieures
-    - Installation de mains-courantes, barres d’appui, poignées de rappel de porte, protection de murs et de portes
-    - Installation ou adaptation des systèmes de commande de fermeture et d’ouverture (portes, fenêtres, volets)
+    - Installation de mains-courantes, barres d'appui, poignées de rappel de porte, protection de murs et de portes
+    - Installation ou adaptation des systèmes de commande de fermeture et d'ouverture (portes, fenêtres, volets)
     - Alerte à distance
     - Modification ou installation des boîtes aux lettres
 
 travaux_a_engager_unite_vie_complete_texte_ph: >
-  La création d'une unité de vie complète comprend, à minima, des travaux d'aménagement de sanitaires ET d’une autre pièce de vie (par exemple une chambre)
+  La création d'une unité de vie complète comprend, à minima, des travaux d'aménagement de sanitaires ET d'une autre pièce de vie (par exemple une chambre)
 
 travaux_a_engager_extension_ph:
   Extension de logement:
@@ -292,7 +295,7 @@ MSG_ELIGI_TRAVAUX_INSA: >
   L'aide ne peut être accordée que pour des travaux appartenant à cette liste. 
   Si aucun ne correspond à vos projets, nous vous invitons à utiliser le moteur de recherche 
   (https://www.loire-atlantique.fr/demarches-aides-habitat-recherche-operateur) 
-  pour connaître le nom d’un opérateur qui étudiera les autres sources éventuelles de financement mobilisables.
+  pour connaître le nom d'un opérateur qui étudiera les autres sources éventuelles de financement mobilisables.
 
 MSG_ELIGI_COEFINSA: Le coefficient d'insalubrité doit être compris entre 0 et 100
 
@@ -407,7 +410,7 @@ travaux_gain_energetique:
     - Non
 
 travaux_gain_energetique_aide: >
-    Une dérogation en étiquette E après travaux est envisageable uniquement en cas d’impossibilité technique, 
+    Une dérogation en étiquette E après travaux est envisageable uniquement en cas d'impossibilité technique, 
     qu'il conviendra de justifier.
 
 travaux_description: Description des travaux envisagés
@@ -634,7 +637,21 @@ procuration_fichier: Procuration scannée à joindre
 
 procuration_nom_organisme: Nom de l'organisme ou de l'opérateur
 
-procuration_referent_organisme: Prénom et Nom du référent suivant le dossier au sein de l’organisme
+procuration_referent_organisme: Prénom et Nom du référent suivant le dossier au sein de l'organisme
+procuration_courrier_description: >
+
+  Le document à imprimer permettant de donner procuration est [accessible ici](https://www.loire-atlantique.fr/demarches-aides-habitat-modele-procuration)
+  
+  Il est à retourner sous un mois, complété et signé par les deux parties à l'adresse suivante :
+
+
+    Hôtel du département – service habitat
+
+    3 quai Ceineray
+    
+    CS 94109
+    
+    44041 Nantes cedex
 
 MSG_PROCU_NOMPRENOM: >
   Si le bénéficiaire donne mandat à une personne il est obligatoire de préciser le nom et le prénom de cette personne.

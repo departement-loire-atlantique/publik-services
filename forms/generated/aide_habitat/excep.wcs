@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-15"?>
 <formdef id="100">
-  <name>Aide exceptionnelle pour l'adaptation des logements (BETA)</name>
-  <url_name>aide-habitat-exceptionnelle-beta</url_name>
+  <name>Aide exceptionnelle pour l'adaptation des logements</name>
+  <url_name>aide-habitat-exceptionnelle</url_name>
   <description>description aide exceptionnelle pour l'adaptation des logements</description>
-  <internal_identifier>aide-habitat-exceptionnelle-beta</internal_identifier>
+  <internal_identifier>aide-habitat-exceptionnelle</internal_identifier>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>true</enable_tracking_codes>
   <confirmation>true</confirmation>
@@ -14,9 +14,10 @@
   <private_status_and_history>false</private_status_and_history>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <workflow workflow_id="_default">Par d&#233;faut</workflow>
-  <max_field_id>167</max_field_id>
-  <last_modification user_id="1">2019-02-15 16:24:08</last_modification>
+  <category category_id="2">Jeunesse</category>
+  <workflow>Aide au permis - v3</workflow>
+  <max_field_id>168</max_field_id>
+  <last_modification user_id="1">2019-12-02 11:25:05</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -162,30 +163,31 @@
     <label>Courriel</label>
     <type>email</type>
     <required>False</required>
+    <hint>Format : test@test.com</hint>
     <id remote="courriel">15</id>
     <varname>courriel</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>none</type>
+    <type>formula</type>
+        <value>form_user_var_email if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
     </prefill>
     
 </field><field>
     <label>Adresse</label>
-    <type>text</type>
+    <type>string</type>
     <required>True</required>
     <id remote="beneficiaire:adresse">16</id>
     <varname>beneficiaire___adresse</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
+    <extra_css_class>grid-1-1</extra_css_class>
     <prefill>
     <type>none</type>
     </prefill>
     
     <validation></validation>
-    <cols></cols>
-    <rows>2</rows>
-    <maxlength></maxlength>
+    <size></size>
 </field>
 <field>
     <label>Code postal</label>
@@ -263,10 +265,14 @@
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
-    <label>Si oui et si vous connaissez le n&#176; du pr&#233;c&#233;dent dossier, merci de l'indiquer</label>
+    <label>&lt;p&gt;Si oui et si vous connaissez le n&amp;#176; du pr&amp;#233;c&amp;#233;dent dossier, merci de l&#39;indiquer.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="precedent_dossier_texte">22</id>
+    </field><field>
+    <label>N&#176; dossier</label>
     <type>string</type>
     <required>False</required>
-    <id remote="precedent_dossier">22</id>
+    <id remote="precedent_dossier">23</id>
     <varname>precedent_dossier</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -279,12 +285,12 @@
 </field><field>
     <label>Ressources des occupant&#183;e&#183;s</label>
     <type>title</type>
-    <id remote="ressources_occupant">23</id>
+    <id remote="ressources_occupant">24</id>
     </field><field>
     <label>Dernier revenu fiscal de r&#233;f&#233;rence du b&#233;n&#233;ficiaire</label>
     <type>string</type>
     <required>True</required>
-    <id remote="revenu_fiscal_reference_beneficiaire">24</id>
+    <id remote="revenu_fiscal_reference_beneficiaire">25</id>
     <varname>revenu_fiscal_reference_beneficiaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -299,7 +305,7 @@
     <type>string</type>
     <required>False</required>
     <hint>Dans le cas o&#249; le conjoint habite le m&#234;me logement</hint>
-    <id remote="revenu_fiscal_reference_conjoint">25</id>
+    <id remote="revenu_fiscal_reference_conjoint">26</id>
     <varname>revenu_fiscal_reference_conjoint</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -313,7 +319,7 @@
     <label>Dernier revenu fiscal de r&#233;f&#233;rence d'un&#183;e autre occupant&#183;e du logement  (si d&#233;claration fiscale distincte de celle du b&#233;n&#233;ficiaire)</label>
     <type>string</type>
     <required>False</required>
-    <id remote="revenu_fiscal_autre">26</id>
+    <id remote="revenu_fiscal_autre">27</id>
     <varname>revenu_fiscal_autre</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -327,7 +333,7 @@
     <label>Nombre de personnes occupant le logement (dont enfant(s) &#224; na&#238;tre)</label>
     <type>string</type>
     <required>True</required>
-    <id remote="nombre_occupants">27</id>
+    <id remote="nombre_occupants">28</id>
     <varname>nombre_occupants</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -340,28 +346,28 @@
 </field><field>
     <label>Rapport de situation</label>
     <type>page</type>
-    <id remote="page_rapport_situation">28</id>
+    <id remote="page_rapport_situation">29</id>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_rapport_situation:intro_textes_obligatoires">29</id>
+    <id remote="page_rapport_situation:intro_textes_obligatoires">30</id>
     </field><field>
     <label>Rapport de situation</label>
     <type>title</type>
-    <id remote="rapport_situation">30</id>
+    <id remote="rapport_situation">31</id>
     </field><field>
     <label>&lt;p&gt;Travaux pr&amp;#233;conis&amp;#233;s dans le rapport de l&#39;ergoth&amp;#233;rapeute&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="travaux_preconises">31</id>
+    <id remote="travaux_preconises">32</id>
     </field><field>
     <label>Travaux pr&#233;conis&#233;s 1</label>
     <type>subtitle</type>
-    <id remote="travaux_preconises_titre_1">32</id>
+    <id remote="travaux_preconises_titre_1">33</id>
     </field><field>
     <label>Nature des travaux</label>
     <type>text</type>
     <required>True</required>
-    <id remote="travaux_1:nature_travaux">33</id>
+    <id remote="travaux_1:nature_travaux">34</id>
     <varname>travaux_1___nature_travaux</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -377,7 +383,8 @@
     <label>Co&#251;ts HT</label>
     <type>string</type>
     <required>True</required>
-    <id remote="travaux_1:couts_ht">34</id>
+    <hint>Montant arrondi (chiffre entier, sans point ni virgule)</hint>
+    <id remote="travaux_1:couts_ht">35</id>
     <varname>travaux_1___couts_ht</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -385,14 +392,14 @@
     <type>none</type>
     </prefill>
     
-    <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
+    <validation>^[0-9]*$</validation>
     <size></size>
 </field>
 <field>
     <label>Am&#233;nagement prioritaire</label>
     <type>item</type>
     <required>True</required>
-    <id remote="travaux_1:amenagement_prioritaire">35</id>
+    <id remote="travaux_1:amenagement_prioritaire">36</id>
     <varname>travaux_1___amenagement_prioritaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -410,12 +417,12 @@
 </field><field>
     <label>Travaux pr&#233;conis&#233;s 2</label>
     <type>subtitle</type>
-    <id remote="travaux_preconises_titre_2">36</id>
+    <id remote="travaux_preconises_titre_2">37</id>
     </field><field>
     <label>Nature des travaux</label>
     <type>text</type>
     <required>False</required>
-    <id remote="travaux_2:nature_travaux">37</id>
+    <id remote="travaux_2:nature_travaux">38</id>
     <varname>travaux_2___nature_travaux</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -431,7 +438,8 @@
     <label>Co&#251;ts HT</label>
     <type>string</type>
     <required>False</required>
-    <id remote="travaux_2:couts_ht">38</id>
+    <hint>Montant arrondi (chiffre entier, sans point ni virgule)</hint>
+    <id remote="travaux_2:couts_ht">39</id>
     <varname>travaux_2___couts_ht</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -439,14 +447,14 @@
     <type>none</type>
     </prefill>
     
-    <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
+    <validation>^[0-9]*$</validation>
     <size></size>
 </field>
 <field>
     <label>Am&#233;nagement prioritaire</label>
     <type>item</type>
     <required>False</required>
-    <id remote="travaux_2:amenagement_prioritaire">39</id>
+    <id remote="travaux_2:amenagement_prioritaire">40</id>
     <varname>travaux_2___amenagement_prioritaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -464,12 +472,12 @@
 </field><field>
     <label>Travaux pr&#233;conis&#233;s 3</label>
     <type>subtitle</type>
-    <id remote="travaux_preconises_titre_3">40</id>
+    <id remote="travaux_preconises_titre_3">41</id>
     </field><field>
     <label>Nature des travaux</label>
     <type>text</type>
     <required>False</required>
-    <id remote="travaux_3:nature_travaux">41</id>
+    <id remote="travaux_3:nature_travaux">42</id>
     <varname>travaux_3___nature_travaux</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -485,7 +493,8 @@
     <label>Co&#251;ts HT</label>
     <type>string</type>
     <required>False</required>
-    <id remote="travaux_3:couts_ht">42</id>
+    <hint>Montant arrondi (chiffre entier, sans point ni virgule)</hint>
+    <id remote="travaux_3:couts_ht">43</id>
     <varname>travaux_3___couts_ht</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -493,14 +502,14 @@
     <type>none</type>
     </prefill>
     
-    <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
+    <validation>^[0-9]*$</validation>
     <size></size>
 </field>
 <field>
     <label>Am&#233;nagement prioritaire</label>
     <type>item</type>
     <required>False</required>
-    <id remote="travaux_3:amenagement_prioritaire">43</id>
+    <id remote="travaux_3:amenagement_prioritaire">44</id>
     <varname>travaux_3___amenagement_prioritaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -518,12 +527,12 @@
 </field><field>
     <label>Travaux pr&#233;conis&#233;s 4</label>
     <type>subtitle</type>
-    <id remote="travaux_preconises_titre_4">44</id>
+    <id remote="travaux_preconises_titre_4">45</id>
     </field><field>
     <label>Nature des travaux</label>
     <type>text</type>
     <required>False</required>
-    <id remote="travaux_4:nature_travaux">45</id>
+    <id remote="travaux_4:nature_travaux">46</id>
     <varname>travaux_4___nature_travaux</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -539,7 +548,8 @@
     <label>Co&#251;ts HT</label>
     <type>string</type>
     <required>False</required>
-    <id remote="travaux_4:couts_ht">46</id>
+    <hint>Montant arrondi (chiffre entier, sans point ni virgule)</hint>
+    <id remote="travaux_4:couts_ht">47</id>
     <varname>travaux_4___couts_ht</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -547,14 +557,14 @@
     <type>none</type>
     </prefill>
     
-    <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
+    <validation>^[0-9]*$</validation>
     <size></size>
 </field>
 <field>
     <label>Am&#233;nagement prioritaire</label>
     <type>item</type>
     <required>False</required>
-    <id remote="travaux_4:amenagement_prioritaire">47</id>
+    <id remote="travaux_4:amenagement_prioritaire">48</id>
     <varname>travaux_4___amenagement_prioritaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -572,12 +582,12 @@
 </field><field>
     <label>Travaux pr&#233;conis&#233;s 5</label>
     <type>subtitle</type>
-    <id remote="travaux_preconises_titre_5">48</id>
+    <id remote="travaux_preconises_titre_5">49</id>
     </field><field>
     <label>Nature des travaux</label>
     <type>text</type>
     <required>False</required>
-    <id remote="travaux_5:nature_travaux">49</id>
+    <id remote="travaux_5:nature_travaux">50</id>
     <varname>travaux_5___nature_travaux</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -593,7 +603,8 @@
     <label>Co&#251;ts HT</label>
     <type>string</type>
     <required>False</required>
-    <id remote="travaux_5:couts_ht">50</id>
+    <hint>Montant arrondi (chiffre entier, sans point ni virgule)</hint>
+    <id remote="travaux_5:couts_ht">51</id>
     <varname>travaux_5___couts_ht</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -601,14 +612,14 @@
     <type>none</type>
     </prefill>
     
-    <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
+    <validation>^[0-9]*$</validation>
     <size></size>
 </field>
 <field>
     <label>Am&#233;nagement prioritaire</label>
     <type>item</type>
     <required>False</required>
-    <id remote="travaux_5:amenagement_prioritaire">51</id>
+    <id remote="travaux_5:amenagement_prioritaire">52</id>
     <varname>travaux_5___amenagement_prioritaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -626,12 +637,12 @@
 </field><field>
     <label>Observation sur les travaux pr&#233;conis&#233;s par l'ergoth&#233;rapeute</label>
     <type>subtitle</type>
-    <id remote="observations_titre">52</id>
+    <id remote="observations_titre">53</id>
     </field><field>
     <label>Observations</label>
     <type>text</type>
     <required>False</required>
-    <id remote="amenagement:observations">53</id>
+    <id remote="amenagement:observations">54</id>
     <varname>amenagement___observations</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -646,13 +657,13 @@
 </field><field>
     <label>Situation du m&#233;nage</label>
     <type>subtitle</type>
-    <id remote="situation_menage_titre">54</id>
+    <id remote="situation_menage_titre">55</id>
     </field><field>
     <label>Situation</label>
     <type>text</type>
     <required>False</required>
     <hint>Dans cette partie, il convient de souligner en quoi la situation du m&#233;nage  n&#233;cessite une intervention du D&#233;partement pour &#224; l'adaptation des logements.  En quoi cette situation est &#171; exceptionnelle &#187; au regard de la situation personnelle  ou de probl&#233;matiques de sant&#233; particuli&#232;res... ? </hint>
-    <id remote="amenagement:situation_menage">55</id>
+    <id remote="amenagement:situation_menage">56</id>
     <varname>amenagement___situation_menage</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -669,7 +680,7 @@
     <type>text</type>
     <required>False</required>
     <hint>Dans cette partie, il convient de mettre en &#233;vidence les d&#233;marches mises en &#339;uvre pour  trouver des solutions permettant la concr&#233;tisation du projet et les r&#233;ponses qui y ont  &#233;t&#233; apport&#233;es : mobilisation d'autres financeurs (pr&#234;ts / subventions) pour cofinancer le projet ?  Mobilisation de fonds propres ? Solutions pour diminuer le co&#251;t des travaux  (autres devis, r&#233;alisation partielle de travaux...) ?</hint>
-    <id remote="amenagement:recherche_solutions">56</id>
+    <id remote="amenagement:recherche_solutions">57</id>
     <varname>amenagement___recherche_solutions</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -684,7 +695,7 @@
 </field><field>
     <label>Compl&#233;ment d'information</label>
     <type>page</type>
-    <id remote="page_complement_info">57</id>
+    <id remote="page_complement_info">58</id>
     <post_conditions>
     <post_condition>
         <condition>
@@ -693,28 +704,21 @@
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
-    <post_condition>
-        <condition>
-          <type>python</type>
-          <value>not (("fait une procuration en ligne" in form_var_procuration_perception_subventions if form_var_procuration_perception_subventions and isinstance(form_var_procuration_perception_subventions, str) else False) and (len(form_var_tel_portable if isinstance(form_var_tel_portable, list) else ([form_var_tel_portable] if form_var_tel_portable else []))== 0))</value>
-        </condition>
-        <error_message>Le num&#233;ro de t&#233;l&#233;phone portable du b&#233;n&#233;ficiaire doit obligatoirement &#234;tre renseign&#233; si vous souhaitez  faire une procuration en ligne valid&#233;e par SMS.</error_message>
-      </post_condition>
     </post_conditions>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_complement_info:intro_textes_obligatoires">58</id>
+    <id remote="page_complement_info:intro_textes_obligatoires">59</id>
     </field><field>
     <label>Autre occupant majeur du logement si nom de famille diff&#233;rent</label>
     <type>title</type>
-    <id remote="autre_occupant">59</id>
+    <id remote="autre_occupant">60</id>
     </field>
 <field>
     <label>Civilit&#233;</label>
     <type>item</type>
     <required>False</required>
-    <id remote="autre_occupant:civilite">60</id>
+    <id remote="autre_occupant:civilite">61</id>
     <varname>autre_occupant___civilite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -733,7 +737,7 @@
     <label>Nom</label>
     <type>string</type>
     <required>False</required>
-    <id remote="autre_occupant:nom">61</id>
+    <id remote="autre_occupant:nom">62</id>
     <varname>autre_occupant___nom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -747,7 +751,7 @@
     <label>Pr&#233;nom</label>
     <type>string</type>
     <required>False</required>
-    <id remote="autre_occupant:prenom">62</id>
+    <id remote="autre_occupant:prenom">63</id>
     <varname>autre_occupant___prenom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -760,13 +764,13 @@
 </field><field>
     <label>Procuration sous seing priv&#233; pour la perception des fonds</label>
     <type>title</type>
-    <id remote="procuration_titre">63</id>
+    <id remote="procuration_titre">64</id>
     </field>
 <field>
     <label>Procuration pour la perception des subventions</label>
     <type>item</type>
     <required>True</required>
-    <id remote="procuration_perception_subventions">64</id>
+    <id remote="procuration_perception_subventions">65</id>
     <varname>procuration_perception_subventions</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -776,8 +780,7 @@
     
     <items>
     <item>Le b&#233;n&#233;ficiaire ne fait pas de procuration</item>
-    <item>Le b&#233;n&#233;ficiaire fait une procuration en ligne valid&#233;e par SMS</item>
-    <item>Le b&#233;n&#233;ficiaire fait une procuration papier valid&#233;e par l'envoi d'un courrier d'un original sign&#233;</item>
+    <item>Le b&#233;n&#233;ficiaire fait une procuration</item>
     </items>
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
@@ -785,16 +788,17 @@
 </field><field>
     <label>T&#233;l&#233;phone du b&#233;n&#233;ficiaire</label>
     <type>title</type>
-    <id remote="tel_beneficiaire">65</id>
+    <id remote="tel_beneficiaire">66</id>
     </field><field>
     <label>&lt;p&gt;Merci de renseigner au moins un num&amp;#233;ro de t&amp;#233;l&amp;#233;phone.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="MSG_COMPIN_TELEPHONE">66</id>
+    <id remote="MSG_COMPIN_TELEPHONE">67</id>
     </field><field>
     <label>T&#233;l&#233;phone fixe</label>
     <type>string</type>
     <required>False</required>
-    <id remote="tel_fixe">67</id>
+    <hint>Format : 0201020304</hint>
+    <id remote="tel_fixe">68</id>
     <varname>tel_fixe</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -808,7 +812,8 @@
     <label>T&#233;l&#233;phone mobile</label>
     <type>string</type>
     <required>False</required>
-    <id remote="tel_portable">68</id>
+    <hint>Format : 0601020304</hint>
+    <id remote="tel_portable">69</id>
     <varname>tel_portable</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -819,10 +824,6 @@
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
 </field><field>
-    <label>&lt;p&gt;Le num&amp;#233;ro de t&amp;#233;l&amp;#233;phone portable du b&amp;#233;n&amp;#233;ficiaire doit obligatoirement &amp;#234;tre renseign&amp;#233; si vous souhaitez  faire une procuration en ligne valid&amp;#233;e par SMS.&lt;/p&gt;</label>
-    <type>comment</type>
-    <id remote="MSG_COMPIN_SMS">69</id>
-    </field><field>
     <label>R&#233;f&#233;rent chez l'op&#233;rateur</label>
     <type>title</type>
     <id remote="complement_titre_referent_operateur">70</id>
@@ -833,7 +834,7 @@
     </field><field>
     <label>Pr&#233;nom et nom du r&#233;f&#233;rent suivant le dossier au sein de l'op&#233;rateur</label>
     <type>string</type>
-    <required>False</required>
+    <required>True</required>
     <id remote="complement_referent_operateur">71</id>
     <varname>complement_referent_operateur</varname>
     <in_listing>False</in_listing>
@@ -1170,6 +1171,34 @@
     <label>Procuration sous seing priv&#233; pour la perception des fonds</label>
     <type>title</type>
     <id remote="procuration:procuration_titre">98</id>
+    </field>
+<field>
+    <label>Choix de l'impression de la procuration</label>
+    <type>item</type>
+    <required>False</required>
+    <id remote="procuration:procuration_impression_choix">164</id>
+    <varname>procuration___procuration_impression_choix</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <items>
+    <item>Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire</item>
+    <item>Je souhaite que la procuration soit pr&#233;-remplie avec toutes les donn&#233;es d&#233;finies dans ce formulaire et je la joindrai dans un second temps &#224; ma demande d'aide</item>
+    </items>
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>&lt;p&gt;La procuration vierge (&amp;#224; imprimer, remplir et signer) permettant de donner procuration est &lt;a href=&#34;https://www.loire-atlantique.fr/upload/docs/application/pdf/2019-01/aide_habitat_procuration.pdf&#34;&gt;accessible ici&lt;/a&gt;.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="procuration:procuration_impression_lien">165</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
+    </condition>
     </field><field>
     <label>&lt;p&gt;Vu la d&amp;#233;lib&amp;#233;ration de la Commission permanente du Conseil d&amp;#233;partemental du 5 septembre 2013 relative &amp;#224; l&#39;ajustement  du r&amp;#233;gime des aides destin&amp;#233;es &amp;#224; l&#39;am&amp;#233;lioration de l&#39;habitat priv&amp;#233;,&lt;/p&gt;</label>
     <type>comment</type>
@@ -1178,113 +1207,25 @@
     <label>Le b&#233;n&#233;ficiaire</label>
     <type>title</type>
     <id remote="procuration_soustitre_beneficiaire">100</id>
-    </field>
-<field>
-    <label>Civilit&#233;</label>
-    <type>item</type>
-    <required>True</required>
-    <id remote="procurationbeneficiaire:civilite">101</id>
-    <varname>procurationbeneficiaire___civilite</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>none</type>
-    </prefill>
-    
-    <items>
-    <item>M.</item>
-    <item>Mme</item>
-    </items>
-    <show_as_radio>True</show_as_radio>
-        <anonymise>False</anonymise>
-    <display_disabled_items>False</display_disabled_items>
-</field><field>
-    <label>Nom</label>
-    <type>string</type>
-    <required>False</required>
-    <id remote="procurationbeneficiaire:nom">102</id>
-    <varname>procurationbeneficiaire___nom</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>formula</type>
-        <value>form_var_beneficiaire___nom</value>
-    </prefill>
-    
-    <validation></validation>
-    <size></size>
-</field><field>
-    <label>Pr&#233;nom</label>
-    <type>string</type>
-    <required>False</required>
-    <id remote="procurationbeneficiaire:prenom">103</id>
-    <varname>procurationbeneficiaire___prenom</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>formula</type>
-        <value>form_var_beneficiaire___prenom</value>
-    </prefill>
-    
-    <validation></validation>
-    <size></size>
-</field><field>
-    <label>Adresse</label>
-    <type>text</type>
-    <required>False</required>
-    <id remote="procurationbeneficiaire:adresse">104</id>
-    <varname>procurationbeneficiaire___adresse</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>formula</type>
-        <value>form_var_beneficiaire___adresse</value>
-    </prefill>
-    
-    <validation></validation>
-    <cols>80</cols>
-    <rows>5</rows>
-    <maxlength></maxlength>
-</field><field>
-    <label>Code postal</label>
-    <type>string</type>
-    <required>False</required>
-    <id remote="procurationbeneficiaire:codepostal">105</id>
-    <varname>procurationbeneficiaire___codepostal</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>formula</type>
-        <value>form_var_beneficiaire___codepostal</value>
-    </prefill>
-    
-    <validation></validation>
-    <size></size>
-</field><field>
-    <label>Commune</label>
-    <type>string</type>
-    <required>False</required>
-    <id remote="procurationbeneficiaire:commune">106</id>
-    <varname>procurationbeneficiaire___commune</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>formula</type>
-        <value>form_var_beneficiaire___commune</value>
-    </prefill>
-    
-    <validation></validation>
-    <size></size>
-</field><field>
+    </field><field>
+    <label>&lt;p&gt;&lt;strong&gt;Civilit&amp;#233;&lt;/strong&gt; : {{form_var_civilite}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nom&lt;/strong&gt; : {{form_var_nom}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pr&amp;#233;nom&lt;/strong&gt; : {{form_var_prenom}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adresse&lt;/strong&gt; : {{form_var_beneficiaire___adresse}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code postal&lt;/strong&gt; : {{form_var_beneficiaire___codepostal}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Commune&lt;/strong&gt; : {{form_var_beneficiaire___commune}}&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="procuration_rappel_coordonnees_beneficiaire">101</id>
+    </field><field>
     <label>Repr&#233;sent&#233; par</label>
     <type>title</type>
-    <id remote="procuration_soustitre_represente">107</id>
+    <id remote="procuration_soustitre_represente">102</id>
     </field>
 <field>
     <label>Civilit&#233;</label>
     <type>item</type>
     <required>False</required>
-    <id remote="procurationrepresentant:civilite">108</id>
+    <id remote="procurationrepresentant:civilite">103</id>
     <varname>procurationrepresentant___civilite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1303,7 +1244,7 @@
     <label>Nom</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:nom">109</id>
+    <id remote="procurationrepresentant:nom">104</id>
     <varname>procurationrepresentant___nom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1319,7 +1260,7 @@
     <label>Pr&#233;nom</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:prenom">110</id>
+    <id remote="procurationrepresentant:prenom">105</id>
     <varname>procurationrepresentant___prenom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1335,7 +1276,7 @@
     <type>string</type>
     <required>False</required>
     <hint>Par exemple fr&#232;re, soeur, enfant, voisin...</hint>
-    <id remote="procurationrepresentant:qualite">111</id>
+    <id remote="procurationrepresentant:qualite">106</id>
     <varname>procurationrepresentant___qualite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1347,26 +1288,25 @@
     <size></size>
 </field><field>
     <label>Adresse</label>
-    <type>text</type>
+    <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:adresse">112</id>
+    <id remote="procurationrepresentant:adresse">107</id>
     <varname>procurationrepresentant___adresse</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
+    <extra_css_class>grid-1-1</extra_css_class>
     <prefill>
     <type>none</type>
     </prefill>
     
     <validation></validation>
-    <cols></cols>
-    <rows>2</rows>
-    <maxlength></maxlength>
+    <size></size>
 </field>
 <field>
     <label>Code postal</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:codepostal">113</id>
+    <id remote="procurationrepresentant:codepostal">108</id>
     <varname>procurationrepresentant___codepostal</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1382,7 +1322,7 @@
     <label>Commune</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:commune">114</id>
+    <id remote="procurationrepresentant:commune">109</id>
     <varname>procurationrepresentant___commune</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1396,13 +1336,13 @@
 </field><field>
     <label>Donne Mandat</label>
     <type>title</type>
-    <id remote="procuration_donne_mandat_titre">115</id>
+    <id remote="procuration_donne_mandat_titre">110</id>
     </field>
 <field>
     <label>Mandat &#224;</label>
     <type>item</type>
     <required>True</required>
-    <id remote="procuration_donne_mandat_list">116</id>
+    <id remote="procuration_donne_mandat_list">111</id>
     <varname>procuration_donne_mandat_list</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1420,7 +1360,7 @@
 </field><field>
     <label>Mandat</label>
     <type>page</type>
-    <id remote="page_mandat_organisme">117</id>
+    <id remote="page_mandat_organisme">112</id>
     <condition>
         <type>python</type>
         <value>not (((form_var_procuration_donne_mandat_list if form_var_procuration_donne_mandat_list and isinstance(form_var_procuration_donne_mandat_list, ("Un organisme ou un op&#233;rateur").__class__) else "") != ("Un organisme ou un op&#233;rateur" if "Un organisme ou un op&#233;rateur" else "")))</value>
@@ -1428,16 +1368,16 @@
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_mandat_organisme:intro_textes_obligatoires">118</id>
+    <id remote="page_mandat_organisme:intro_textes_obligatoires">113</id>
     </field><field>
     <label>Donne Mandat &#224; un organisme ou un op&#233;rateur</label>
     <type>title</type>
-    <id remote="procuration_donne_mandat_organisme_sous_titre">119</id>
+    <id remote="procuration_donne_mandat_organisme_sous_titre">114</id>
     </field><field>
     <label>Nom de l'organisme ou de l'op&#233;rateur</label>
     <type>string</type>
     <required>True</required>
-    <id remote="procuration_nom_organisme">120</id>
+    <id remote="procuration_nom_organisme">115</id>
     <varname>procuration_nom_organisme</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1448,45 +1388,40 @@
     <validation></validation>
     <size></size>
 </field><field>
-    <label>Pr&#233;nom et Nom du r&#233;f&#233;rent suivant le dossier au sein de l&#8217;organisme</label>
+    <label>Pr&#233;nom et Nom du r&#233;f&#233;rent suivant le dossier au sein de l'organisme</label>
     <type>string</type>
     <required>True</required>
-    <id remote="procuration_referent_organisme">121</id>
+    <id remote="procuration_referent_organisme">116</id>
     <varname>procuration_referent_organisme</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
-    <condition>
-        <type>django</type>
-        <value>not form_var_qui_saisit_list|default_if_none:"" == "Un op&#233;rateur"|default_if_none:""</value>
-    </condition>
     
     <validation></validation>
     <size></size>
 </field><field>
     <label>Adresse</label>
-    <type>text</type>
+    <type>string</type>
     <required>True</required>
-    <id remote="organisme:adresse">122</id>
+    <id remote="organisme:adresse">117</id>
     <varname>organisme___adresse</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
+    <extra_css_class>grid-1-1</extra_css_class>
     <prefill>
     <type>none</type>
     </prefill>
     
     <validation></validation>
-    <cols></cols>
-    <rows>2</rows>
-    <maxlength></maxlength>
+    <size></size>
 </field>
 <field>
     <label>Code postal</label>
     <type>string</type>
     <required>True</required>
-    <id remote="organisme:codepostal">123</id>
+    <id remote="organisme:codepostal">118</id>
     <varname>organisme___codepostal</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1502,7 +1437,7 @@
     <label>Commune</label>
     <type>string</type>
     <required>True</required>
-    <id remote="organisme:commune">124</id>
+    <id remote="organisme:commune">119</id>
     <varname>organisme___commune</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1514,11 +1449,11 @@
     <validation></validation>
     <size></size>
 </field><field>
-    <label>T&#233;l&#233;phone portable du mandataire</label>
-    <type>string</type>
-    <required>True</required>
-    <id remote="page_mandat_organisme:procuration_sms_telephone">125</id>
-    <varname>page_mandat_organisme___procuration_sms_telephone</varname>
+    <label>Procuration scann&#233;e &#224; joindre</label>
+    <type>file</type>
+    <required>False</required>
+    <id remote="page_mandat_organisme:procuration_fichier">166</id>
+    <varname>page_mandat_organisme___procuration_fichier</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
@@ -1526,53 +1461,14 @@
     </prefill>
     <condition>
         <type>django</type>
-        <value>not form_var_procuration_perception_subventions|default_if_none:"" != "Le b&#233;n&#233;ficiaire fait une procuration en ligne valid&#233;e par SMS"|default_if_none:""</value>
+        <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
     </condition>
     
-    <validation></validation>
-    <size></size>
+    <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
-    <label>&lt;h4&gt;Aux fins&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;De recevoir en mon nom et pour mon compte le montant de la (des) subvention(s) accord&amp;#233;e(s) par le D&amp;#233;partement dans le cadre de son dispositif d&#39;aides &amp;#224; l&#39;am&amp;#233;lioration de l&#39;habitat priv&amp;#233; et, plus pr&amp;#233;cis&amp;#233;ment, au titre de l&#39;adaptation des logements &amp;#224; l&#39;&amp;#226;ge ou au handicap.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;D&#39;utiliser cette somme pour r&amp;#233;gler les entreprises retenues pour effectuer les travaux objet de cette subvention.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;De pr&amp;#233;senter, en mon nom, les pi&amp;#232;ces justifiant l&#39;ex&amp;#233;cution des travaux ainsi que tout document n&amp;#233;cessaire au calcul et au versement des subventions et &amp;#224; recevoir en mon nom toute correspondance &amp;#233;mise par le D&amp;#233;partement relative au paiement.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Validation du Mandant&lt;/h4&gt;
-&lt;p&gt;Un SMS est envoy&amp;#233; sur le t&amp;#233;l&amp;#233;phone portable du b&amp;#233;n&amp;#233;ficiaire apr&amp;#232;s la validation en fin de formulaire. En donnant le code re&amp;#231;u dans ce SMS il donne bon pour pouvoir pour servir et valoir ce que de droit.&lt;/p&gt;
-&lt;p&gt;La saisie de ce code est &amp;#224; faire &amp;#224; l&#39;issue de la validation du pr&amp;#233;sent formulaire. Ce code est indispensable pour que le dossier soit instruit.&lt;/p&gt;
-&lt;h4&gt;Validation du Mandataire&lt;/h4&gt;
-&lt;p&gt;Un SMS est envoy&amp;#233; sur le t&amp;#233;l&amp;#233;phone portable du mandataire apr&amp;#232;s la validation en fin de formulaire. En donnant le code re&amp;#231;u dans ce SMS, il donne bon pour acceptation de mandat pour servir et valoir ce que de droit.&lt;/p&gt;
-&lt;p&gt;La saisie de ce code est &amp;#224; faire &amp;#224; l&#39;issue de la validation du pr&amp;#233;sent formulaire, apr&amp;#232;s la saisie du code du mandant. Ce code est indispensable pour que le dossier soit instruit.&lt;/p&gt;</label>
-    <type>comment</type>
-    <id remote="page_mandat_organisme:procuration_sms_description">126</id>
-    <condition>
-        <type>django</type>
-        <value>not form_var_procuration_perception_subventions|default_if_none:"" != "Le b&#233;n&#233;ficiaire fait une procuration en ligne valid&#233;e par SMS"|default_if_none:""</value>
-    </condition>
-    </field><field>
-    <label>&lt;p&gt;Le document &amp;#224; imprimer permettant de donner procuration est &lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-procuration&#34;&gt;accessible ici&lt;/a&gt;
-Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp;#233; par les deux parties &amp;#224; l&#39;adresse suivante :&lt;/p&gt;
-&lt;p&gt;H&amp;#244;tel du d&amp;#233;partement &amp;#8211; service habitat&lt;/p&gt;
-&lt;p&gt;3 quai Ceineray&lt;/p&gt;
-&lt;p&gt;CS 94109&lt;/p&gt;
-&lt;p&gt;44041 Nantes cedex&lt;/p&gt;</label>
-    <type>comment</type>
-    <id remote="page_mandat_organisme:procuration_courrier_description">127</id>
-    <condition>
-        <type>django</type>
-        <value>not form_var_procuration_perception_subventions|default_if_none:"" != "Le b&#233;n&#233;ficiaire fait une procuration papier valid&#233;e par l'envoi d'un courrier d'un original sign&#233;"|default_if_none:""</value>
-    </condition>
-    </field><field>
     <label>Mandat</label>
     <type>page</type>
-    <id remote="page_mandat_personne">128</id>
+    <id remote="page_mandat_personne">123</id>
     <condition>
         <type>python</type>
         <value>not (((form_var_procuration_donne_mandat_list if form_var_procuration_donne_mandat_list and isinstance(form_var_procuration_donne_mandat_list, ("Une personne").__class__) else "") != ("Une personne" if "Une personne" else "")))</value>
@@ -1580,23 +1476,27 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_mandat_personne:intro_textes_obligatoires">129</id>
+    <id remote="page_mandat_personne:intro_textes_obligatoires">124</id>
     </field><field>
     <label>Donne Mandat &#224; une personne</label>
     <type>title</type>
-    <id remote="procuration_donne_mandat_personne_sous_titre">130</id>
+    <id remote="procuration_donne_mandat_personne_sous_titre">125</id>
     </field>
 <field>
     <label>Civilit&#233;</label>
     <type>item</type>
     <required>True</required>
-    <id remote="mandat:civilite">131</id>
+    <id remote="mandat:civilite">126</id>
     <varname>mandat___civilite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
     
     <items>
     <item>M.</item>
@@ -1605,42 +1505,117 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
-</field>
-<field>
+</field><field>
     <label>Nom</label>
     <type>string</type>
     <required>True</required>
-    <id remote="mandant:nom">132</id>
-    <varname>mandant___nom</varname>
+    <id remote="mandat:nom">127</id>
+    <varname>mandat___nom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
-    
-    <validation></validation>
-    <size></size>
-</field>
-<field>
-    <label>Pr&#233;nom</label>
-    <type>string</type>
-    <required>True</required>
-    <id remote="mandant:prenom">133</id>
-    <varname>mandant___prenom</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>none</type>
-    </prefill>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
     
     <validation></validation>
     <size></size>
 </field><field>
+    <label>Pr&#233;nom</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="mandat:prenom">128</id>
+    <varname>mandat___prenom</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Adresse</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="mandat:adresse">129</id>
+    <varname>mandat___adresse</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Code postal</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="mandat:codepostal">130</id>
+    <varname>mandat___codepostal</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Commune</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="mandat:commune">131</id>
+    <varname>mandat___commune</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>&lt;p&gt;&lt;strong&gt;Civilit&amp;#233;&lt;/strong&gt; : {{form_var_civilite}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nom&lt;/strong&gt; : {{form_var_nom}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pr&amp;#233;nom&lt;/strong&gt; : {{form_var_prenom}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adresse&lt;/strong&gt; : {{form_var_beneficiaire___adresse}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code postal&lt;/strong&gt; : {{form_var_beneficiaire___codepostal}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Commune&lt;/strong&gt; : {{form_var_beneficiaire___commune}}&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_mandat_personne:procuration_rappel_coordonnees_beneficiaire">132</id>
+    <condition>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" not in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    </field><field>
     <label>Qualit&#233;</label>
     <type>string</type>
     <required>False</required>
     <hint>Par exemple fr&#232;re, soeur, enfant, voisin...</hint>
-    <id remote="procuration:qualite">134</id>
+    <id remote="procuration:qualite">133</id>
     <varname>procuration___qualite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1651,113 +1626,26 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     <validation></validation>
     <size></size>
 </field><field>
-    <label>Adresse</label>
-    <type>text</type>
-    <required>True</required>
-    <id remote="mandant:adresse">135</id>
-    <varname>mandant___adresse</varname>
+    <label>Procuration scann&#233;e &#224; joindre</label>
+    <type>file</type>
+    <required>False</required>
+    <id remote="page_mandat_personne:procuration_fichier">167</id>
+    <varname>page_mandat_personne___procuration_fichier</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    <condition>
+        <type>django</type>
+        <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
+    </condition>
     
-    <validation></validation>
-    <cols></cols>
-    <rows>2</rows>
-    <maxlength></maxlength>
-</field>
-<field>
-    <label>Code postal</label>
-    <type>string</type>
-    <required>True</required>
-    <id remote="mandant:codepostal">136</id>
-    <varname>mandant___codepostal</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <extra_css_class>grid-1-2</extra_css_class>
-    <prefill>
-    <type>none</type>
-    </prefill>
-    
-    <validation></validation>
-    <size></size>
-</field>
-<field>
-    <label>Commune</label>
-    <type>string</type>
-    <required>True</required>
-    <id remote="mandant:commune">137</id>
-    <varname>mandant___commune</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <extra_css_class>grid-1-2</extra_css_class>
-    <prefill>
-    <type>none</type>
-    </prefill>
-    
-    <validation></validation>
-    <size></size>
+    <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
-    <label>T&#233;l&#233;phone portable du mandataire</label>
-    <type>string</type>
-    <required>True</required>
-    <id remote="page_mandat_personne:procuration_sms_telephone">138</id>
-    <varname>page_mandat_personne___procuration_sms_telephone</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
-    <prefill>
-    <type>none</type>
-    </prefill>
-    <condition>
-        <type>django</type>
-        <value>not form_var_procuration_perception_subventions|default_if_none:"" != "Le b&#233;n&#233;ficiaire fait une procuration en ligne valid&#233;e par SMS"|default_if_none:""</value>
-    </condition>
-    
-    <validation></validation>
-    <size></size>
-</field><field>
-    <label>&lt;h4&gt;Aux fins&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;De recevoir en mon nom et pour mon compte le montant de la (des) subvention(s) accord&amp;#233;e(s) par le D&amp;#233;partement dans le cadre de son dispositif d&#39;aides &amp;#224; l&#39;am&amp;#233;lioration de l&#39;habitat priv&amp;#233; et, plus pr&amp;#233;cis&amp;#233;ment, au titre de l&#39;adaptation des logements &amp;#224; l&#39;&amp;#226;ge ou au handicap.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;D&#39;utiliser cette somme pour r&amp;#233;gler les entreprises retenues pour effectuer les travaux objet de cette subvention.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;De pr&amp;#233;senter, en mon nom, les pi&amp;#232;ces justifiant l&#39;ex&amp;#233;cution des travaux ainsi que tout document n&amp;#233;cessaire au calcul et au versement des subventions et &amp;#224; recevoir en mon nom toute correspondance &amp;#233;mise par le D&amp;#233;partement relative au paiement.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Validation du Mandant&lt;/h4&gt;
-&lt;p&gt;Un SMS est envoy&amp;#233; sur le t&amp;#233;l&amp;#233;phone portable du b&amp;#233;n&amp;#233;ficiaire apr&amp;#232;s la validation en fin de formulaire. En donnant le code re&amp;#231;u dans ce SMS il donne bon pour pouvoir pour servir et valoir ce que de droit.&lt;/p&gt;
-&lt;p&gt;La saisie de ce code est &amp;#224; faire &amp;#224; l&#39;issue de la validation du pr&amp;#233;sent formulaire. Ce code est indispensable pour que le dossier soit instruit.&lt;/p&gt;
-&lt;h4&gt;Validation du Mandataire&lt;/h4&gt;
-&lt;p&gt;Un SMS est envoy&amp;#233; sur le t&amp;#233;l&amp;#233;phone portable du mandataire apr&amp;#232;s la validation en fin de formulaire. En donnant le code re&amp;#231;u dans ce SMS, il donne bon pour acceptation de mandat pour servir et valoir ce que de droit.&lt;/p&gt;
-&lt;p&gt;La saisie de ce code est &amp;#224; faire &amp;#224; l&#39;issue de la validation du pr&amp;#233;sent formulaire, apr&amp;#232;s la saisie du code du mandant. Ce code est indispensable pour que le dossier soit instruit.&lt;/p&gt;</label>
-    <type>comment</type>
-    <id remote="page_mandat_personne:procuration_sms_description">139</id>
-    <condition>
-        <type>django</type>
-        <value>not form_var_procuration_perception_subventions|default_if_none:"" != "Le b&#233;n&#233;ficiaire fait une procuration en ligne valid&#233;e par SMS"|default_if_none:""</value>
-    </condition>
-    </field><field>
-    <label>&lt;p&gt;Le document &amp;#224; imprimer permettant de donner procuration est &lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-procuration&#34;&gt;accessible ici&lt;/a&gt;
-Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp;#233; par les deux parties &amp;#224; l&#39;adresse suivante :&lt;/p&gt;
-&lt;p&gt;H&amp;#244;tel du d&amp;#233;partement &amp;#8211; service habitat&lt;/p&gt;
-&lt;p&gt;3 quai Ceineray&lt;/p&gt;
-&lt;p&gt;CS 94109&lt;/p&gt;
-&lt;p&gt;44041 Nantes cedex&lt;/p&gt;</label>
-    <type>comment</type>
-    <id remote="page_mandat_personne:procuration_courrier_description">140</id>
-    <condition>
-        <type>django</type>
-        <value>not form_var_procuration_perception_subventions|default_if_none:"" != "Le b&#233;n&#233;ficiaire fait une procuration papier valid&#233;e par l'envoi d'un courrier d'un original sign&#233;"|default_if_none:""</value>
-    </condition>
-    </field><field>
     <label>Engagement</label>
     <type>page</type>
-    <id remote="page_engagement_operateur">141</id>
+    <id remote="page_engagement_operateur">137</id>
     <post_conditions>
     <post_condition>
         <condition>
@@ -1770,9 +1658,9 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_engagement_operateur:intro_textes_obligatoires">142</id>
+    <id remote="page_engagement_operateur:intro_textes_obligatoires">138</id>
     </field><field>
-    <label>&lt;p&gt;En tant qu&#39;op&amp;#233;rateur, j&#39;ai signal&amp;#233; au b&amp;#233;n&amp;#233;ficiaire qu&#39;il s&#39;engage &amp;#224;&lt;/p&gt;
+    <label>&lt;p&gt;&lt;strong&gt;En tant qu&#39;op&amp;#233;rateur, j&#39;ai signal&amp;#233; au b&amp;#233;n&amp;#233;ficiaire qu&#39;il s&#39;engage &amp;#224; :&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Attendre, si possible, le courrier de notification de subvention avant de d&amp;#233;marrer les travaux. Il est toutefois autoris&amp;#233; de d&amp;#233;marrer les travaux une fois re&amp;#231;u l&#39;accus&amp;#233; de r&amp;#233;ception du dossier complet. Mais seul le courrier de notification garantit l&#39;attribution de l&#39;aide.&lt;/p&gt;
@@ -1800,13 +1688,13 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
 &lt;/li&gt;
 &lt;/ul&gt;</label>
     <type>comment</type>
-    <id remote="engagement_operateur_texte_aide_exceptionnelle">143</id>
+    <id remote="engagement_operateur_texte_aide_exceptionnelle">139</id>
     </field>
 <field>
     <label>En tant qu'op&#233;rateur, en validant ce formulaire, je deviens responsable des informations qui y sont saisies</label>
     <type>items</type>
     <required>True</required>
-    <id remote="engagement_operateur">144</id>
+    <id remote="engagement_operateur">140</id>
     <varname>engagement_operateur</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1819,22 +1707,22 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     </items><anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
-    <label>&lt;p&gt;Vous pouvez t&amp;#233;l&amp;#233;charger un mod&amp;#232;le d&#39;accord du b&amp;#233;n&amp;#233;ficiaire &lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire&#34;&gt;en cliquant ici&lt;/a&gt;&lt;/p&gt;</label>
+    <label>&lt;p&gt;&lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire&#34;&gt;T&amp;#233;l&amp;#233;charger un mod&amp;#232;le d&#39;accord du b&amp;#233;n&amp;#233;ficiaire&lt;/a&gt;&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="engagement_operateur_modele_accord">145</id>
+    <id remote="engagement_operateur_modele_accord">141</id>
     </field><field>
     <label>Pi&#232;ces justificatives</label>
     <type>page</type>
-    <id remote="page_pieces_justificatives">146</id>
+    <id remote="page_pieces_justificatives">142</id>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_pieces_justificatives:intro_textes_obligatoires">147</id>
+    <id remote="page_pieces_justificatives:intro_textes_obligatoires">143</id>
     </field><field>
     <label>Relev&#233; d'Identit&#233; Bancaire</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_rib">148</id>
+    <id remote="documents_rib">144</id>
     <varname>documents_rib</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1844,17 +1732,26 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
-    <label>&lt;ul&gt;
-&lt;li&gt;RIB au nom du b&amp;#233;n&amp;#233;ficiaire (ou au double nom &amp;#171; M ou Mme &amp;#187;) si celui-ci per&amp;#231;oit directement les subventions,&lt;/li&gt;
-&lt;li&gt;RIB au nom du mandataire habilit&amp;#233; &amp;#224; percevoir les fonds, si une personne a &amp;#233;t&amp;#233; d&amp;#233;sign&amp;#233;e &amp;#224; cet effet et  accompagn&amp;#233; de la procuration, en original, correspondante&lt;/li&gt;
-&lt;/ul&gt;</label>
+    <label>&lt;p&gt;RIB au nom du b&amp;#233;n&amp;#233;ficiaire (ou au double nom &amp;#171; M ou Mme &amp;#187;) qui per&amp;#231;oit directement les subventions&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_rib_texte">149</id>
+    <id remote="documents_rib_texte_si_aucune_procuration">145</id>
+    <condition>
+        <type>django</type>
+        <value>not "ne fait pas de procuration"|default_if_none:""|stringformat:"s" not in form_var_procuration_perception_subventions|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    </field><field>
+    <label>&lt;p&gt;RIB au nom du mandataire habilit&amp;#233; &amp;#224; percevoir les fonds&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="documents_rib_texte_si_procuration">146</id>
+    <condition>
+        <type>django</type>
+        <value>not "ne fait pas de procuration"|default_if_none:""|stringformat:"s" in form_var_procuration_perception_subventions|default_if_none:""|stringformat:"s" </value>
+    </condition>
     </field><field>
     <label>Document justifiant de l'&#233;ligibilit&#233; &#224; l'Allocation Personnalis&#233;e d'Autonomie (APA)</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_apa">150</id>
+    <id remote="documents_apa">147</id>
     <varname>documents_apa</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1867,7 +1764,7 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     <label>Copie de la carte d'invalidit&#233; ou copie de la notification de la prestation de compensation  &#171; am&#233;nagement du logement &#187; (MDPH)</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_mdph">151</id>
+    <id remote="documents_mdph">148</id>
     <varname>documents_mdph</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1880,7 +1777,7 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     <label>Diagnostic de l'ergoth&#233;rapeute</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_diagnostic_ergotherapeute">152</id>
+    <id remote="documents_diagnostic_ergotherapeute">149</id>
     <varname>documents_diagnostic_ergotherapeute</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1893,12 +1790,12 @@ Il est &amp;#224; retourner sous un mois, compl&amp;#233;t&amp;#233; et sign&amp
     <label>&lt;p&gt;&lt;em&gt;Avis d&#39;imposition&lt;/em&gt;
 Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&amp;#183;s du logement (d&amp;#233;clarations fiscales distinctes)&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_avis_imposition_texte">153</id>
+    <id remote="documents_avis_imposition_texte">150</id>
     </field><field>
     <label>Avis d'imposition du b&#233;n&#233;ficiaire</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_avis_imposition_beneficiaire">154</id>
+    <id remote="documents_avis_imposition_beneficiaire">151</id>
     <varname>documents_avis_imposition_beneficiaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1911,7 +1808,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>Avis d'imposition du conjoint ou de la conjointe habitant le logement (si d&#233;claration fiscale distincte de celle du b&#233;n&#233;ficiaire)</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_avis_imposition_conjoint">155</id>
+    <id remote="documents_avis_imposition_conjoint">152</id>
     <varname>documents_avis_imposition_conjoint</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1928,7 +1825,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>Avis d'imposition d'un&#183;e autre occupant&#183;e du logement (si d&#233;claration fiscale distincte de celle du b&#233;n&#233;ficiaire)</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_avis_imposition_autre">156</id>
+    <id remote="documents_avis_imposition_autre">153</id>
     <varname>documents_avis_imposition_autre</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1946,7 +1843,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>file</type>
     <required>True</required>
     <hint>Merci de compiler les devis dans une archive ZIP.</hint>
-    <id remote="documents_devis_detailles">157</id>
+    <id remote="documents_devis_detailles">154</id>
     <varname>documents_devis_detailles</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1958,12 +1855,12 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
 </field><field>
     <label>&lt;p&gt;&lt;em&gt;Si le logement est en secteur sauvegard&amp;#233;, vous devez fournir les autorisations administratives pr&amp;#233;alables  requises par la r&amp;#233;glementation en vigueur et n&amp;#233;cessaire &amp;#224; l&#39;instruction des dossiers.&lt;/em&gt;&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_autorisations_secteur_sauvegarde_texte">158</id>
+    <id remote="documents_autorisations_secteur_sauvegarde_texte">155</id>
     </field><field>
     <label>Si logement en secteur sauvegard&#233;, autorisations administratives</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autorisations_secteur_sauvegarde">159</id>
+    <id remote="documents_autorisations_secteur_sauvegarde">156</id>
     <varname>documents_autorisations_secteur_sauvegarde</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1975,12 +1872,12 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
 </field><field>
     <label>&lt;p&gt;&lt;em&gt;Autres justificatifs&lt;/em&gt;&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_autres_texte">160</id>
+    <id remote="documents_autres_texte">157</id>
     </field><field>
     <label>1.</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autres_1">161</id>
+    <id remote="documents_autres_1">158</id>
     <varname>documents_autres_1</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1993,7 +1890,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>2.</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autres_2">162</id>
+    <id remote="documents_autres_2">159</id>
     <varname>documents_autres_2</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -2006,7 +1903,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>3.</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autres_3">163</id>
+    <id remote="documents_autres_3">160</id>
     <varname>documents_autres_3</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -2019,7 +1916,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>4.</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autres_4">164</id>
+    <id remote="documents_autres_4">161</id>
     <varname>documents_autres_4</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -2032,7 +1929,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>5.</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autres_5">165</id>
+    <id remote="documents_autres_5">162</id>
     <varname>documents_autres_5</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -2045,7 +1942,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>Observations</label>
     <type>text</type>
     <required>False</required>
-    <id remote="documents_autres_observations">166</id>
+    <id remote="documents_autres_observations">163</id>
     <varname>documents_autres_observations</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -2059,6 +1956,16 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <maxlength></maxlength>
 </field>
   </fields>
-  <options />
+  <user-roles>
+    <role role_id="logged-users">logged-users</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role role_id="7b0c6a08a6384cfc9ce6431c08472735">Gestionnaire demande aide mobilit&#233;</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role role_id="bd87fdca866d4d059d9ee5408096e2a2" role_key="_receiver">Gestionnaire demande aide mobilit&#233;</role>
+  </roles>
+  <options>
+    </options>
   <geolocations />
 </formdef>
