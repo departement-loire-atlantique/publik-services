@@ -244,7 +244,7 @@ page page_procuration
 
     titre procuration:procuration_titre
 
-    liste procuration:procuration_impression_choix
+    liste procuration:procuration_impression_choix*
 
     texte procuration:procuration_impression_lien
 
@@ -285,7 +285,7 @@ page page_mandat_organisme
 
     adresse* organisme:adresse organisme:codepostal organisme:commune
 
-    fichier page_mandat_organisme:procuration_fichier
+    fichier page_mandat_organisme:procuration_fichier*
 
     si procuration:procuration_impression_choix n'est pas égal à "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire" alors masquer le champ page_mandat_organisme:procuration_fichier
 
@@ -328,7 +328,7 @@ page page_mandat_personne
     champ_texte procuration:qualite
         aide à la saisie qualite_aide
 
-    fichier page_mandat_personne:procuration_fichier
+    fichier page_mandat_personne:procuration_fichier*
 
     si procuration:procuration_impression_choix n'est pas égal à "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire" alors masquer le champ page_mandat_personne:procuration_fichier
 
