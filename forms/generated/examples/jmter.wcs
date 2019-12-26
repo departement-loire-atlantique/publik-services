@@ -6,7 +6,7 @@
   <internal_identifier>test-jmeter</internal_identifier>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>true</enable_tracking_codes>
   <confirmation>true</confirmation>
@@ -14,9 +14,10 @@
   <private_status_and_history>false</private_status_and_history>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <workflow workflow_id="_default">Par d&#233;faut</workflow>
+  <category category_id=""></category>
+  <workflow>Par d&amp;#233;faut</workflow>
   <max_field_id>8</max_field_id>
-  <last_modification user_id="1">2019-02-15 16:24:08</last_modification>
+  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -87,6 +88,16 @@
     <size></size>
 </field>
   </fields>
-  <options />
+  <user-roles>
+    <role role_id=""></role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role role_id=""></role>
+  </backoffice-submission-roles>
+  <roles>
+    <role role_id="" role_key=""></role>
+  </roles>
+  <options>
+    </options>
   <geolocations />
 </formdef>

@@ -14,10 +14,10 @@
   <private_status_and_history>false</private_status_and_history>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <category category_id="2">Jeunesse</category>
-  <workflow>Aide au permis - v3</workflow>
+  <category category_id="1">Aides &#224; l'habitat</category>
+  <workflow>Aides habitat</workflow>
   <max_field_id>168</max_field_id>
-  <last_modification user_id="1">2019-12-02 11:25:05</last_modification>
+  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -138,7 +138,7 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_last_name if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
+        <value>form_user_var_last_name</value>
     </prefill>
     
     <validation></validation>
@@ -154,7 +154,7 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_first_name if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
+        <value>form_user_var_first_name</value>
     </prefill>
     
     <validation></validation>
@@ -170,7 +170,7 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_email if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
+        <value>form_user_var_email</value>
     </prefill>
     
 </field><field>
@@ -699,8 +699,8 @@
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((len(form_var_tel_fixe if isinstance(form_var_tel_fixe, list) else ([form_var_tel_fixe] if form_var_tel_fixe else []))== 0) and (len(form_var_tel_portable if isinstance(form_var_tel_portable, list) else ([form_var_tel_portable] if form_var_tel_portable else []))== 0))</value>
+          <type>django</type>
+          <value>not (form_var_tel_fixe|default_if_none:""|length == 0 and form_var_tel_portable|default_if_none:""|length == 0)</value>
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
@@ -856,15 +856,15 @@
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((len(form_var_depenses_autres_precisions if isinstance(form_var_depenses_autres_precisions, list) else ([form_var_depenses_autres_precisions] if form_var_depenses_autres_precisions else []))== 0) and (len(form_var_depenses_autres if isinstance(form_var_depenses_autres, list) else ([form_var_depenses_autres] if form_var_depenses_autres else []))> 0))</value>
+          <type>django</type>
+          <value>not (form_var_depenses_autres_precisions|default_if_none:""|length == 0 and form_var_depenses_autres|default_if_none:""|length > 0)</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres d&#233;penses que vous avez indiqu&#233;s.</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((len(form_var_subventions_autres_precisions if isinstance(form_var_subventions_autres_precisions, list) else ([form_var_subventions_autres_precisions] if form_var_subventions_autres_precisions else []))== 0) and (len(form_var_subventions_autres if isinstance(form_var_subventions_autres, list) else ([form_var_subventions_autres] if form_var_subventions_autres else []))> 0))</value>
+          <type>django</type>
+          <value>not (form_var_subventions_autres_precisions|default_if_none:""|length == 0 and form_var_subventions_autres|default_if_none:""|length > 0)</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres financements que vous avez indiqu&#233;s.</error_message>
       </post_condition>
@@ -1160,8 +1160,8 @@
     <type>page</type>
     <id remote="page_procuration">96</id>
     <condition>
-        <type>python</type>
-        <value>not (("ne fait pas de procuration" in form_var_procuration_perception_subventions if form_var_procuration_perception_subventions and isinstance(form_var_procuration_perception_subventions, str) else False))</value>
+        <type>django</type>
+        <value>not "ne fait pas de procuration"|default_if_none:""|stringformat:"s" in form_var_procuration_perception_subventions|default_if_none:""|stringformat:"s" </value>
     </condition>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
@@ -1175,7 +1175,7 @@
 <field>
     <label>Choix de l'impression de la procuration</label>
     <type>item</type>
-    <required>False</required>
+    <required>True</required>
     <id remote="procuration:procuration_impression_choix">164</id>
     <varname>procuration___procuration_impression_choix</varname>
     <in_listing>False</in_listing>
@@ -1362,8 +1362,8 @@
     <type>page</type>
     <id remote="page_mandat_organisme">112</id>
     <condition>
-        <type>python</type>
-        <value>not (((form_var_procuration_donne_mandat_list if form_var_procuration_donne_mandat_list and isinstance(form_var_procuration_donne_mandat_list, ("Un organisme ou un op&#233;rateur").__class__) else "") != ("Un organisme ou un op&#233;rateur" if "Un organisme ou un op&#233;rateur" else "")))</value>
+        <type>django</type>
+        <value>not form_var_procuration_donne_mandat_list|default_if_none:"" != "Un organisme ou un op&#233;rateur"|default_if_none:""</value>
     </condition>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
@@ -1451,7 +1451,7 @@
 </field><field>
     <label>Procuration scann&#233;e &#224; joindre</label>
     <type>file</type>
-    <required>False</required>
+    <required>True</required>
     <id remote="page_mandat_organisme:procuration_fichier">166</id>
     <varname>page_mandat_organisme___procuration_fichier</varname>
     <in_listing>False</in_listing>
@@ -1470,8 +1470,8 @@
     <type>page</type>
     <id remote="page_mandat_personne">123</id>
     <condition>
-        <type>python</type>
-        <value>not (((form_var_procuration_donne_mandat_list if form_var_procuration_donne_mandat_list and isinstance(form_var_procuration_donne_mandat_list, ("Une personne").__class__) else "") != ("Une personne" if "Une personne" else "")))</value>
+        <type>django</type>
+        <value>not form_var_procuration_donne_mandat_list|default_if_none:"" != "Une personne"|default_if_none:""</value>
     </condition>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
@@ -1628,7 +1628,7 @@
 </field><field>
     <label>Procuration scann&#233;e &#224; joindre</label>
     <type>file</type>
-    <required>False</required>
+    <required>True</required>
     <id remote="page_mandat_personne:procuration_fichier">167</id>
     <varname>page_mandat_personne___procuration_fichier</varname>
     <in_listing>False</in_listing>
@@ -1649,8 +1649,8 @@
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not (len(form_var_engagement_operateur if isinstance(form_var_engagement_operateur, list) else ([form_var_engagement_operateur] if form_var_engagement_operateur else []))== 0)</value>
+          <type>django</type>
+          <value>not (form_var_engagement_operateur|default_if_none:""|length == 0)</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
@@ -1960,10 +1960,10 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <role role_id="logged-users">logged-users</role>
   </user-roles>
   <backoffice-submission-roles>
-    <role role_id="7b0c6a08a6384cfc9ce6431c08472735">Gestionnaire demande aide mobilit&#233;</role>
+    <role role_id="9e4dacfc848045b2a22773f3de3fbd67">Service habitat</role>
   </backoffice-submission-roles>
   <roles>
-    <role role_id="bd87fdca866d4d059d9ee5408096e2a2" role_key="_receiver">Gestionnaire demande aide mobilit&#233;</role>
+    <role role_id="9e4dacfc848045b2a22773f3de3fbd67" role_key="_receiver">Service habitat</role>
   </roles>
   <options>
     </options>

@@ -14,10 +14,10 @@
   <private_status_and_history>false</private_status_and_history>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <category category_id="2">Jeunesse</category>
-  <workflow>Aide au permis - v3</workflow>
+  <category category_id="1">Aides &#224; l'habitat</category>
+  <workflow>Aides habitat</workflow>
   <max_field_id>93</max_field_id>
-  <last_modification user_id="1">2019-12-02 11:25:05</last_modification>
+  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -105,50 +105,50 @@
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ("Depuis" in form_var_annee_de_construction if form_var_annee_de_construction and isinstance(form_var_annee_de_construction, str) else False)</value>
+          <type>django</type>
+          <value>not ("Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" )</value>
         </condition>
         <error_message>L'aide &#224; l'habitat ne concerne que les logements construits depuis plus de 15 ans ce qui n'est pas votre cas.</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((form_var_travaux_eligibles_anah if form_var_travaux_eligibles_anah and isinstance(form_var_travaux_eligibles_anah, ("Non").__class__) else "") == ("Non" if "Non" else ""))</value>
+          <type>django</type>
+          <value>not (form_var_travaux_eligibles_anah|default_if_none:"" == "Non"|default_if_none:"")</value>
         </condition>
         <error_message>La liste des travaux couvert par l'aide &#224; l'habitat est similaire &#224; celle de l'ANAH, les autres travaux ne sont pas  &#233;ligibles &#224; l'aide.</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((form_var_engagement_proprietaire if form_var_engagement_proprietaire and isinstance(form_var_engagement_proprietaire, ("Non").__class__) else "") == ("Non" if "Non" else ""))</value>
+          <type>django</type>
+          <value>not (form_var_engagement_proprietaire|default_if_none:"" == "Non"|default_if_none:"")</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique est accord&#233;e en contrepartie d'un engagement &#224; louer le bien &#224; des locataires  dont les ressources sont inf&#233;rieures aux plafonds &#171; social &#187; ou &#171; tr&#232;s social &#187;</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((form_var_logement_occupe_ou_vacant if form_var_logement_occupe_ou_vacant and isinstance(form_var_logement_occupe_ou_vacant, ("vacant depuis plus d'un an").__class__) else "") == ("vacant depuis plus d'un an" if "vacant depuis plus d'un an" else ""))</value>
+          <type>django</type>
+          <value>not (form_var_logement_occupe_ou_vacant|default_if_none:"" == "vacant depuis plus d'un an"|default_if_none:"")</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique concerne les logements occup&#233;s ou vacants depuis moins d'un an, ce qui n'est pas  le cas ici.</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((form_var_logement_conventionnement_anah if form_var_logement_conventionnement_anah and isinstance(form_var_logement_conventionnement_anah, ("Non").__class__) else "") == ("Non" if "Non" else ""))</value>
+          <type>django</type>
+          <value>not (form_var_logement_conventionnement_anah|default_if_none:"" == "Non"|default_if_none:"")</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique concerne les logements faisant l'objet d'un conventionnement ANAH &#171; social &#187; ou  &#171; tr&#232;s social &#187;, ce qui n'est pas le cas ici.</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((form_var_travaux_gain_energetique if form_var_travaux_gain_energetique and isinstance(form_var_travaux_gain_energetique, ("Non").__class__) else "") == ("Non" if "Non" else ""))</value>
+          <type>django</type>
+          <value>not (form_var_travaux_gain_energetique|default_if_none:"" == "Non"|default_if_none:"")</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique s'adresse aux projets permettant de r&#233;aliser un gain &#233;nerg&#233;tique de 25% minimum,  ce qui n'est pas le cas de ce projet.</error_message>
       </post_condition>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not (not (form_var_logement_a_modifier___codepostal.startswith("44") if form_var_logement_a_modifier___codepostal and isinstance(form_var_logement_a_modifier___codepostal, str) else False))</value>
+          <type>django</type>
+          <value>not (form_var_logement_a_modifier___codepostal|make_list|slice:':2:'|join:'' != "44")</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration &#233;nerg&#233;tique s'applique uniquement sur des logements situ&#233;s en Loire Atlantique, ce qui  n'est pas le cas de la location que vous avez indiqu&#233;e.</error_message>
       </post_condition>
@@ -192,7 +192,7 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_last_name if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
+        <value>form_user_var_last_name</value>
     </prefill>
     
     <validation></validation>
@@ -208,7 +208,7 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_first_name if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
+        <value>form_user_var_first_name</value>
     </prefill>
     
     <validation></validation>
@@ -224,7 +224,7 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_email if (&#34;ou un de ses proches&#34; in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False) else &#34;&#34;</value>
+        <value>form_user_var_email</value>
     </prefill>
     
 </field><field>
@@ -537,8 +537,8 @@
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((len(form_var_tel_fixe if isinstance(form_var_tel_fixe, list) else ([form_var_tel_fixe] if form_var_tel_fixe else []))== 0) and (len(form_var_tel_portable if isinstance(form_var_tel_portable, list) else ([form_var_tel_portable] if form_var_tel_portable else []))== 0))</value>
+          <type>django</type>
+          <value>not (form_var_tel_fixe|default_if_none:""|length == 0 and form_var_tel_portable|default_if_none:""|length == 0)</value>
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
@@ -828,8 +828,8 @@
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not ((len(form_var_subventions_autres_precisions if isinstance(form_var_subventions_autres_precisions, list) else ([form_var_subventions_autres_precisions] if form_var_subventions_autres_precisions else []))== 0) and (len(form_var_subventions_autres if isinstance(form_var_subventions_autres, list) else ([form_var_subventions_autres] if form_var_subventions_autres else []))> 0))</value>
+          <type>django</type>
+          <value>not (form_var_subventions_autres_precisions|default_if_none:""|length == 0 and form_var_subventions_autres|default_if_none:""|length > 0)</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres financements que vous avez indiqu&#233;s.</error_message>
       </post_condition>
@@ -1039,14 +1039,14 @@
     <type>page</type>
     <id remote="page_engagement_operateur">73</id>
     <condition>
-        <type>python</type>
-        <value>not (("ou un de ses proches" in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else False))</value>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
     </condition>
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not (len(form_var_engagement_operateur if isinstance(form_var_engagement_operateur, list) else ([form_var_engagement_operateur] if form_var_engagement_operateur else []))== 0)</value>
+          <type>django</type>
+          <value>not (form_var_engagement_operateur|default_if_none:""|length == 0)</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
@@ -1114,14 +1114,14 @@
     <type>page</type>
     <id remote="page_engagement_beneficiaire">78</id>
     <condition>
-        <type>python</type>
-        <value>not (("ou un de ses proches" not in form_var_qui_saisit_list if form_var_qui_saisit_list and isinstance(form_var_qui_saisit_list, str) else True))</value>
+        <type>django</type>
+        <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" not in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
     </condition>
     <post_conditions>
     <post_condition>
         <condition>
-          <type>python</type>
-          <value>not (len(form_var_engagement_beneficiaire_thermique if isinstance(form_var_engagement_beneficiaire_thermique, list) else ([form_var_engagement_beneficiaire_thermique] if form_var_engagement_beneficiaire_thermique else []))== 0)</value>
+          <type>django</type>
+          <value>not (form_var_engagement_beneficiaire_thermique|default_if_none:""|length == 0)</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
@@ -1296,10 +1296,10 @@
     <role role_id="logged-users">logged-users</role>
   </user-roles>
   <backoffice-submission-roles>
-    <role role_id="7b0c6a08a6384cfc9ce6431c08472735">Gestionnaire demande aide mobilit&#233;</role>
+    <role role_id="9e4dacfc848045b2a22773f3de3fbd67">Service habitat</role>
   </backoffice-submission-roles>
   <roles>
-    <role role_id="bd87fdca866d4d059d9ee5408096e2a2" role_key="_receiver">Gestionnaire demande aide mobilit&#233;</role>
+    <role role_id="9e4dacfc848045b2a22773f3de3fbd67" role_key="_receiver">Service habitat</role>
   </roles>
   <options>
     </options>
