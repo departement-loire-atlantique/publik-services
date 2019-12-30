@@ -6,6 +6,8 @@ formulaire metadata_name_aide_habitat_pa
 
     workflow workflow
 
+    Le paramètre "type_aide" du workflow vaut "PA"
+    
     category_id metadata_category_id
     category_name metadata_category_name
 
@@ -72,14 +74,20 @@ page page_eligibilite
 
     nom_prenom_civilite* nom prenom civilite
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir nom avec profil:nom
+    #si qui_saisit_list contient "ou un de ses proches" alors préremplir nom avec "profil:nom"
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir prenom avec profil:prenom
+    préremplir nom avec formule python "'form_user_var_last_name' if 'ou un de ses proches' in form_var_qui_saisit_list"
+
+    #si qui_saisit_list contient "ou un de ses proches" alors préremplir prenom avec profil:prenom
+
+    préremplir prenom avec formule python "'form_user_var_first_name' if 'ou un de ses proches' in form_var_qui_saisit_list"
 
     courriel courriel
         aide à la saisie format_courriel
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir courriel avec profil:courriel
+    #si qui_saisit_list contient "ou un de ses proches" alors préremplir courriel avec profil:courriel
+
+    préremplir courriel avec formule python "'form_user_var_email' if 'ou un de ses proches' in form_var_qui_saisit_list"
 
     adresse* beneficiaire:adresse beneficiaire:codepostal beneficiaire:commune
 

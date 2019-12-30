@@ -6,6 +6,8 @@ formulaire metadata_name_aide_habitat_therm
 
     workflow workflow
 
+    Le paramètre "type_aide" du workflow vaut "THERM"
+    
     category_id metadata_category_id
     category_name metadata_category_name
 
@@ -62,14 +64,14 @@ page page_eligibilite
 
     nom_prenom_civilite* nom prenom civilite
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir nom avec profil:nom
+    #si qui_saisit_list contient "ou un de ses proches" alors préremplir nom avec profil:nom
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir prenom avec profil:prenom
+    #si qui_saisit_list contient "ou un de ses proches" alors préremplir prenom avec profil:prenom
 
     courriel courriel
         aide à la saisie format_courriel
 
-    si qui_saisit_list contient "ou un de ses proches" alors préremplir courriel avec profil:courriel
+    #si qui_saisit_list contient "ou un de ses proches" alors préremplir courriel avec profil:courriel
 
     adresse* beneficiaire:adresse beneficiaire:codepostal beneficiaire:commune
 
