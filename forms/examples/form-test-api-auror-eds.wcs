@@ -15,7 +15,7 @@
   <skip_from_360_view>false</skip_from_360_view>
   <workflow workflow_id="_default">Par d&#233;faut</workflow>
   <max_field_id>2</max_field_id>
-  <last_modification user_id="3">2020-01-10 17:41:55</last_modification>
+  <last_modification user_id="3">2020-01-10 17:47:41</last_modification>
   <fields>
     <field>
       <label>EDS</label>
@@ -27,7 +27,6 @@
       </prefill><display_mode>list</display_mode>
       <data_source>
         <type>liste_eds</type>
-        <value>[["test_code", "test"], ["test2_code", "test2"]]</value>
       </data_source><in_filters>False</in_filters>
       <anonymise>False</anonymise>
       <display_disabled_items>False</display_disabled_items>
@@ -42,7 +41,6 @@
       </prefill><display_mode>list</display_mode>
       <data_source>
         <type>liste_eds_cache</type>
-        <value>[["test_code", "test"], ["test2_code", "test2"]]</value>
       </data_source><in_filters>False</in_filters>
       <anonymise>False</anonymise>
       <display_disabled_items>False</display_disabled_items>
