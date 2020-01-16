@@ -17,7 +17,7 @@
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
   <max_field_id>93</max_field_id>
-  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
+  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -41,10 +41,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Le b&#233;n&#233;ficiaire ou un de ses proches</item>
     <item>Un op&#233;rateur</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -53,14 +55,15 @@
     <label>Op&#233;rateur</label>
     <type>item</type>
     <required>True</required>
-    <hint>Pr&#233;cisez l'op&#233;rateur</hint>
+    <hint>Pr&#233;cisez l'op&#233;rateur qui vous accompagne.</hint>
     <id remote="qui_saisit_operateur_list">5</id>
     <varname>qui_saisit_operateur_list</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_qui_saisit_list|default_if_none:"" != "Un op&#233;rateur"|default_if_none:""</value>
@@ -73,6 +76,7 @@
     <item>UFUT44 (Une Famille Un Toit)</item>
     <item>Autre</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -87,6 +91,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_qui_saisit_operateur_list|default_if_none:"" != "Autre"|default_if_none:""</value>
@@ -174,10 +179,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -191,9 +198,9 @@
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>formula</type>
-        <value>form_user_var_last_name</value>
+    <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -207,9 +214,9 @@
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>formula</type>
-        <value>form_user_var_first_name</value>
+    <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -223,9 +230,9 @@
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>formula</type>
-        <value>form_user_var_email</value>
+    <type>none</type>
     </prefill>
+    
     
 </field><field>
     <label>Adresse</label>
@@ -239,6 +246,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -256,6 +264,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -272,6 +281,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -287,11 +297,13 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Propri&#233;taire bailleur simple</item>
     <item>Soci&#233;t&#233; civile immobili&#232;re (SCI)</item>
     <item>Indivision</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -308,10 +320,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Oui</item>
     <item>Non</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -332,6 +346,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -347,6 +362,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -364,6 +380,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -377,6 +394,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <data_source>
         <type>formula</type>
@@ -398,11 +416,13 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Non</item>
     <item>Oui</item>
     <item>Ne sais pas</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -422,6 +442,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -437,11 +458,13 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>occup&#233;</item>
     <item>vacant depuis moins d'un an</item>
     <item>vacant depuis plus d'un an</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -458,10 +481,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Oui</item>
     <item>Non</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -486,10 +511,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Oui</item>
     <item>Non</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -507,10 +534,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Oui</item>
     <item>Non</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -525,6 +554,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -566,6 +596,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:""</value>
@@ -585,6 +616,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:""</value>
@@ -605,6 +637,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:""</value>
@@ -625,6 +658,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Soci&#233;t&#233; civile immobili&#232;re (SCI)"|default_if_none:""</value>
@@ -643,6 +677,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:""</value>
@@ -662,6 +697,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:""</value>
@@ -682,6 +718,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:""</value>
@@ -702,6 +739,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:"" and not form_var_proprietaire_bailleur|default_if_none:"" != "Indivision"|default_if_none:""</value>
@@ -730,6 +768,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
 </field><field>
@@ -744,6 +783,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
@@ -764,10 +804,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Maison</item>
     <item>Appartement</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -784,6 +826,7 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Studio</item>
     <item>T1</item>
@@ -792,6 +835,7 @@
     <item>T3</item>
     <item>T4 et +</item>
     </items>
+    
     <show_as_radio>False</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -814,6 +858,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -854,6 +899,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -867,6 +913,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -882,6 +929,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -896,6 +944,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -909,6 +958,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -928,6 +978,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -941,6 +992,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -956,6 +1008,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -969,6 +1022,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -984,6 +1038,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -998,6 +1053,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -1011,6 +1067,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -1031,6 +1088,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -1101,9 +1159,11 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Je m'engage &#224; pouvoir fournir au D&#233;partement la preuve de l'accord du b&#233;n&#233;ficiaire en cas de contr&#244;le</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>&lt;p&gt;&lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire&#34;&gt;T&amp;#233;l&amp;#233;charger un mod&amp;#232;le d&#39;accord du b&amp;#233;n&amp;#233;ficiaire&lt;/a&gt;&lt;/p&gt;</label>
@@ -1176,9 +1236,11 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>En tant que propri&#233;taire bailleur du logement cit&#233; dans ce dossier, j'affirme avoir lu les informations ci-dessus et certifie sur l'honneur l'exactitude des renseignements donn&#233;s dans ce formulaire.</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>Pi&#232;ces justificatives</label>
@@ -1199,6 +1261,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
@@ -1229,6 +1292,7 @@
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Copie de la convention ANAH</label>
@@ -1241,6 +1305,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
@@ -1255,6 +1320,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
@@ -1273,6 +1339,7 @@
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Observations</label>
@@ -1285,6 +1352,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -1302,6 +1370,7 @@
     <role role_id="9e4dacfc848045b2a22773f3de3fbd67" role_key="_receiver">Service habitat</role>
   </roles>
   <options>
+    <option varname="type_aide">THERM</option>
     </options>
   <geolocations />
 </formdef>

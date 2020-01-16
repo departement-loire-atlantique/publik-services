@@ -123,7 +123,7 @@ qui_saisit_operateur_list:
     - Autre
 
 qui_saisit_operateur_list_aide:
-  Précisez l'opérateur
+  Précisez l'opérateur qui vous accompagne.
 
 qui_saisit_operateur_autre: >
   Autre opérateur, précisez :

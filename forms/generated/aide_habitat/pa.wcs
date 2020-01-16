@@ -16,8 +16,8 @@
   <skip_from_360_view>false</skip_from_360_view>
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
-  <max_field_id>148</max_field_id>
-  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
+  <max_field_id>142</max_field_id>
+  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -41,10 +41,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Le b&#233;n&#233;ficiaire ou un de ses proches</item>
     <item>Un op&#233;rateur</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -53,14 +55,15 @@
     <label>Op&#233;rateur</label>
     <type>item</type>
     <required>True</required>
-    <hint>Pr&#233;cisez l'op&#233;rateur</hint>
+    <hint>Pr&#233;cisez l'op&#233;rateur qui vous accompagne.</hint>
     <id remote="qui_saisit_operateur_list">5</id>
     <varname>qui_saisit_operateur_list</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_qui_saisit_list|default_if_none:"" != "Un op&#233;rateur"|default_if_none:""</value>
@@ -73,6 +76,7 @@
     <item>UFUT44 (Une Famille Un Toit)</item>
     <item>Autre</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -87,6 +91,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_qui_saisit_list|default_if_none:"" != "Un op&#233;rateur"|default_if_none:"" and not form_var_qui_saisit_operateur_list|default_if_none:"" != "Autre"|default_if_none:""</value>
@@ -154,16 +159,18 @@
     <required>True</required>
     <id remote="type_proprietaire_list">11</id>
     <varname>type_proprietaire_list</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <items>
     <item>Propri&#233;taire occupant</item>
     <item>Usufruitier</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -184,10 +191,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Oui</item>
     <item>Non</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -204,10 +213,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Oui</item>
     <item>Non</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -224,10 +235,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -242,8 +255,9 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_last_name</value>
+        <value>formule python</value>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -258,8 +272,9 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_first_name</value>
+        <value>formule python</value>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -274,8 +289,9 @@
     <in_filters>False</in_filters>
     <prefill>
     <type>formula</type>
-        <value>form_user_var_email</value>
+        <value>formule python</value>
     </prefill>
+    
     
 </field><field>
     <label>Adresse</label>
@@ -289,6 +305,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -306,6 +323,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -321,6 +339,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -339,6 +358,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <data_source>
         <type>formula</type>
@@ -360,11 +380,13 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Non</item>
     <item>Oui</item>
     <item>Ne sais pas</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -383,6 +405,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -411,9 +434,11 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Installation, adaptation ou travaux de mise aux normes d'un ascenseur ou autres appareils permettant notamment le transport de personnes &#224; mobilit&#233; r&#233;duite</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field>
 <field>
@@ -428,6 +453,7 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Cr&#233;ation, modification ou remplacement d'&#233;quipements sanitaires et robinetterie et les travaux induits (carrelage, r&#233;fection de sols, pl&#226;trerie...)</item>
     <item>Rev&#234;tements de sol, y compris travaux pr&#233;paratoires (chapes, isolations...) &#224; l'exception des sols souples (moquettes, lino...)</item>
@@ -437,7 +463,8 @@
     <item>Installation ou adaptation des syst&#232;mes de commande de fermeture et d'ouverture (portes, fen&#234;tres, volets)</item>
     <item>Alerte &#224; distance</item>
     <item>Modification ou installation des bo&#238;tes aux lettres</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field>
 <field>
@@ -452,11 +479,13 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>R&#233;fection ou adaptation des cheminements ext&#233;rieurs , de cour ou de passage dans un projet d'accessibilit&#233; ou de restructuration</item>
     <item>Am&#233;nagement de bateaux pour franchir le trottoir</item>
     <item>&#201;largissement ou am&#233;nagement de place de parking (uniquement en cas de travaux pour l'autonomie de la personne)</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field>
 <field>
@@ -471,9 +500,11 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Dans la limite de 45 m&#178; de surface habitable (annexion de parties communes, sur-&#233;l&#233;vation, cr&#233;ation de volume...)</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>Compl&#233;ment d'informations sur les travaux</label>
@@ -486,6 +517,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -505,11 +537,12 @@
     <required>True</required>
     <id remote="revenu_fiscal_reference_beneficiaire">37</id>
     <varname>revenu_fiscal_reference_beneficiaire</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -526,6 +559,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -540,6 +574,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -553,6 +588,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^[0-9]*$</validation>
     <size></size>
@@ -590,10 +626,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -609,6 +647,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -622,6 +661,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -642,10 +682,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Le b&#233;n&#233;ficiaire ne fait pas de procuration</item>
     <item>Le b&#233;n&#233;ficiaire fait une procuration</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -670,6 +712,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
 </field><field>
@@ -684,6 +727,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
@@ -706,6 +750,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -753,6 +798,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -766,6 +812,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -781,6 +828,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -795,6 +843,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -808,6 +857,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -825,6 +875,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -838,6 +889,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -857,6 +909,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -870,6 +923,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -885,6 +939,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -898,6 +953,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -913,6 +969,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -926,6 +983,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -941,6 +999,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -954,6 +1013,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -969,6 +1029,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -983,6 +1044,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -996,6 +1058,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -1016,6 +1079,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -1040,7 +1104,7 @@
     <label>Choix de l'impression de la procuration</label>
     <type>item</type>
     <required>True</required>
-    <id remote="procuration:procuration_impression_choix">144</id>
+    <id remote="procuration:procuration_impression_choix">82</id>
     <varname>procuration___procuration_impression_choix</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1048,17 +1112,19 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire</item>
     <item>Je souhaite que la procuration soit pr&#233;-remplie avec toutes les donn&#233;es d&#233;finies dans ce formulaire et je la joindrai dans un second temps &#224; ma demande d'aide</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>&lt;p&gt;La procuration vierge (&amp;#224; imprimer, remplir et signer) permettant de donner procuration est &lt;a href=&#34;https://www.loire-atlantique.fr/upload/docs/application/pdf/2019-01/aide_habitat_procuration.pdf&#34;&gt;accessible ici&lt;/a&gt;.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="procuration:procuration_impression_lien">145</id>
+    <id remote="procuration:procuration_impression_lien">83</id>
     <condition>
         <type>django</type>
         <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
@@ -1066,11 +1132,11 @@
     </field><field>
     <label>&lt;p&gt;Vu la d&amp;#233;lib&amp;#233;ration de la Commission permanente du Conseil d&amp;#233;partemental du 5 septembre 2013 relative &amp;#224; l&#39;ajustement  du r&amp;#233;gime des aides destin&amp;#233;es &amp;#224; l&#39;am&amp;#233;lioration de l&#39;habitat priv&amp;#233;,&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="procuration:procuration_titre_texte">82</id>
+    <id remote="procuration:procuration_titre_texte">84</id>
     </field><field>
     <label>Le b&#233;n&#233;ficiaire</label>
     <type>title</type>
-    <id remote="procuration_soustitre_beneficiaire">83</id>
+    <id remote="procuration_soustitre_beneficiaire">85</id>
     </field><field>
     <label>&lt;p&gt;&lt;strong&gt;Civilit&amp;#233;&lt;/strong&gt; : {{form_var_civilite}}&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Nom&lt;/strong&gt; : {{form_var_nom}}&lt;/p&gt;
@@ -1079,17 +1145,17 @@
 &lt;p&gt;&lt;strong&gt;Code postal&lt;/strong&gt; : {{form_var_beneficiaire___codepostal}}&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Commune&lt;/strong&gt; : {{form_var_beneficiaire___commune}}&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="procuration_rappel_coordonnees_beneficiaire">84</id>
+    <id remote="procuration_rappel_coordonnees_beneficiaire">86</id>
     </field><field>
     <label>Repr&#233;sent&#233; par</label>
     <type>title</type>
-    <id remote="procuration_soustitre_represente">85</id>
+    <id remote="procuration_soustitre_represente">87</id>
     </field>
 <field>
     <label>Civilit&#233;</label>
     <type>item</type>
     <required>False</required>
-    <id remote="procurationrepresentant:civilite">86</id>
+    <id remote="procurationrepresentant:civilite">88</id>
     <varname>procurationrepresentant___civilite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1097,10 +1163,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -1108,7 +1176,7 @@
     <label>Nom</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:nom">87</id>
+    <id remote="procurationrepresentant:nom">89</id>
     <varname>procurationrepresentant___nom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1117,6 +1185,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1124,7 +1193,7 @@
     <label>Pr&#233;nom</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:prenom">88</id>
+    <id remote="procurationrepresentant:prenom">90</id>
     <varname>procurationrepresentant___prenom</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1133,6 +1202,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -1140,7 +1210,7 @@
     <type>string</type>
     <required>False</required>
     <hint>Par exemple fr&#232;re, soeur, enfant, voisin...</hint>
-    <id remote="procurationrepresentant:qualite">89</id>
+    <id remote="procurationrepresentant:qualite">91</id>
     <varname>procurationrepresentant___qualite</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1148,13 +1218,14 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
     <label>Adresse</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:adresse">90</id>
+    <id remote="procurationrepresentant:adresse">92</id>
     <varname>procurationrepresentant___adresse</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1163,6 +1234,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1170,7 +1242,7 @@
     <label>Code postal</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:codepostal">91</id>
+    <id remote="procurationrepresentant:codepostal">93</id>
     <varname>procurationrepresentant___codepostal</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1179,6 +1251,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1186,7 +1259,7 @@
     <label>Commune</label>
     <type>string</type>
     <required>False</required>
-    <id remote="procurationrepresentant:commune">92</id>
+    <id remote="procurationrepresentant:commune">94</id>
     <varname>procurationrepresentant___commune</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1195,18 +1268,19 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
     <label>Donne Mandat</label>
     <type>title</type>
-    <id remote="procuration_donne_mandat_titre">93</id>
+    <id remote="procuration_donne_mandat_titre">95</id>
     </field>
 <field>
     <label>Mandat &#224;</label>
     <type>item</type>
     <required>True</required>
-    <id remote="procuration_donne_mandat_list">94</id>
+    <id remote="procuration_donne_mandat_list">96</id>
     <varname>procuration_donne_mandat_list</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1214,17 +1288,19 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Un organisme ou un op&#233;rateur</item>
     <item>Une personne</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>Mandat</label>
     <type>page</type>
-    <id remote="page_mandat_organisme">95</id>
+    <id remote="page_mandat_organisme">97</id>
     <condition>
         <type>django</type>
         <value>not form_var_procuration_donne_mandat_list|default_if_none:"" != "Un organisme ou un op&#233;rateur"|default_if_none:""</value>
@@ -1232,16 +1308,16 @@
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_mandat_organisme:intro_textes_obligatoires">96</id>
+    <id remote="page_mandat_organisme:intro_textes_obligatoires">98</id>
     </field><field>
     <label>Donne Mandat &#224; un organisme ou un op&#233;rateur</label>
     <type>title</type>
-    <id remote="procuration_donne_mandat_organisme_sous_titre">97</id>
+    <id remote="procuration_donne_mandat_organisme_sous_titre">99</id>
     </field><field>
     <label>Nom de l'organisme ou de l'op&#233;rateur</label>
     <type>string</type>
     <required>True</required>
-    <id remote="procuration_nom_organisme">98</id>
+    <id remote="procuration_nom_organisme">100</id>
     <varname>procuration_nom_organisme</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1249,13 +1325,14 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
     <label>Pr&#233;nom et Nom du r&#233;f&#233;rent suivant le dossier au sein de l'organisme</label>
     <type>string</type>
     <required>True</required>
-    <id remote="procuration_referent_organisme">99</id>
+    <id remote="procuration_referent_organisme">101</id>
     <varname>procuration_referent_organisme</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1263,13 +1340,14 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
     <label>Adresse</label>
     <type>string</type>
     <required>True</required>
-    <id remote="organisme:adresse">100</id>
+    <id remote="organisme:adresse">102</id>
     <varname>organisme___adresse</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1278,6 +1356,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1285,7 +1364,7 @@
     <label>Code postal</label>
     <type>string</type>
     <required>True</required>
-    <id remote="organisme:codepostal">101</id>
+    <id remote="organisme:codepostal">103</id>
     <varname>organisme___codepostal</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1294,6 +1373,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1301,7 +1381,7 @@
     <label>Commune</label>
     <type>string</type>
     <required>True</required>
-    <id remote="organisme:commune">102</id>
+    <id remote="organisme:commune">104</id>
     <varname>organisme___commune</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1310,19 +1390,21 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
     <label>Procuration scann&#233;e &#224; joindre</label>
     <type>file</type>
     <required>True</required>
-    <id remote="page_mandat_organisme:procuration_fichier">146</id>
+    <id remote="page_mandat_organisme:procuration_fichier">105</id>
     <varname>page_mandat_organisme___procuration_fichier</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
@@ -1357,6 +1439,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1366,6 +1449,7 @@
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -1380,6 +1464,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1398,6 +1483,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1416,6 +1502,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1436,6 +1523,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1454,6 +1542,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1487,19 +1576,21 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
     <label>Procuration scann&#233;e &#224; joindre</label>
     <type>file</type>
     <required>True</required>
-    <id remote="page_mandat_personne:procuration_fichier">147</id>
+    <id remote="page_mandat_personne:procuration_fichier">117</id>
     <varname>page_mandat_personne___procuration_fichier</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
@@ -1509,7 +1600,7 @@
 </field><field>
     <label>Engagement</label>
     <type>page</type>
-    <id remote="page_engagement_operateur">120</id>
+    <id remote="page_engagement_operateur">118</id>
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1526,7 +1617,7 @@
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_engagement_operateur:intro_textes_obligatoires">121</id>
+    <id remote="page_engagement_operateur:intro_textes_obligatoires">119</id>
     </field><field>
     <label>&lt;p&gt;&lt;strong&gt;En tant qu&#39;op&amp;#233;rateur, j&#39;ai signal&amp;#233; au b&amp;#233;n&amp;#233;ficiaire qu&#39;il s&#39;engage &amp;#224; :&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1559,13 +1650,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;</label>
     <type>comment</type>
-    <id remote="engagement_operateur_texte">122</id>
+    <id remote="engagement_operateur_texte">120</id>
     </field>
 <field>
     <label>En tant qu'op&#233;rateur, en validant ce formulaire, je deviens responsable des informations qui y sont saisies</label>
     <type>items</type>
     <required>True</required>
-    <id remote="engagement_operateur">123</id>
+    <id remote="engagement_operateur">121</id>
     <varname>engagement_operateur</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1573,18 +1664,20 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Je m'engage &#224; pouvoir fournir au D&#233;partement la preuve de l'accord du b&#233;n&#233;ficiaire en cas de contr&#244;le</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>&lt;p&gt;&lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire&#34;&gt;T&amp;#233;l&amp;#233;charger un mod&amp;#232;le d&#39;accord du b&amp;#233;n&amp;#233;ficiaire&lt;/a&gt;&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="engagement_operateur_modele_accord">124</id>
+    <id remote="engagement_operateur_modele_accord">122</id>
     </field><field>
     <label>Engagement</label>
     <type>page</type>
-    <id remote="page_engagement_beneficiaire">125</id>
+    <id remote="page_engagement_beneficiaire">123</id>
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" not in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1601,7 +1694,7 @@
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_engagement_beneficiaire:intro_textes_obligatoires">126</id>
+    <id remote="page_engagement_beneficiaire:intro_textes_obligatoires">124</id>
     </field><field>
     <label>&lt;p&gt;Je m&#39;engage &amp;#224;&lt;/p&gt;
 &lt;ul&gt;
@@ -1634,13 +1727,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;</label>
     <type>comment</type>
-    <id remote="engagement_beneficiaire_texte">127</id>
+    <id remote="engagement_beneficiaire_texte">125</id>
     </field>
 <field>
     <label>Engagement</label>
     <type>items</type>
     <required>True</required>
-    <id remote="engagement_beneficiaire">128</id>
+    <id remote="engagement_beneficiaire">126</id>
     <varname>engagement_beneficiaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1648,23 +1741,25 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>En tant que propri&#233;taire occupant ou usufruitier du logement cit&#233; dans ce dossier, j'affirme avoir lu les informations ci-dessus et certifie sur l'honneur l'exactitude des renseignements donn&#233;s dans ce formulaire.</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>Pi&#232;ces justificatives</label>
     <type>page</type>
-    <id remote="page_pieces_justificatives">129</id>
+    <id remote="page_pieces_justificatives">127</id>
     </field><field>
     <label>&lt;p&gt;Les champs suivis d&#39;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="page_pieces_justificatives:intro_textes_obligatoires">130</id>
+    <id remote="page_pieces_justificatives:intro_textes_obligatoires">128</id>
     </field><field>
     <label>Relev&#233; d'Identit&#233; Bancaire</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_rib">131</id>
+    <id remote="documents_rib">129</id>
     <varname>documents_rib</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1672,11 +1767,12 @@
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>&lt;p&gt;RIB au nom du b&amp;#233;n&amp;#233;ficiaire (ou au double nom &amp;#171; M ou Mme &amp;#187;) qui per&amp;#231;oit directement les subventions&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_rib_texte_si_aucune_procuration">132</id>
+    <id remote="documents_rib_texte_si_aucune_procuration">130</id>
     <condition>
         <type>django</type>
         <value>not "ne fait pas de procuration"|default_if_none:""|stringformat:"s" not in form_var_procuration_perception_subventions|default_if_none:""|stringformat:"s" </value>
@@ -1684,7 +1780,7 @@
     </field><field>
     <label>&lt;p&gt;RIB au nom du mandataire habilit&amp;#233; &amp;#224; percevoir les fonds&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_rib_texte_si_procuration">133</id>
+    <id remote="documents_rib_texte_si_procuration">131</id>
     <condition>
         <type>django</type>
         <value>not "ne fait pas de procuration"|default_if_none:""|stringformat:"s" in form_var_procuration_perception_subventions|default_if_none:""|stringformat:"s" </value>
@@ -1693,7 +1789,7 @@
     <label>Document justifiant de l'&#233;ligibilit&#233; &#224; l'Allocation Personnalis&#233;e d'Autonomie (APA)</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_apa">134</id>
+    <id remote="documents_apa">132</id>
     <varname>documents_apa</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1701,12 +1797,13 @@
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Diagnostic de l'ergoth&#233;rapeute</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_diagnostic_ergotherapeute">135</id>
+    <id remote="documents_diagnostic_ergotherapeute">133</id>
     <varname>documents_diagnostic_ergotherapeute</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1714,17 +1811,18 @@
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>&lt;p&gt;&lt;em&gt;Avis d&#39;imposition&lt;/em&gt;
 Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&amp;#183;s du logement (d&amp;#233;clarations fiscales distinctes)&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_avis_imposition_texte">136</id>
+    <id remote="documents_avis_imposition_texte">134</id>
     </field><field>
     <label>Avis d'imposition du b&#233;n&#233;ficiaire</label>
     <type>file</type>
     <required>True</required>
-    <id remote="documents_avis_imposition_beneficiaire">137</id>
+    <id remote="documents_avis_imposition_beneficiaire">135</id>
     <varname>documents_avis_imposition_beneficiaire</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1732,18 +1830,20 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Avis d'imposition du conjoint ou de la conjointe habitant le logement (si d&#233;claration fiscale distincte de celle du b&#233;n&#233;ficiaire)</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_avis_imposition_conjoint">138</id>
+    <id remote="documents_avis_imposition_conjoint">136</id>
     <varname>documents_avis_imposition_conjoint</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_revenu_fiscal_reference_conjoint|default_if_none:""|length == 0 and not form_var_revenu_fiscal_reference_conjoint|default_if_none:""|add:"0" == 0</value>
@@ -1754,13 +1854,14 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <label>Avis d'imposition d'un&#183;e autre occupant&#183;e du logement (si d&#233;claration fiscale distincte de celle du b&#233;n&#233;ficiaire)</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_avis_imposition_autre">139</id>
+    <id remote="documents_avis_imposition_autre">137</id>
     <varname>documents_avis_imposition_autre</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_revenu_fiscal_autre|default_if_none:""|length == 0 and not form_var_revenu_fiscal_autre|default_if_none:""|add:"0" == 0</value>
@@ -1772,7 +1873,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>file</type>
     <required>True</required>
     <hint>Merci de compiler les devis dans une archive ZIP.</hint>
-    <id remote="documents_devis_detailles">140</id>
+    <id remote="documents_devis_detailles">138</id>
     <varname>documents_devis_detailles</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1780,16 +1881,17 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>&lt;p&gt;&lt;em&gt;Si le logement est en secteur sauvegard&amp;#233;, vous devez fournir les autorisations administratives pr&amp;#233;alables  requises par la r&amp;#233;glementation en vigueur et n&amp;#233;cessaire &amp;#224; l&#39;instruction des dossiers.&lt;/em&gt;&lt;/p&gt;</label>
     <type>comment</type>
-    <id remote="documents_autorisations_secteur_sauvegarde_texte">141</id>
+    <id remote="documents_autorisations_secteur_sauvegarde_texte">139</id>
     </field><field>
     <label>Si logement en secteur sauvegard&#233;, autorisations administratives</label>
     <type>file</type>
     <required>False</required>
-    <id remote="documents_autorisations_secteur_sauvegarde">142</id>
+    <id remote="documents_autorisations_secteur_sauvegarde">140</id>
     <varname>documents_autorisations_secteur_sauvegarde</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
@@ -1797,18 +1899,20 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Observations</label>
     <type>text</type>
     <required>False</required>
-    <id remote="documents_autres_observations">143</id>
+    <id remote="documents_autres_observations">141</id>
     <varname>documents_autres_observations</varname>
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -1826,6 +1930,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <role role_id="9e4dacfc848045b2a22773f3de3fbd67" role_key="_receiver">Service habitat</role>
   </roles>
   <options>
+    <option varname="type_aide">PA</option>
     </options>
   <geolocations />
 </formdef>

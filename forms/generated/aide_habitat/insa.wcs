@@ -17,7 +17,7 @@
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
   <max_field_id>146</max_field_id>
-  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
+  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -41,10 +41,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Le b&#233;n&#233;ficiaire ou un de ses proches</item>
     <item>Un op&#233;rateur</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -53,14 +55,15 @@
     <label>Op&#233;rateur</label>
     <type>item</type>
     <required>True</required>
-    <hint>Pr&#233;cisez l'op&#233;rateur</hint>
+    <hint>Pr&#233;cisez l'op&#233;rateur qui vous accompagne.</hint>
     <id remote="qui_saisit_operateur_list">5</id>
     <varname>qui_saisit_operateur_list</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_qui_saisit_list|default_if_none:"" != "Un op&#233;rateur"|default_if_none:""</value>
@@ -73,6 +76,7 @@
     <item>UFUT44 (Une Famille Un Toit)</item>
     <item>Autre</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -87,6 +91,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_qui_saisit_operateur_list|default_if_none:"" != "Autre"|default_if_none:""</value>
@@ -168,16 +173,18 @@
     <required>True</required>
     <id remote="type_proprietaire_list">11</id>
     <varname>type_proprietaire_list</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <items>
     <item>Propri&#233;taire occupant</item>
     <item>Usufruitier</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -194,10 +201,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -211,9 +220,9 @@
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>formula</type>
-        <value>form_user_var_last_name</value>
+    <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -227,9 +236,9 @@
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>formula</type>
-        <value>form_user_var_first_name</value>
+    <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -243,9 +252,9 @@
     <in_listing>False</in_listing>
     <in_filters>False</in_filters>
     <prefill>
-    <type>formula</type>
-        <value>form_user_var_email</value>
+    <type>none</type>
     </prefill>
+    
     
 </field><field>
     <label>Adresse</label>
@@ -259,6 +268,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -276,6 +286,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -291,6 +302,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -309,6 +321,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <data_source>
         <type>formula</type>
@@ -330,11 +343,13 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Non</item>
     <item>Oui</item>
     <item>Ne sais pas</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -353,6 +368,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -373,6 +389,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>^[0-9]*$</validation>
     <size></size>
 </field><field>
@@ -386,6 +403,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^[0-9]*$</validation>
     <size></size>
@@ -410,10 +428,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>R&#233;novation compl&#232;te du logement dans le cadre d'une &#171; grande insalubrit&#233; &#187; (selon l'Anah)</item>
     <item>Travaux de mise aux normes dans le cadre d'une &#171; petite insalubrit&#233; &#187; (selon l'Anah)</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>&lt;p&gt;Si aucun des travaux &amp;#233;ligibles de l&#39;ANAH ne correspond &amp;#224; vos projets, nous vous invitons &amp;#224; utiliser le moteur de recherche  &lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-recherche-operateur&#34;&gt;(cliquez ici)&lt;/a&gt;  pour conna&amp;#238;tre le nom d&#39;un op&amp;#233;rateur qui &amp;#233;tudiera les autres sources &amp;#233;ventuelles de financement mobilisables.&lt;/p&gt;</label>
@@ -430,6 +450,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -449,11 +470,12 @@
     <required>True</required>
     <id remote="revenu_fiscal_reference_beneficiaire">34</id>
     <varname>revenu_fiscal_reference_beneficiaire</varname>
-    <in_listing>False</in_listing>
-    <in_filters>False</in_filters>
+    <in_listing>True</in_listing>
+    <in_filters>True</in_filters>
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -470,6 +492,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -484,6 +507,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -497,6 +521,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^[0-9]*$</validation>
     <size></size>
@@ -534,10 +559,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -553,6 +580,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -566,6 +594,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -586,10 +615,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Le b&#233;n&#233;ficiaire ne fait pas de procuration</item>
     <item>Le b&#233;n&#233;ficiaire fait une procuration</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -614,6 +645,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
 </field><field>
@@ -628,6 +660,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
     <size></size>
@@ -650,6 +683,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -697,6 +731,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -710,6 +745,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -725,6 +761,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -739,6 +776,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -752,6 +790,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -769,6 +808,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -782,6 +822,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -801,6 +842,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -814,6 +856,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -829,6 +872,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -842,6 +886,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -857,6 +902,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -870,6 +916,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -885,6 +932,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -898,6 +946,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -913,6 +962,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -927,6 +977,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
 </field><field>
@@ -940,6 +991,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -960,6 +1012,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>[+-]?([0-9]*[.])?[0-9]+</validation>
     <size></size>
@@ -992,10 +1045,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire</item>
     <item>Je souhaite que la procuration soit pr&#233;-remplie avec toutes les donn&#233;es d&#233;finies dans ce formulaire et je la joindrai dans un second temps &#224; ma demande d'aide</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -1041,10 +1096,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -1060,6 +1117,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -1077,6 +1135,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -1092,6 +1151,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -1106,6 +1166,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -1123,6 +1184,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1138,6 +1200,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -1158,10 +1221,12 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Un organisme ou un op&#233;rateur</item>
     <item>Une personne</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -1193,6 +1258,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -1206,6 +1272,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -1221,6 +1288,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>
@@ -1238,6 +1306,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -1254,6 +1323,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -1267,6 +1337,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
@@ -1301,6 +1372,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1310,6 +1382,7 @@
     <item>M.</item>
     <item>Mme</item>
     </items>
+    
     <show_as_radio>True</show_as_radio>
         <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
@@ -1324,6 +1397,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1342,6 +1416,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1360,6 +1435,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1380,6 +1456,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1398,6 +1475,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not "ou un de ses proches"|default_if_none:""|stringformat:"s" in form_var_qui_saisit_list|default_if_none:""|stringformat:"s" </value>
@@ -1431,6 +1509,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -1444,6 +1523,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_procuration___procuration_impression_choix|default_if_none:"" != "Je souhaite imprimer la procuration vierge et la joindre dans ce formulaire"|default_if_none:""</value>
@@ -1517,9 +1597,11 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>Je m'engage &#224; pouvoir fournir au D&#233;partement la preuve de l'accord du b&#233;n&#233;ficiaire en cas de contr&#244;le</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>&lt;p&gt;&lt;a href=&#34;https://www.loire-atlantique.fr/demarches-aides-habitat-modele-accord-beneficiaire&#34;&gt;T&amp;#233;l&amp;#233;charger un mod&amp;#232;le d&#39;accord du b&amp;#233;n&amp;#233;ficiaire&lt;/a&gt;&lt;/p&gt;</label>
@@ -1592,9 +1674,11 @@
     <type>none</type>
     </prefill>
     
+    
     <items>
     <item>En tant que propri&#233;taire occupant ou usufruitier du logement cit&#233; dans ce dossier, j'affirme avoir lu les informations ci-dessus et certifie sur l'honneur l'exactitude des renseignements donn&#233;s dans ce formulaire.</item>
-    </items><anonymise>False</anonymise>
+    </items>
+    <anonymise>False</anonymise>
     <display_disabled_items>False</display_disabled_items>
 </field><field>
     <label>Pi&#232;ces justificatives</label>
@@ -1615,6 +1699,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
@@ -1650,6 +1735,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Avis d'imposition du conjoint ou de la conjointe habitant le logement (si d&#233;claration fiscale distincte de celle du b&#233;n&#233;ficiaire)</label>
@@ -1662,6 +1748,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_revenu_fiscal_reference_conjoint|default_if_none:""|length == 0 and not form_var_revenu_fiscal_reference_conjoint|default_if_none:""|add:"0" == 0</value>
@@ -1679,6 +1766,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <prefill>
     <type>none</type>
     </prefill>
+    
     <condition>
         <type>django</type>
         <value>not form_var_revenu_fiscal_autre|default_if_none:""|length == 0 and not form_var_revenu_fiscal_autre|default_if_none:""|add:"0" == 0</value>
@@ -1698,6 +1786,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>&lt;p&gt;&lt;em&gt;Devis des &amp;#233;tudes techniques&lt;/em&gt;&lt;/p&gt;
@@ -1716,6 +1805,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>&lt;p&gt;&lt;em&gt;Si le logement est en secteur sauvegard&amp;#233;, vous devez fournir les autorisations administratives pr&amp;#233;alables  requises par la r&amp;#233;glementation en vigueur et n&amp;#233;cessaire &amp;#224; l&#39;instruction des dossiers.&lt;/em&gt;&lt;/p&gt;</label>
@@ -1733,6 +1823,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Autre pi&#232;ce justificative</label>
@@ -1746,6 +1837,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <type>none</type>
     </prefill>
     
+    
     <allow_portfolio_picking>False</allow_portfolio_picking>
 </field><field>
     <label>Observations</label>
@@ -1758,6 +1850,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <cols>80</cols>
@@ -1775,6 +1868,7 @@ Vous devez fournir les derniers avis d&#39;imposition des habitant&amp;#183;e&am
     <role role_id="9e4dacfc848045b2a22773f3de3fbd67" role_key="_receiver">Service habitat</role>
   </roles>
   <options>
+    <option varname="type_aide">INSA</option>
     </options>
   <geolocations />
 </formdef>
