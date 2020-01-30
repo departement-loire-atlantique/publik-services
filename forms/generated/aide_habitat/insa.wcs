@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-15"?>
 <formdef id="100">
   <name>Aide pour des travaux de sortie d'insalubrit&#233;</name>
-  <url_name>aide-habitat-insalubrite</url_name>
-  <description>description aide pour des travaux de sortie d'insalubrit&#233;</description>
-  <internal_identifier>aide-habitat-insalubrite</internal_identifier>
+  <url_name>aide-habitat-insalubrite-2020-01</url_name>
+  <description>Cette aide vise &#224; soutenir les projets de travaux des m&#233;nages d&#233;favoris&#233;s dont le logement est insalubre.  Elle permet de compl&#233;ter les autres subventions notamment (celles de l'ANAH) et ainsi de rendre possible  la mise en &#339;uvre de travaux de r&#233;novation et de mises aux normes des logements insalubres occup&#233;s.</description>
+  <internal_identifier>aide-habitat-insalubrite-2020-01</internal_identifier>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
@@ -17,7 +17,7 @@
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
   <max_field_id>146</max_field_id>
-  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
+  <last_modification user_id="1">2020-01-29 13:08:31</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -111,49 +111,49 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not ("Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" )</value>
+          <value>not "Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" </value>
         </condition>
         <error_message>L'aide &#224; l'habitat ne concerne que les logements construits depuis plus de 15 ans ce qui n'est pas votre cas.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_insa_coef|default_if_none:""|add:"0" &lt; 30)</value>
+          <value>not form_var_logement_insa_coef|default_if_none:""|add:"0" &lt; 30</value>
         </condition>
         <error_message>En dessous de 30% le logement n'est pas consid&#233;r&#233; comme insalubre. Cette aide est r&#233;serv&#233;e aux logements insalubres.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_insa_coef|default_if_none:""|add:"0" > 100)</value>
+          <value>not form_var_logement_insa_coef|default_if_none:""|add:"0" > 100</value>
         </condition>
         <error_message>Le coefficient d'insalubrit&#233; doit &#234;tre compris entre 0 et 100</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_insa_gain_energetique|default_if_none:""|add:"0" &lt; 0)</value>
+          <value>not form_var_logement_insa_gain_energetique|default_if_none:""|add:"0" &lt; 0</value>
         </condition>
         <error_message>Le gain &#233;nerg&#233;tique doit &#234;tre compris entre 0 et 100</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_insa_gain_energetique|default_if_none:""|add:"0" > 100)</value>
+          <value>not form_var_logement_insa_gain_energetique|default_if_none:""|add:"0" > 100</value>
         </condition>
         <error_message>Le gain &#233;nerg&#233;tique doit &#234;tre compris entre 0 et 100</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_travaux_a_engager_insa|default_if_none:""|length == 0)</value>
+          <value>not form_var_travaux_a_engager_insa|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Attention, vous devez s&#233;lectionner le type de travaux que vous envisagez parmi la liste des travaux propos&#233;s.  L'aide ne peut &#234;tre accord&#233;e que pour des travaux appartenant &#224; cette liste.  Si aucun ne correspond &#224; vos projets, nous vous invitons &#224; utiliser le moteur de recherche  (https://www.loire-atlantique.fr/demarches-aides-habitat-recherche-operateur)  pour conna&#238;tre le nom d'un op&#233;rateur qui &#233;tudiera les autres sources &#233;ventuelles de financement mobilisables.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_beneficiaire___codepostal|make_list|slice:':2:'|join:'' != "44")</value>
+          <value>not form_var_beneficiaire___codepostal|make_list|slice:':2:'|join:'' != "44"</value>
         </condition>
         <error_message>L'aide &#224; l'habitat s'adresse aux habitant&#183;e&#183;s de Loire Atlantique, ce qui n'est pas votre cas.</error_message>
       </post_condition>
@@ -533,7 +533,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_tel_fixe|default_if_none:""|length == 0 and form_var_tel_portable|default_if_none:""|length == 0)</value>
+          <value>not form_var_tel_fixe|default_if_none:""|length == 0 or not form_var_tel_portable|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
@@ -699,14 +699,14 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_depenses_autres_precisions|default_if_none:""|length == 0 and form_var_depenses_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_depenses_autres_precisions|default_if_none:""|length == 0 or not form_var_depenses_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres d&#233;penses que vous avez indiqu&#233;s.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_subventions_autres_precisions|default_if_none:""|length == 0 and form_var_subventions_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_subventions_autres_precisions|default_if_none:""|length == 0 or not form_var_subventions_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres financements que vous avez indiqu&#233;s.</error_message>
       </post_condition>
@@ -1542,7 +1542,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_operateur|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_operateur|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
@@ -1619,7 +1619,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_beneficiaire|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_beneficiaire|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>

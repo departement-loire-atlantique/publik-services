@@ -17,7 +17,7 @@
   <category category_id=""></category>
   <workflow>Par d&amp;#233;faut</workflow>
   <max_field_id>8</max_field_id>
-  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
+  <last_modification user_id="1">2019-12-30 17:20:06</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -36,6 +36,7 @@
         <value>form_user_var_last_name</value>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -51,6 +52,7 @@
         <value>form_user_var_first_name</value>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field><field>
@@ -64,6 +66,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation>^[0-9]*$</validation>
     <size></size>
@@ -83,6 +86,7 @@
     <type>formula</type>
         <value>form_user_var_email</value>
     </prefill>
+    
     
     <validation></validation>
     <size></size>

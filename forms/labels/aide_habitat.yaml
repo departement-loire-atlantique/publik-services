@@ -1,35 +1,47 @@
 # ---------------------------------------------------------------------------
 # libellés des champs et messages du document de spécifications
-# v1.9 du 16/11/2018
 # ---------------------------------------------------------------------------
 
 # Métadonnées
 # --------------------------------------------------
 
 metadata_name_aide_habitat_pa: Adaptation des logements de personnes âgées
-metadata_url_name_aide_habitat_pa: aide-habitat-pa
-metadata_description_aide_habitat_pa: description adaptation des logements de personnes âgées
-metadata_internal_identifier_aide_habitat_pa: aide-habitat-pa
+metadata_url_name_aide_habitat_pa: aide-habitat-pa-2020-01
+metadata_description_aide_habitat_pa: >
+  Le Département propose sous conditions de ressources une aide financière pour soutenir les personnes âgées 
+  qui souhaitent réaliser des travaux d’adaptation de leur logement. Ascenseurs / monte personne, aménagement 
+  intérieur pour adapter votre logement, chemins extérieurs, cours, passages, locaux communs ou extension de 
+  logement, le Département peut vous aider à financer des travaux pour vous permettre de mieux vivre chez vous.
+metadata_internal_identifier_aide_habitat_pa: aide-habitat-pa-2020-01
 
 metadata_name_aide_habitat_ph: Adaptation des logements de personnes en situation de handicap
-metadata_url_name_aide_habitat_ph: aide-habitat-ph
-metadata_description_aide_habitat_ph: description adaptation des logements de personnes en situation de handicap
-metadata_internal_identifier_aide_habitat_ph: aide-habitat-ph
+metadata_url_name_aide_habitat_ph: aide-habitat-ph-2020-01
+metadata_description_aide_habitat_ph: >
+  Le Département propose sous conditions de ressources une aide financière pour soutenir les personnes en 
+  situation de handicap qui souhaitent réaliser des travaux d’adaptation de leur logement. 
+  Ascenseurs / monte personne, travaux d'aménagement de chambre et de sanitaires, extension de logement, 
+  le Département peut vous aider à financer des travaux pour vous permettre de mieux vivre chez vous.
+metadata_internal_identifier_aide_habitat_ph: aide-habitat-ph-2020-01
 
 metadata_name_aide_habitat_insa: Aide pour des travaux de sortie d'insalubrité
-metadata_url_name_aide_habitat_insa: aide-habitat-insalubrite
-metadata_description_aide_habitat_insa: description aide pour des travaux de sortie d'insalubrité
-metadata_internal_identifier_aide_habitat_insa: aide-habitat-insalubrite
+metadata_url_name_aide_habitat_insa: aide-habitat-insalubrite-2020-01
+metadata_description_aide_habitat_insa: >
+  Cette aide vise à soutenir les projets de travaux des ménages défavorisés dont le logement est insalubre. 
+  Elle permet de compléter les autres subventions notamment (celles de l'ANAH) et ainsi de rendre possible 
+  la mise en œuvre de travaux de rénovation et de mises aux normes des logements insalubres occupés.
+metadata_internal_identifier_aide_habitat_insa: aide-habitat-insalubrite-2020-01
 
 metadata_name_aide_habitat_excep: Aide exceptionnelle pour l'adaptation des logements
-metadata_url_name_aide_habitat_excep: aide-habitat-exceptionnelle
-metadata_description_aide_habitat_excep: description aide exceptionnelle pour l'adaptation des logements
-metadata_internal_identifier_aide_habitat_excep: aide-habitat-exceptionnelle
+metadata_url_name_aide_habitat_excep: aide-habitat-exceptionnelle-2020-01
+metadata_description_aide_habitat_excep: Aide exceptionnelle pour l'adaptation des logements.
+metadata_internal_identifier_aide_habitat_excep: aide-habitat-exceptionnelle-2020-01
 
 metadata_name_aide_habitat_therm: Aide à l'amélioration thermique de logements locatifs conventionnés privés
-metadata_url_name_aide_habitat_therm: aide-habitat-thermique
-metadata_description_aide_habitat_therm: description aide à l'amélioration thermique de logements locatifs conventionnés privés
-metadata_internal_identifier_aide_habitat_therm: aide-habitat-thermique
+metadata_url_name_aide_habitat_therm: aide-habitat-thermique-2020-01
+metadata_description_aide_habitat_therm: >
+  Cette aide a pour but de soutenir les projets de rénovations énergétiques réalisés par des propriétaires bailleurs 
+  afin de favoriser de bonnes conditions de vie aux ménages modestes qui les occupent.
+metadata_internal_identifier_aide_habitat_therm: aide-habitat-thermique-2020-01
 
 workflow: Aides habitat
 

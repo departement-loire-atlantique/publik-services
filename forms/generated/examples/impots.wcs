@@ -17,7 +17,7 @@
   <category category_id=""></category>
   <workflow>Par d&amp;#233;faut</workflow>
   <max_field_id>5</max_field_id>
-  <last_modification user_id="1">2019-12-26 15:29:16</last_modification>
+  <last_modification user_id="1">2019-12-30 17:20:06</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -45,6 +45,7 @@
     <type>none</type>
     </prefill>
     
+    
     <validation></validation>
     <size></size>
 </field>
@@ -60,6 +61,7 @@
     <prefill>
     <type>none</type>
     </prefill>
+    
     
     <validation></validation>
     <size></size>

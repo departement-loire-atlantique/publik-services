@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-15"?>
 <formdef id="100">
   <name>Adaptation des logements de personnes &#226;g&#233;es</name>
-  <url_name>aide-habitat-pa</url_name>
-  <description>description adaptation des logements de personnes &#226;g&#233;es</description>
-  <internal_identifier>aide-habitat-pa</internal_identifier>
+  <url_name>aide-habitat-pa-2020-01</url_name>
+  <description>Le D&#233;partement propose sous conditions de ressources une aide financi&#232;re pour soutenir les personnes &#226;g&#233;es  qui souhaitent r&#233;aliser des travaux d&#8217;adaptation de leur logement. Ascenseurs / monte personne, am&#233;nagement  int&#233;rieur pour adapter votre logement, chemins ext&#233;rieurs, cours, passages, locaux communs ou extension de  logement, le D&#233;partement peut vous aider &#224; financer des travaux pour vous permettre de mieux vivre chez vous.</description>
+  <internal_identifier>aide-habitat-pa-2020-01</internal_identifier>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
@@ -17,7 +17,7 @@
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
   <max_field_id>142</max_field_id>
-  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
+  <last_modification user_id="1">2020-01-29 13:08:31</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -111,35 +111,35 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not ("Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" )</value>
+          <value>not "Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" </value>
         </condition>
         <error_message>L'aide &#224; l'habitat ne concerne que les logements construits depuis plus de 15 ans ce qui n'est pas votre cas.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_eligibilite_beneficiaire_apa|default_if_none:"" == "Non"|default_if_none:"")</value>
+          <value>not form_var_eligibilite_beneficiaire_apa|default_if_none:"" == "Non"|default_if_none:""</value>
         </condition>
         <error_message>Cette aide est r&#233;serv&#233;e aux personnes b&#233;n&#233;ficiant de l'Aide Personnalis&#233;e d'Autonomie (APA).  Si le dossier APA du b&#233;n&#233;ficiaire est en cours, vous devrez en fournir la preuve.  L'aide &#224; l'adaptation du logement ne sera pas accord&#233;e si l'APA n'est pas accord&#233;e.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_eligibilite_beneficiaire_retraite|default_if_none:"" == "Oui"|default_if_none:"")</value>
+          <value>not form_var_eligibilite_beneficiaire_retraite|default_if_none:"" == "Oui"|default_if_none:""</value>
         </condition>
         <error_message>Cette aide n'est pas cumulable avec l'aide accord&#233;e par une caisse de retraite pour l'adaptation du logement.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_beneficiaire___codepostal|make_list|slice:':2:'|join:'' != "44")</value>
+          <value>not form_var_beneficiaire___codepostal|make_list|slice:':2:'|join:'' != "44"</value>
         </condition>
         <error_message>L'aide &#224; l'habitat s'adresse aux habitant&#183;e&#183;s de Loire Atlantique, ce qui n'est pas votre cas.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_travaux_a_engager_ascenceur_pa|default_if_none:""|length == 0 and form_var_travaux_a_engager_amenagement_pa|default_if_none:""|length == 0 and form_var_travaux_a_engager_passage_pa|default_if_none:""|length == 0 and form_var_travaux_a_engager_extension_pa|default_if_none:""|length == 0)</value>
+          <value>not form_var_travaux_a_engager_ascenceur_pa|default_if_none:""|length == 0 or not form_var_travaux_a_engager_amenagement_pa|default_if_none:""|length == 0 or not form_var_travaux_a_engager_passage_pa|default_if_none:""|length == 0 or not form_var_travaux_a_engager_extension_pa|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Attention, vous devez s&#233;lectionner les travaux que vous envisagez parmi la liste des travaux propos&#233;s.  L'aide ne peut &#234;tre accord&#233;e que pour des travaux appartenant &#224; cette liste.  Si aucun ne correspond &#224; vos projets, nous vous invitons &#224; utiliser le moteur de recherche  (https://www.loire-atlantique.fr/demarches-aides-habitat-recherche-operateur)  pour conna&#238;tre le nom d'un op&#233;rateur qui &#233;tudiera les autres sources &#233;ventuelles de financement mobilisables.</error_message>
       </post_condition>
@@ -600,7 +600,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_tel_fixe|default_if_none:""|length == 0 and form_var_tel_portable|default_if_none:""|length == 0)</value>
+          <value>not form_var_tel_fixe|default_if_none:""|length == 0 or not form_var_tel_portable|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
@@ -766,14 +766,14 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_depenses_autres_precisions|default_if_none:""|length == 0 and form_var_depenses_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_depenses_autres_precisions|default_if_none:""|length == 0 or not form_var_depenses_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres d&#233;penses que vous avez indiqu&#233;s.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_subventions_autres_precisions|default_if_none:""|length == 0 and form_var_subventions_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_subventions_autres_precisions|default_if_none:""|length == 0 or not form_var_subventions_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres financements que vous avez indiqu&#233;s.</error_message>
       </post_condition>
@@ -1609,7 +1609,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_operateur|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_operateur|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
@@ -1686,7 +1686,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_beneficiaire|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_beneficiaire|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>

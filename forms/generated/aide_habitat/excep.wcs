@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-15"?>
 <formdef id="100">
   <name>Aide exceptionnelle pour l'adaptation des logements</name>
-  <url_name>aide-habitat-exceptionnelle</url_name>
-  <description>description aide exceptionnelle pour l'adaptation des logements</description>
-  <internal_identifier>aide-habitat-exceptionnelle</internal_identifier>
+  <url_name>aide-habitat-exceptionnelle-2020-01</url_name>
+  <description>Aide exceptionnelle pour l'adaptation des logements.</description>
+  <internal_identifier>aide-habitat-exceptionnelle-2020-01</internal_identifier>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
@@ -17,7 +17,7 @@
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
   <max_field_id>168</max_field_id>
-  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
+  <last_modification user_id="1">2020-01-29 13:08:31</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -742,7 +742,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_tel_fixe|default_if_none:""|length == 0 and form_var_tel_portable|default_if_none:""|length == 0)</value>
+          <value>not form_var_tel_fixe|default_if_none:""|length == 0 or not form_var_tel_portable|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
@@ -908,14 +908,14 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_depenses_autres_precisions|default_if_none:""|length == 0 and form_var_depenses_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_depenses_autres_precisions|default_if_none:""|length == 0 or not form_var_depenses_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres d&#233;penses que vous avez indiqu&#233;s.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_subventions_autres_precisions|default_if_none:""|length == 0 and form_var_subventions_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_subventions_autres_precisions|default_if_none:""|length == 0 or not form_var_subventions_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres financements que vous avez indiqu&#233;s.</error_message>
       </post_condition>
@@ -1747,7 +1747,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_operateur|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_operateur|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-15"?>
 <formdef id="100">
   <name>Aide &#224; l'am&#233;lioration thermique de logements locatifs conventionn&#233;s priv&#233;s</name>
-  <url_name>aide-habitat-thermique</url_name>
-  <description>description aide &#224; l'am&#233;lioration thermique de logements locatifs conventionn&#233;s priv&#233;s</description>
-  <internal_identifier>aide-habitat-thermique</internal_identifier>
+  <url_name>aide-habitat-thermique-2020-01</url_name>
+  <description>Cette aide a pour but de soutenir les projets de r&#233;novations &#233;nerg&#233;tiques r&#233;alis&#233;s par des propri&#233;taires bailleurs  afin de favoriser de bonnes conditions de vie aux m&#233;nages modestes qui les occupent.</description>
+  <internal_identifier>aide-habitat-thermique-2020-01</internal_identifier>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
@@ -17,7 +17,7 @@
   <category category_id="1">Aides &#224; l'habitat</category>
   <workflow>Aides habitat</workflow>
   <max_field_id>93</max_field_id>
-  <last_modification user_id="1">2020-01-16 15:14:53</last_modification>
+  <last_modification user_id="1">2020-01-29 13:08:31</last_modification>
   <fields>
     <field>
     <label>Pr&#233;ambule</label>
@@ -111,49 +111,49 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not ("Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" )</value>
+          <value>not "Depuis"|default_if_none:""|stringformat:"s" in form_var_annee_de_construction|default_if_none:""|stringformat:"s" </value>
         </condition>
         <error_message>L'aide &#224; l'habitat ne concerne que les logements construits depuis plus de 15 ans ce qui n'est pas votre cas.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_travaux_eligibles_anah|default_if_none:"" == "Non"|default_if_none:"")</value>
+          <value>not form_var_travaux_eligibles_anah|default_if_none:"" == "Non"|default_if_none:""</value>
         </condition>
         <error_message>La liste des travaux couvert par l'aide &#224; l'habitat est similaire &#224; celle de l'ANAH, les autres travaux ne sont pas  &#233;ligibles &#224; l'aide.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_proprietaire|default_if_none:"" == "Non"|default_if_none:"")</value>
+          <value>not form_var_engagement_proprietaire|default_if_none:"" == "Non"|default_if_none:""</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique est accord&#233;e en contrepartie d'un engagement &#224; louer le bien &#224; des locataires  dont les ressources sont inf&#233;rieures aux plafonds &#171; social &#187; ou &#171; tr&#232;s social &#187;</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_occupe_ou_vacant|default_if_none:"" == "vacant depuis plus d'un an"|default_if_none:"")</value>
+          <value>not form_var_logement_occupe_ou_vacant|default_if_none:"" == "vacant depuis plus d'un an"|default_if_none:""</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique concerne les logements occup&#233;s ou vacants depuis moins d'un an, ce qui n'est pas  le cas ici.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_conventionnement_anah|default_if_none:"" == "Non"|default_if_none:"")</value>
+          <value>not form_var_logement_conventionnement_anah|default_if_none:"" == "Non"|default_if_none:""</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique concerne les logements faisant l'objet d'un conventionnement ANAH &#171; social &#187; ou  &#171; tr&#232;s social &#187;, ce qui n'est pas le cas ici.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_travaux_gain_energetique|default_if_none:"" == "Non"|default_if_none:"")</value>
+          <value>not form_var_travaux_gain_energetique|default_if_none:"" == "Non"|default_if_none:""</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration thermique s'adresse aux projets permettant de r&#233;aliser un gain &#233;nerg&#233;tique de 25% minimum,  ce qui n'est pas le cas de ce projet.</error_message>
       </post_condition>
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_logement_a_modifier___codepostal|make_list|slice:':2:'|join:'' != "44")</value>
+          <value>not form_var_logement_a_modifier___codepostal|make_list|slice:':2:'|join:'' != "44"</value>
         </condition>
         <error_message>L'aide &#224; l'am&#233;lioration &#233;nerg&#233;tique s'applique uniquement sur des logements situ&#233;s en Loire Atlantique, ce qui  n'est pas le cas de la location que vous avez indiqu&#233;e.</error_message>
       </post_condition>
@@ -568,7 +568,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_tel_fixe|default_if_none:""|length == 0 and form_var_tel_portable|default_if_none:""|length == 0)</value>
+          <value>not form_var_tel_fixe|default_if_none:""|length == 0 or not form_var_tel_portable|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Merci de renseigner au moins un num&#233;ro de t&#233;l&#233;phone.</error_message>
       </post_condition>
@@ -874,7 +874,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_subventions_autres_precisions|default_if_none:""|length == 0 and form_var_subventions_autres|default_if_none:""|length > 0)</value>
+          <value>not form_var_subventions_autres_precisions|default_if_none:""|length == 0 or not form_var_subventions_autres|default_if_none:""|length > 0</value>
         </condition>
         <error_message>Attention. Vous devez pr&#233;ciser &#224; quoi correspondent les autres financements que vous avez indiqu&#233;s.</error_message>
       </post_condition>
@@ -1104,7 +1104,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_operateur|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_operateur|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
@@ -1181,7 +1181,7 @@
     <post_condition>
         <condition>
           <type>django</type>
-          <value>not (form_var_engagement_beneficiaire_thermique|default_if_none:""|length == 0)</value>
+          <value>not form_var_engagement_beneficiaire_thermique|default_if_none:""|length == 0</value>
         </condition>
         <error_message>Vous devez lire cette page puis cocher la case d'engagement pour pouvoir continuer.</error_message>
       </post_condition>
