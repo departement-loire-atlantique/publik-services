@@ -1,0 +1,46 @@
+# 5.6 Page 5 : "Identification de l'association"
+# -----------------------------------------------------------
+
+page_identification_association: Identification de l’association 
+titre_identification_association: Identification de l’association 
+
+frequence: Nom - Dénomination 
+numero_siret: Numéro Siret 
+numero_rna: Numéro RNA ou à défaut celui du récépissé en préfecture 
+aide_numero_rna: Composé d'un W suivi de 9 chiffres 
+
+adresse: Adresse du siège social 
+code_postal: Code postal 
+commune: Commune 
+adresse_gestion_differente:
+    Avez-vous une adresse de gestion ou de correspondance différente de celle du siège social de l'association ? 
+        - Oui 
+        - Non 
+adresse_gestion: Adresse de gestion ou de correspondance 
+code_postal_gestion: Code postal 
+commune_gestion: Commune 
+
+titre_representant_legal: Représentant·e légal·e (personne désignée par les statuts) 
+
+nom_representant: Nom 
+prenom_representant: Prénom 
+fonction_representant: Fonction 
+telephone_representant: Téléphone 
+courriel_representant: Courriel 
+demandeur_different_representant: 
+    La personne chargée de la présente demande est-elle différente du représentant légal ? 
+        - Oui 
+        - Non 
+
+titre_charge_subvention: Personne chargée de la présente demande de subvention 
+
+nom_demandeur: Nom 
+prenom_demandeur: Prénom 
+fonction_demandeur: Fonction 
+telephone_demandeur: Téléphone 
+courriel_demandeur: Courriel 
+
+
+MSG_ERR_CHAMP_SIRET: Le champ Numéro de Siret doit contenir 14 caractères numériques. 
+MSG_ERR_CHAMP_RNA: Le champ Numéro RNA doit contenir un W suivi de 9 caractères numériques. 
+

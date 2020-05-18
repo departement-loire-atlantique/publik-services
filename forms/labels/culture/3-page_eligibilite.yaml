@@ -1,0 +1,39 @@
+# 5.4 Page 3 : "Eligibilité"
+# -----------------------------------------------------------
+
+
+page_eligibilite: Eligibilité 
+
+non_eligible: "Vous n'êtes pas éligible pour les raisons suivantes :" 
+
+critere_date_creation: >
+ "  * Vous êtes une association ou un établissement public implanté en Loire-Atlantique 
+  et créé depuis moins d'un an."
+
+critere_competences_professionnelles: >
+ "  * Votre structure ne dispose pas de compétences professionnelles : artistes 
+ et/ou commissaires d’expositions et/ou médiateurs proposant des actions de
+ sensibilisation et de formation aux publics jeunes et adultes."
+critere_duree_residences: >
+ "  * Les résidences que vous proposez aux artistes ne sont pas de plus de 3 semaines"
+
+critere_dates_diffusion_arretees: "  * Vous n'avez pas de date de diffusion arrêtée sur le territoire départemental."
+
+critere_dates_residence_arretees: "  * Vous n'avez pas de date de résidence arrêtée sur le territoire départemental."
+
+critere_actions_mediation: >
+ "  * Vous n'avez pas prévu de mener des actions de médiation en direction des publics dans le cadre de votre action."
+
+critere_allocation_moyens_production: "* Vous n'allouez pas aux artistes accueillis de moyens de production et/ou une rémunération."
+
+critere_nombre_artistes: >
+ "  * Votre lieu ne permet pas d’accueillir le travail d’un minimum de 8 
+ artistes-plasticiens professionnels (ateliers individuels ou collectifs), 
+ dont les deux tiers minimum proviennent de Loire-Atlantique."
+
+critere_duree_locaux: "*Les locaux ne sont pas occupés pour une durée supérieure à deux ans."
+
+info_recours: >
+ Néanmoins merci de cliquer sur le bouton "Suivant" puis de valider le formulaire pour avoir
+ la possibilité de faire un recours (en envoyant un courrier papier à l’Hôtel du département). 
+

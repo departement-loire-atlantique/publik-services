@@ -1,0 +1,31 @@
+# 2.9 Page "Programmation"
+# -----------------------------------------------------------
+page_programmation: Programmation 
+titre_programmation: Programmation
+
+type_programmation: >
+    Type de programmation 
+    - Programmation annuelle 
+    - Programmation événementielle 
+
+ 
+
+liste_commissaires: Liste des commissaires d'exposition (nom et qualité) 
+commissaires_colonne1: Nom
+commissaires_colonne2: Qualité 
+
+liste_actions: Liste des actions faisant l'objet de la demande (expos, résidences, autres) 
+actions_colonne1: Titre
+actions_colonne2: Lieu
+actions_colonne3: Artiste(s) (indiquer leur provenance)
+actions_colonne4: Date(s) 
+aide_actions: >
+    Précisez les actions dans le département et hors département
+    Vous pouvez ajouter en complément au dossier une fiche
+    informative sur chacun des artistes. 
+
+remarques: > 
+    Remarques, observations ou faits marquants que vous jugez utiles de préciser
+    (exemple, propriétaire si lieu mis à disposition...) 
+aide_remarques: 2000 caractères maximum 
+

@@ -1,0 +1,12 @@
+page page_nature_demande
+#EXG04.01
+si date_creation est égale à "Non" et competences_professionnelles est égale à "Non" et duree_residences est égale à "Non" et dates_diffusion_arretees est égale à "Non" et dates_residence_arretees est égale à "Non" et actions_mediation est égale à "Non" et allocation_moyens_production est égale à "Non" et duree_locaux est égale à "Non" alors masquer cette page
+
+	
+	titre page_nature_demande
+    
+    texte info_asterique
+    
+    liste* frequence
+    
+    texte info_support

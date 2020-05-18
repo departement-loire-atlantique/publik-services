@@ -1,0 +1,23 @@
+# 5.8 Page 7 : "Moyens humains"
+# -----------------------------------------------------------
+
+page_moyens_humains: Moyens humains au 31 décembre de l'année écoulée 
+titre_moyens_humains: Moyens humains au 31 décembre de l'année écoulée 
+
+nombre_adherents: Nombre d'adhérent·e·s 
+nombre_benevoles: Nombre de bénévoles 
+aide_nombre_benevoles: "Bénévole : personne contribuant régulièrement à l'activité de l'association, de manière non rémunérée." 
+
+nombre_volontaires: Nombre de volontaires 
+aide_nombre_volontaire: "Volontaire : personne engagée pour une mission d'intérêt général par un contrat spécifique (par ex : service civique)."
+
+nombre_salaries: Nombre total de salarié·e·s 
+nombre_cdi: Nombre de CDI 
+nombre_cdi_emplois_aides: dont nombre d'emplois aidés 
+
+nombre_cdd: Nombre de CDD 
+nombre_cdd_emplois_aides: dont nombre d'emplois aidés 
+
+nombre_salaries_etpt: Nombre de salarié·e·s en équivalent temps plein travaillé (ETP) 
+nombre_detaches: Nombre de personnels mis à disposition ou détachés par une autorité publique 
+

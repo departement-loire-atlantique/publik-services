@@ -1,0 +1,29 @@
+page page_votre_projet
+#EXG08.01 
+Si date_creation est égal à "Non"  
+ou competences_professionnelles est égal à "Non" 
+ou duree_residences est égal à "Non" 
+ou dates_diffusion_arretees est égal à "Non" 
+ou dates_residence_arretees est égal à "Non" 
+ou actions_mediation est égal à "Non" 
+ou allocation_moyens_production est égal à "Non" 
+ou nombre_artistes est égal à "Non" 
+ou duree_locaux est égal à "Non" 
+alors masquer cette page 
+
+	titre titre_votre_projet
+	texte info_asterisque
+
+	champ_texte_long* description 
+	aode à la saisie aide_description
+
+	titre titre_moyens_techniques 
+
+	liste* lieu_permanent 
+	liste_choix_multiple* lieu_type_activite 
+	
+	#EXG08.02 
+	Si lieu_permanent est égal à "Non" alors masquer le champ lieu_type_activite 
+
+
+

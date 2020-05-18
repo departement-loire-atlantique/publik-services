@@ -1,0 +1,52 @@
+page page_test-eligibilite
+	
+	text info_asterique
+	
+	liste* date_creation
+	aide à la saisie aide_date_creation
+	
+	liste* type_aide
+	aide à la saisie aide_type_aide
+	
+	liste* competences_professionnelles
+	aide à la saisie aide_competences_professionnelles
+	#EXG02.01
+	si date_creation est égal à "Non" ou type_aide contient "3 - Aide à un projet de mise en place" alors masquer competence_professionnelles 
+	
+	liste* duree_residences
+	#EXG02.02
+	si date_creation est égal à "Non" ou type_aide contient "1 -" ou type_aide contient "3 -" alors masquer duree_residences
+	
+	liste* date_diffusion_arretees
+	aide à la saisie aide_date_diffusion_arretees
+	#EXG02.03
+	si date_creation est égal à "Non" ou type_aide contient "2 -" ou type_aide contient "3 -" alors masquer date_diffusion_arretees
+	
+	liste* dates_residence_arretees
+	aide à la saisie aide_dates_residence_arretees
+	#EXG02.04
+	si date_creation est égal à "Non" ou type_aide contien "1 - " ou type_aide contien "3 - " alors masquer dates_residence_arretees
+	
+	liste* actions_mediation
+	aide à la saisie aide_actions_mediation
+	#EXG02.05
+	si date_creation est égal à "Non" ou type_aide contien "3 - " alors masquer actions_mediation
+	
+	liste* allocutions_moyen_production
+	#EXG02.06
+	aide à la saisie aide_allocutions_moyen_production
+	si date_creation est égal à "Non" ou type_aide contien "3 - " alors masquer allocutions_moyen_production
+	
+	liste* nombre_artistes
+	#EXG02.07
+	si date_creation est égal à "Non" ou type_aide contien "1 - " ou type_aide contien "2 - " alors masquer nombre_artistes
+	
+	liste* duree_locaux
+	#EXG02.08
+	si date_creation est égal à "Non" ou type_aide contien "1 - " ou type_aide contien "2 - " alors masquer duree_locaux
+	
+	liste_choix_multiple* declaration_tarifs_location #?#
+	#EXG02.09
+	si date_creation est égal à "Non" ou type_aide contien "1 - " ou ou type_aide contien "2 - " alors masquer declaration_tarifs_location
+	
+	text autres_criteres

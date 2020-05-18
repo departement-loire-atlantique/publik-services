@@ -1,0 +1,38 @@
+page page_moyens_humains
+
+#EXG07.01 
+Si date_creation est égal à "Non"
+ou competences_professionnelles est égal à "Non" 
+ou duree_residences est égal à "Non" 
+ou dates_diffusion_arretees est égal à "Non" 
+ou dates_residence_arretees est égal à "Non" 
+ou actions_mediation est égal à "Non" 
+ou allocation_moyens_production est égal à "Non" 
+ou nombre_artistes est égal à "Non" 
+ou duree_locaux est égal à "Non" 
+alors masquer cette page 
+
+	titre titre_moyens_humains
+	texte info_asterisque
+	
+	nombre* nombre_adherents 
+	nombre* nombre_benevoles 
+	aide à la saisie aide_nombre_benevoles
+	
+	nombre* nombre_volontaires 
+	aide à la saisie aide_nombre_volontaires
+	
+	nombre* nombre_salaries 
+
+	nombre* nombre_cdi 
+	nombre* nombre_cdi_emplois_aides 
+
+	nombre* nombre_cdd 
+	nombre* nombre_cdd_emplois_aides 
+
+	nombre* nombre_salaries_etpt 
+
+	nombre* nombre_detaches 
+	
+	texte info_support
+

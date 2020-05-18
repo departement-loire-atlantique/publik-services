@@ -1,0 +1,10 @@
+# 5.11 Page 10 : "Projet de résidence"
+# -----------------------------------------------------------
+page_projet_residence: Projet de résidence
+
+age_association: >
+    Êtes-vous une association ou un établissement public implanté en Loire-Atlantique
+    et créé depuis un an au moins ou une commune ou intercommunalité de Loire-Atlantique ? 
+        - Oui
+        - Non
+texte info_age: Il est nécessaire que l'association ait au moins 1 an pour pouvoir bénéficier d'une aide. 

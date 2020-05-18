@@ -1,0 +1,15 @@
+# Libéllés généraux
+# -----------------------------------------------------------
+
+info_asterisque: Les champs suivis d’un astérisque * sont obligatoires.
+info_support: >
+    Une question, besoin d'aide ? 
+    
+    Écrivez à support-aideculture@loire-atlantique.fr 
+    ou téléphonez au 02 40 99 10 00
+    du lundi au vendredi, de 12h30 à 16h30 
+    
+MSG_ERR_CHAMP_OBLIGATOIRE: Vous devez renseigner le champ [NOM_DU_CHAMP]. #?#
+MSG_ERR_CHAMP_DATE: Le champ doit être au format JJ/MM/AAAA (par exemple 01/04/2020 pour le 1er avril 2020). 
+MSG_ERR_CHAMP_TELEPHONE: Le champ doit comporter 10 chiffres. 
+MSG_ERR_CHAMP_EMAIL: Le champ doit être au format xxx@xxx.xxx (par exemple abel.dupont@gmail.com) 

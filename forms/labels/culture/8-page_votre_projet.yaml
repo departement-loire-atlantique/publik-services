@@ -1,0 +1,22 @@
+# 5.9 Page : "Votre projet"
+# -----------------------------------------------------------
+page_votre_projet: Votre projet - objet de la demande 
+titre_votre-projet: Votre projet - objet de la demande 
+
+description: Description succincte de votre projet artistique (arts plastiques) 
+aide_description: 2000 caractères maximum 
+
+titre_moyens_techniques: Moyens techniques 
+
+lieu_permanent: >
+    Votre structure dispose-t-elle d'un lieu permanent ? 
+        - Oui 
+        - Non 
+
+lieu_type_activite: >
+    Précisez pour quel type d'activité :
+        - pour l'administration 
+        - pour la diffusion 
+        - pour les créations 
+ 
+

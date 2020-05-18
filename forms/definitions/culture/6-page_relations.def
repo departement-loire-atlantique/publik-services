@@ -1,0 +1,33 @@
+page page_relations
+#EXG06.01 
+Si date_creation est égal à "Non"
+ou competences_professionnelles est égal à "Non" 
+ou duree_residences est égal à "Non" 
+ou dates_diffusion_arretees est égal à "Non" 
+ou dates_residence_arretees est égal à "Non" 
+ou actions_mediation est égal à "Non" 
+ou allocation_moyens_production est égal à "Non" 
+ou nombre_artistes est égal à "Non" 
+ou duree_locaux est égal à "Non" 
+alors masquer cette page 
+
+	titre titre_page_relations
+	texte info_asterisque
+	
+	liste* relation_reseau
+	aide à la saisie aide_reseau
+	champ_texte_long* reseau 
+	liste* relation_adherents 
+	champ_texte_long* adherents_personnes_morales 
+	liste* relation_conventions 
+	champ_texte_long* conventions 
+	aide à la saisie aide_conventions
+	
+	#EXG06.02 
+	Si relation_reseau est égal à "Non" alors masquer le champ reseau 
+	#EXG06.03 
+	Si relation_adherents est égal à "Non" alors masquer le champ adherents_personnes_morales 
+	#EXG06.04 
+	Si relation_conventions est égal à "Non" alors masquer le champ conventions 
+
+	texte info_support

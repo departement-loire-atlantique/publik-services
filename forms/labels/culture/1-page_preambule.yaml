@@ -1,0 +1,20 @@
+# 5.2 Page 1 : "Préambule"
+# -----------------------------------------------------------
+
+page_preambule: Avant de commencer
+
+introduction: >
+    Si vous devez interrompre la procédure, vous pouvez
+    revenir plus tard et reprendre votre saisie en entrant
+    le code de suivi qui s'affiche à gauche. Vous pouvez
+    vous le faire envoyer par mail en cliquant dessus. 
+    
+    Si vous prenez vos documents en photo plutôt que de
+    les scanner, assurez-vous que la photo : 
+    <ul>
+        <li> Cadre tout le document, </li>
+        <li> Ne soit pas trop sombre (le document doit être lisible), </li>
+        <li> Ait une bonne résolution (5 Millions de pixels minimum). </li>
+    </ul>   
+
+temps_saisi: Temps de saisie estimé : 60 minutes #?#

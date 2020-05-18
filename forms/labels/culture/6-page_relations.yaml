@@ -1,0 +1,32 @@
+# 5.7 Page 6 : "Relations avec d'autres associations ou collectivités"
+# -----------------------------------------------------------
+
+
+page_relations: Relations avec d'autres associations ou collectivités 
+titre_page_relations: Relations avec d'autres associations ou collectivités
+
+relation_reseau :>
+    Êtes-vous affilié à un réseau, union ou fédération ? 
+        - Oui 
+        - Non 
+
+reseau: Lequel ? 
+aide_reseau: Indiquer le nom complet, ne pas utiliser de sigle 
+
+relation_adherents: >
+    L'association a-t-elle des adhérents personnes morales ? 
+        - Oui 
+        - Non 
+
+adherents_personnes_morales: Lesquels ? 
+
+relation_conventions: >
+    L'association a-t-elle des conventions avec des collectivités publiques ? 
+        - Oui 
+        - Non 
+
+conventions: Lesquelles ? 
+aide_conventions: >
+    Préciser le nom des institutions, la date de signature, la durée de la convention
+    et l'objet de la convention 
+

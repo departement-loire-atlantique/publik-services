@@ -1,0 +1,9 @@
+# 5.5 Page 4 : "Nature de la demande"
+# -----------------------------------------------------------
+
+page_nature_demande: Nature de la demande
+
+frequence:
+   "Fréquence / récurrence :" 
+     - Première demande 
+     - Renouvellement 

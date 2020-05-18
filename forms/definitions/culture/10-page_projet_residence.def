@@ -1,0 +1,16 @@
+page page_projet_residence
+#EXG02.01 
+
+
+
+Le champ CHP02.03 est affiché si : 
+alors masquer cette page
+le champ CHP02.01 est renseigné à « Oui » 
+
+le champ CHP02.02 est renseigné à « 1 - Aide à un projet singulier de diffusion incluant un financement dédié à la réalisation de nouvelles créations (expositions, festival, ...) » ou à « 2 - Aide à un projet de résidence mettant des moyens de production et de diffusion à disposition d’artistes invités » 
+
+
+
+	texte info_asterisque
+	liste* age_association
+	texte info_age

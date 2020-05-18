@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------------------
+# libellés des champs et massages du document de spécifications
+# ---------------------------------------------------------------------------
+
+# Métadonnées
+# ---------------------------------------------------------------------------
+
+metadata_name_aide_art_plastique : Aides aux arts plastiques
+metadata_url_aide_art_plastique : aide-art-plastique-2020-01
+metadata_description_aide_art_plastique: >
+    #?# descript_aide
+metadata_internal_identifier_aide_art_plastique: id_aide
+	
+workflow: #?# workflow_aide
+	
+metadata_category_id: #?#
+metadata_category_name: #?# Culture 
+		
+metadata_user_roles_id: logged-ussers
+metadata_user_roles_name: logged-ussers
+	
+metadata_backoffice_submission_roles_id: #?#
+metadata_backoffice_submission_roles_name: #?#
+	
+metadata_roles_id: #?#
+metadata_roles_key: #?#
+metadata_roles_name: #?#
+	

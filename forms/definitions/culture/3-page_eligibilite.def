@@ -1,0 +1,48 @@
+page page_eligibilite
+
+	texte non-eligible
+    #EXG03.01
+	si type_aide contient "1 - " et date_creation est égale à "Oui" et competences_professionnelles est égale à "Oui" et dates_diffusion_arretees est égale à "Oui" et actions_mediation est égale à "Oui" et allocation_moyens_production est égale à "Oui" alors masquer cette page	
+	#EXG03.02
+	si type_aide contient "2 - " et date_creation est égale à "Oui" et competences_professionnelles est égale à "Oui" et duree_residences est égale à "Oui" et dates_residence_arretees est égale à "Oui" et actions_mediation est égale à "Oui" et allocation_moyens_production est égale à "Oui" alors masquer cette page
+	#EXG03.03
+	si type_aide contient "3 - " et date_creation est égale à "Oui" et nombre_artistes est égale à "Oui" et duree_locaux est égale à "Oui" alors masquer cette page
+	
+	texte critere_date_creation
+    #EXG03.04
+    si date_creation est égale à "Oui" alors masquer le champ critere_date_creation
+	
+	texte critere_competences_professionnelles
+	#EXG03.05
+	si competences_professionnelles est égale à "Oui" alors masquer le champ critere_competences_professionnelles
+
+	texte critere_duree_residences 
+	#EXG03.06
+	si duree_residences est égale à "Oui" alors masquer le champ critere_duree_residences
+	
+	texte critere_dates_diffusion_arretees 
+	#EXG03.07
+	si dates_diffusion_arretees est égale à "Oui" alors masquer le champ critere_dates_diffusion_arretees
+
+	texte critere_dates_residence_arretees 
+	#EXG03.08
+	si dates_residence_arretees est égale à "Oui" alors masquer le champ critere_dates_residence_arretees
+
+	texte critere_actions_mediation 
+	#EXG03.09
+	si actions_mediation est égale à "Oui" alors masquer le champ critere_actions_mediation
+
+	texte critere_allocation_moyens_production 
+	#EXG03.10
+	si allocation_moyens_production est égale à "Oui" alors masquer le champ critere_allocation_moyens_production
+
+	texte critere_nombre_artistes 
+	#EXG03.11
+	si nombre_artistes est égale à "Oui" alors masquer le champ critere_nombre_artistes
+	
+	texte critere_duree_locaux 
+	#EXG03.12
+	si duree_locaux est égale à "Oui" alors masquer le champ critere_duree_locaux
+
+	texte info_recours 
+	texte info_support

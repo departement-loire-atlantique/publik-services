@@ -1,0 +1,76 @@
+page page_identification_association 
+
+#EXG05.01
+Si date_creation est égal à "Non"
+ou competences_professionnelles est égal à "Non"
+ou duree_residences est égal à "Non"
+ou dates_diffusion_arretees est égal à "Non"
+ou dates_residence_arretees est égal à "Non"
+ou actions_mediation est égal à "Non"
+ou allocation_moyens_production est égal à "Non"
+ou nombre_artistes est égal à "Non"
+ou duree_locaux est égal à "Non"
+alors masquer cette page 
+
+	texte info_asterisque
+	
+	titre titre_identification_association
+
+	champ_texte* frequence 
+	champ_texte* numero_siret
+	champ_texte* numero_rna	
+	aide à la saisie aide_numero_rna
+	champ_texte* adresse 
+	champ_texte* code_postal 
+	champ_texte* commune 
+	
+	#EXG05.02
+	#?#
+	Si numero_siret est différent de r'\d{14} alors afficher le message MSG_ERR_CHAMP_SIRET 
+	#EXG05.03
+	#?#
+	Si numero_rna est différent de r'W[\d]{9}' alors afficher le message MSG_ERR_CHAMP_RNA 
+	
+	liste* adresse_gestion_differente
+	
+	champ_texte* adresse_gestion  
+	champ_texte* code_postal_gestion 
+	champ_texte* commune_gestion 
+	
+	#EXG05.04
+	Si adresse_gestion_differente est égal à "Non" alors masquer le champ adresse_gestion	
+	#EXG05.05
+	Si adresse_gestion_differente est égal à "Non" alors masquer le champ code_postal_gestion	
+	#EXG05.06
+	Si adresse_gestion_differente est égal à "Non" alors masquer le champ commune_gestion
+
+	titre titre_representant_legal 
+
+	champ_texte* nom_representant 
+	champ_texte* prenom_representant 
+	champ_texte* fonction_representant 
+	champ_texte* telephone_representant 
+	champ_texte* courriel_representant 
+	liste* demandeur_different_representant 
+
+	titre titre_charge_subvention
+
+	champ_texte* nom_demandeur 
+	champ_texte* prenom_demandeur
+	champ_texte* fonction_demandeur 
+	champ_texte* telephone_demandeur 
+	champ_texte* courriel_demandeur 
+	
+	#EXG05.07 
+	Si demandeur_different_representant est égal à "Non" alors masquer le champ nom_demandeur 
+	#EXG05.08 
+	Si demandeur_different_representant est égal à "Non" alors masquer le champ prenom_demandeur 
+	#EXG05.09 
+	Si demandeur_different_representant est égal à "Non" alors masquer le champ fonction_demandeur 
+	#EXG05.10 
+	Si le champ demandeur_different_representant est égal à "Non" alors masquer le champ telephone_demandeur 
+	#EXG05.11 
+	Si demandeur_different_representant est égal à "Non" alors masquer le champ courriel_demandeur 
+
+	texte info_support
+

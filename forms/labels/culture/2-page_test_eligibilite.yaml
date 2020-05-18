@@ -1,0 +1,87 @@
+# 5.3 Page 2 : "Testez votre éligibilité"
+# -----------------------------------------------------------
+
+page_test_eligibilite: Testez votre éligibilité
+
+date_création: 
+    Êtes-vous une association ou un établissement public implanté en Loire-Atlantique et créé depuis un an au moins ou une commune ou intercommunalité de Loire-Atlantique ? 
+        - Oui 
+        - Non 
+    #?#
+aide_date_creation: Il est nécessaire que l'association ait au moins 1 an pour pouvoir bénéficier d'une aide. 
+    
+type_aide:
+    Quelle aide sollicitez-vous ? 
+        - 1 - Aide à un projet singulier de diffusion incluant un financement dédié à la réalisation de nouvelles créations (expositions, festival, ...) 
+        - 2 - Aide à un projet de résidence mettant des moyens de production et de diffusion à disposition d’artistes invités 
+        - 3 - Aide à un projet de mise en place d’ateliers de travail et de production collectifs pour les artistes plasticiens 
+
+aide_type_aide: 
+    Une seule demande peut être faite par association et par an. 
+    
+competences_professionnelles:
+    "Votre structure dispose-t-elle de compétences professionnelles : artistes et/ou commissaires d’expositions et/ou médiateurs proposant des actions de sensibilisation et de formation aux publics jeunes et adultes ?" 
+        - Oui 
+        - Non
+aide_competences_professionnelles: Il est nécessaire d'avoir des compétences professionnelles reconnues. 
+    
+duree_residences:
+    Les résidences que vous proposez aux artistes sont-elles de plus de 3 semaines ? 
+        - Oui 
+        - Non
+        
+dates_diffusion_arretees:
+    Avez-vous des dates de diffusion arrêtées sur le territoire départemental ? 
+        - Oui 
+        - Non
+aide_dates_diffusion_arretees: Il est nécessaire d'avoir des dates de diffusion arrêtées sur le département de Loire-Atlantique pour pouvoir bénéficier d'une aide. 
+        
+dates_residence_arretees:
+    Avez-vous des dates de résidence arrêtées sur le territoire départemental ? 
+        - Oui 
+        - Non
+aide_dates_residence_arretees: Il est nécessaire d'avoir des dates de résidence arrêtées sur le département de Loire-Atlantique pour pouvoir bénéficier d'une aide. 
+        
+
+actions_mediation:
+    Prévoyez-vous mener des actions de médiation en direction des publics dans le cadre de votre action ? 
+        - Oui
+        - Non
+aide_actions_mediation: Il est nécessaire d'avoir des actions de médiation envers le public de Loire-Atlantique pour pouvoir bénéficier d'une aide. 
+
+ 
+allocation_moyens_production:
+    Allouez-vous aux artistes accueillis des moyens de production et/ou une rémunération ? 
+        - Oui 
+        - Non
+aide_allocation_moyens_production: Il est nécessaire d'allouer des moyens aux artistes accueillis pour pouvoir bénéficier d'une aide. 
+
+ 
+nombre_artistes:
+    Votre lieu permet-il d’accueillir le travail d’un minimum de 8 artistes-plasticiens professionnels (ateliers individuels ou collectifs), dont les deux tiers minimum proviennent de Loire-Atlantique ? 
+        - Oui 
+        - Non
+        
+
+duree_locaux:
+    Les locaux sont-ils occupés pour une durée supérieure à deux ans ? 
+        - Oui
+        - Non
+
+
+declaration_tarifs_location:
+    - Je déclare pratiquer et communiquer clairement des tarifs de location ou de participation aux frais par les artistes-plasticiens en dessous du marché. 
+
+
+autres_criteres: >
+    Votre association doit également : 
+    <ul>
+        <li> être reconnue dans le secteur des arts plastiques; </li>
+        <li> avoir une activité régulière. </li>
+    >/ul>
+
+
+ 
+
+
+
