@@ -17,7 +17,10 @@ alors masquer cette page
 	titre titre_identification_association
 
 	champ_texte* frequence 
-	champ_texte* numero_siret
+
+	#champ_texte* numero_siret
+	siren numero_siret
+
 	champ_texte* numero_rna	
 	aide à la saisie aide_numero_rna
 	champ_texte* adresse 
@@ -26,7 +29,7 @@ alors masquer cette page
 	
 	#EXG05.02
 	#?#
-	Si numero_siret est différent de r'\d{14} alors afficher le message MSG_ERR_CHAMP_SIRET 
+	#Si numero_siret est différent de r'\d{14} alors afficher le message MSG_ERR_CHAMP_SIRET 
 	#EXG05.03
 	#?#
 	Si numero_rna est différent de r'W[\d]{9}' alors afficher le message MSG_ERR_CHAMP_RNA 
