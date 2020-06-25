@@ -1,0 +1,3781 @@
+<?xml version="1.0" encoding="iso-8859-15"?>
+<formdef id="100">
+  <name>test-Julie-Aides aux arts plastiques_v5</name>
+  <url_name>test-art-plastique-2020-01_v5</url_name>
+  <description>Le D&#233;partement propose sous conditions une aide pour les arts plastiques ...</description>
+  <internal_identifier>aide-culture-2020-06</internal_identifier>
+  <discussion>false</discussion>
+  <detailed_emails>true</detailed_emails>
+  <disabled>false</disabled>
+  <only_allow_one>false</only_allow_one>
+  <enable_tracking_codes>true</enable_tracking_codes>
+  <confirmation>true</confirmation>
+  <always_advertise>false</always_advertise>
+  <private_status_and_history>false</private_status_and_history>
+  <has_captcha>false</has_captcha>
+  <skip_from_360_view>false</skip_from_360_view>
+  <category category_id="8">Test</category>
+  <workflow>WF-demo-culture</workflow>
+  <max_field_id>244</max_field_id>
+  <last_modification user_id="1">2020-06-23 10:14:50</last_modification>
+  <fields>
+    <field>
+    <label>Avant de commencer</label>
+    <type>page</type>
+    <id remote="page_preambule">2</id>
+    </field><field>
+    <label>&lt;p&gt;Si vous devez interrompre la proc&amp;#233;dure, vous pouvez revenir plus tard et reprendre votre saisie en entrant le code de suivi qui s&#39;affiche &amp;#224; gauche. Vous pouvez vous le faire envoyer par mail en cliquant dessus.&lt;/p&gt;
+&lt;p&gt;Si vous prenez vos documents en photo plut&amp;#244;t que de les scanner, assurez-vous que la photo :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Cadre tout le document,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ne soit pas trop sombre (le document doit &amp;#234;tre lisible),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ait une bonne r&amp;#233;solution (5 Millions de pixels minimum).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="introduction">3</id>
+    </field><field>
+    <label>&lt;p&gt;&lt;strong&gt;Temps de saisie estim&amp;#233; : 60 minutes&lt;/strong&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="temps_saisi">4</id>
+    </field><field>
+    <label>Testez votre &#233;ligibilit&#233;</label>
+    <type>page</type>
+    <id remote="page_test_eligibilite">5</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_test_eligibilite:info_asterisque">6</id>
+    </field>
+<field>
+    <label>&#202;tes-vous une association ou un &#233;tablissement public implant&#233; en Loire-Atlantique et cr&#233;&#233; depuis un an au moins ou une commune ou intercommunalit&#233; de Loire-Atlantique ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Il est n&#233;cessaire que l'association ait au moins 1 an pour pouvoir b&#233;n&#233;ficier d'une aide.</hint>
+    <id remote="date_creation">7</id>
+    <varname>date_creation</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Quelle aide sollicitez-vous ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Une seule demande peut &#234;tre faite par association et par an.</hint>
+    <id remote="type_aide">8</id>
+    <varname>type_aide</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>1 - Aide &#224; un projet singulier de diffusion incluant un financement d&#233;di&#233; &#224; la r&#233;alisation de nouvelles cr&#233;ations (expositions, festival, ...)</item>
+    <item>2 - Aide &#224; un projet de r&#233;sidence mettant des moyens de production et de diffusion &#224; disposition d&#8217;artistes invit&#233;s</item>
+    <item>3 - Aide &#224; un projet de mise en place d&#8217;ateliers de travail et de production collectifs pour les artistes plasticiens</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Votre structure dispose-t-elle de comp&#233;tences professionnelles : artistes et/ou commissaires d&#8217;expositions et/ou m&#233;diateurs proposant des actions de sensibilisation et de formation aux publics jeunes et adultes ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Il est n&#233;cessaire d'avoir des comp&#233;tences professionnelles reconnues.</hint>
+    <id remote="competences_professionnelles">9</id>
+    <varname>competences_professionnelles</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s"  or not "2"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Les r&#233;sidences que vous proposez aux artistes sont-elles de plus de 3 semaines ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="duree_residences">10</id>
+    <varname>duree_residences</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Avez-vous des dates de diffusion arr&#234;t&#233;es sur le territoire d&#233;partemental ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Il est n&#233;cessaire d'avoir des dates de diffusion en Loire-Atlantique pour pouvoir b&#233;n&#233;ficier d'une aide.</hint>
+    <id remote="dates_diffusion_arretees">11</id>
+    <varname>dates_diffusion_arretees</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Avez-vous des dates de r&#233;sidence arr&#234;t&#233;es sur le territoire d&#233;partemental ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Il est n&#233;cessaire d'avoir des dates de r&#233;sidence en Loire-Atlantique pour pouvoir b&#233;n&#233;ficier d'une aide.</hint>
+    <id remote="dates_residence_arretees">12</id>
+    <varname>dates_residence_arretees</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Pr&#233;voyez-vous mener des actions de m&#233;diation en direction des publics dans le cadre de votre action ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Il est n&#233;cessaire d'avoir des actions de m&#233;diation envers les publics de Loire-Atlantique pour pouvoir b&#233;n&#233;ficier d'une aide.</hint>
+    <id remote="actions_mediation">13</id>
+    <varname>actions_mediation</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s"  or not "2"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Allouez-vous aux artistes accueillis des moyens de production et/ou une r&#233;mun&#233;ration ?</label>
+    <type>item</type>
+    <required>True</required>
+    <hint>Il est n&#233;cessaire d'allouer des moyens aux artistes accueillis pour pouvoir b&#233;n&#233;ficier d'une aide.</hint>
+    <id remote="allocations_moyens_production">14</id>
+    <varname>allocations_moyens_production</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s"  or not "2"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Votre lieu permet-il d&#8217;accueillir le travail d&#8217;un minimum de 8 artistes-plasticiens professionnels (ateliers individuels ou collectifs), dont les deux tiers minimum proviennent de Loire-Atlantique ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="nombre_artistes">15</id>
+    <varname>nombre_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Les locaux sont-ils occup&#233;s pour une dur&#233;e sup&#233;rieure &#224; deux ans ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="duree_locaux">16</id>
+    <varname>duree_locaux</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Communications des tarifs</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="declaration_tarifs_location">17</id>
+    <varname>declaration_tarifs_location</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" not in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Je d&#233;clare pratiquer et communiquer clairement des tarifs de location ou de participation aux frais par les artistes-plasticiens en dessous du march&#233;.</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>&lt;p&gt;Votre association doit &amp;#233;galement :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;#234;tre reconnue dans le secteur des arts plastiques;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;avoir une activit&amp;#233; r&amp;#233;guli&amp;#232;re.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="autres_criteres">18</id>
+    </field><field>
+    <label>Eligibilit&#233;</label>
+    <type>page</type>
+    <id remote="page_eligibilite">19</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Non"|default_if_none:"" or not form_var_competences_professionnelles|default_if_none:"" != "Non"|default_if_none:"" or not form_var_dates_residence_arretees|default_if_none:"" != "Non"|default_if_none:"" or not form_var_dates_diffusion_arretees|default_if_none:"" != "Non"|default_if_none:"" or not form_var_actions_mediation|default_if_none:"" != "Non"|default_if_none:"" or not form_var_allocations_moyens_production|default_if_none:"" != "Non"|default_if_none:"" or not form_var_duree_residences|default_if_none:"" != "Non"|default_if_none:"" or not form_var_dates_residence_arretees|default_if_none:"" != "Non"|default_if_none:"" or not form_var_duree_locaux|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;p&gt;Vous n&#39;&amp;#234;tes pas &amp;#233;ligible pour les raisons suivantes :&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="non_eligible">20</id>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Vous &amp;#234;tes une association ou un &amp;#233;tablissement public implant&amp;#233; en Loire-Atlantique et cr&amp;#233;&amp;#233; depuis moins d&#39;un an.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_date_creation">21</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Votre structure ne dispose pas de comp&amp;#233;tences professionnelles : artistes et/ou commissaires d&amp;#8217;expositions et/ou m&amp;#233;diateurs proposant des actions de sensibilisation et de formation aux publics jeunes et adultes.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_competences_professionnelles">22</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Les r&amp;#233;sidences que vous proposez aux artistes ne sont pas de plus de 3 semaines&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_duree_residences">23</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_duree_residences|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Vous n&#39;avez pas de date de diffusion arr&amp;#234;t&amp;#233;e sur le territoire d&amp;#233;partemental.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_dates_diffusion_arretees">24</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_dates_diffusion_arretees|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Vous n&#39;avez pas de date de r&amp;#233;sidence arr&amp;#234;t&amp;#233;e sur le territoire d&amp;#233;partemental.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_dates_residence_arretees">25</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_dates_residence_arretees|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Vous n&#39;avez pas pr&amp;#233;vu de mener des actions de m&amp;#233;diation en direction des publics dans le cadre de votre action.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_actions_mediation">26</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_actions_mediation|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Vous n&#39;allouez pas aux artistes accueillis de moyens de production et/ou une r&amp;#233;mun&amp;#233;ration.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_allocation_moyens_production">27</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_allocations_moyens_production|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Votre lieu ne permet pas d&amp;#8217;accueillir le travail d&amp;#8217;un minimum de 8 artistes-plasticiens professionnels (ateliers individuels ou collectifs), dont les deux tiers minimum proviennent de Loire-Atlantique.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_nombre_artistes">28</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_nombre_artistes|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;ul&gt;
+&lt;li&gt;Les locaux ne sont pas occup&amp;#233;s pour une dur&amp;#233;e sup&amp;#233;rieure &amp;#224; deux ans.&lt;/li&gt;
+&lt;/ul&gt;</label>
+    <type>comment</type>
+    <id remote="critere_duree_locaux">29</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_duree_locaux|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;p&gt;N&amp;#233;anmoins merci de cliquer sur le bouton &#39;Suivant&#39; puis de valider le formulaire pour avoir la possibilit&amp;#233; de faire un recours (en envoyant un courrier papier &amp;#224; l&#39;H&amp;#244;tel du d&amp;#233;partement).&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_eligibilite:info_recours">30</id>
+    </field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_eligibilite:info_support">31</id>
+    </field><field>
+    <label>Nature de la demande</label>
+    <type>page</type>
+    <id remote="page_nature_demande">32</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Nature de la demande&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_page_nature_demande">33</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_nature_demande:info_asterisque">34</id>
+    </field>
+<field>
+    <label>Fr&#233;quence/r&#233;currence</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="frequence_demande">35</id>
+    <varname>frequence_demande</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Premi&#232;re demande</item>
+    <item>Renouvellement</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_nature_demande:info_support">36</id>
+    </field><field>
+    <label>Identification de l&#8217;association</label>
+    <type>page</type>
+    <id remote="page_identification_association">37</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_identification_association:info_asterisque">38</id>
+    </field><field>
+    <label>&lt;h3&gt;Identification de l&amp;#8217;association&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_identification_association">39</id>
+    </field><field>
+    <label>Nom - D&#233;nomination</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="frequence">40</id>
+    <varname>frequence</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Num&#233;ro Siret</label>
+    <type>string</type>
+    <required>True</required>
+    <hint>Compos&#233; de 14 chiffres</hint>
+    <id remote="numero_siret">41</id>
+    <varname>numero_siret</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>[0-9]{14}</validation>
+    <size></size>
+</field><field>
+    <label>Num&#233;ro RNA ou &#224; d&#233;faut celui du r&#233;c&#233;piss&#233; en pr&#233;fecture</label>
+    <type>string</type>
+    <required>True</required>
+    <hint>Compos&#233; d'un W suivi de 9 chiffres</hint>
+    <id remote="numero_rna">42</id>
+    <varname>numero_rna</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>W[0-9]{9}</validation>
+    <size></size>
+</field><field>
+    <label>Adresse du si&#232;ge social</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="adresse">43</id>
+    <varname>adresse</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-1</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Code postal</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="code_postal">44</id>
+    <varname>code_postal</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Commune</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="commune">45</id>
+    <varname>commune</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Avez-vous une adresse de gestion ou de correspondance diff&#233;rente de celle du si&#232;ge social de l'association ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="adresse_gestion_differente">46</id>
+    <varname>adresse_gestion_differente</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Adresse de gestion ou de correspondance</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="adresse_gestion">47</id>
+    <varname>adresse_gestion</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-1</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_adresse_gestion_differente|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_adresse_gestion_differente|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Code postal</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="code_postal_gestion">48</id>
+    <varname>code_postal_gestion</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_adresse_gestion_differente|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_adresse_gestion_differente|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Commune</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="commune_gestion">49</id>
+    <varname>commune_gestion</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_adresse_gestion_differente|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_adresse_gestion_differente|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>&lt;h3&gt;Repr&amp;#233;sentant&amp;#183;e l&amp;#233;gal&amp;#183;e (personne d&amp;#233;sign&amp;#233;e par les statuts)&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_representant_legal">50</id>
+    </field><field>
+    <label>Nom</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nom_representant">51</id>
+    <varname>nom_representant</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Pr&#233;nom</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="prenom_representant">52</id>
+    <varname>prenom_representant</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Fonction</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="fonction_representant">53</id>
+    <varname>fonction_representant</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>T&#233;l&#233;phone</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="telephone_representant">54</id>
+    <varname>telephone_representant</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
+    <size></size>
+</field><field>
+    <label>Courriel</label>
+    <type>email</type>
+    <required>True</required>
+    <id remote="courriel_representant">55</id>
+    <varname>courriel_representant</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+</field>
+<field>
+    <label>La personne charg&#233;e de la pr&#233;sente demande est-elle diff&#233;rente du repr&#233;sentant l&#233;gal ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="demandeur_different_representant">56</id>
+    <varname>demandeur_different_representant</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>&lt;h3&gt;Personne charg&amp;#233;e de la pr&amp;#233;sente demande de subvention&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_charge_subvention">57</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>Nom</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nom_demandeur">58</id>
+    <varname>nom_demandeur</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Pr&#233;nom</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="prenom_demandeur">59</id>
+    <varname>prenom_demandeur</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <extra_css_class>grid-1-2</extra_css_class>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Fonction</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="fonction_demandeur">60</id>
+    <varname>fonction_demandeur</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>T&#233;l&#233;phone</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="telephone_demandeur">61</id>
+    <varname>telephone_demandeur</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation>^0[0-9]([ .-]?[0-9]{2}){4}$</validation>
+    <size></size>
+</field><field>
+    <label>Courriel</label>
+    <type>email</type>
+    <required>True</required>
+    <id remote="courriel_demandeur">62</id>
+    <varname>courriel_demandeur</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_demandeur_different_representant|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_identification_association:info_support">63</id>
+    </field><field>
+    <label>Relations avec d'autres associations ou collectivit&#233;s</label>
+    <type>page</type>
+    <id remote="page_relations">64</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Relations avec d&#39;autres associations ou collectivit&amp;#233;s&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_page_relations">65</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_relations:info_asterisque">66</id>
+    </field>
+<field>
+    <label>&#202;tes-vous affili&#233; &#224; un r&#233;seau, union ou f&#233;d&#233;ration ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="relation_reseau">67</id>
+    <varname>relation_reseau</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Lequel ? (Indiquer le nom complet, ne pas utiliser de sigle)</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="reseau">68</id>
+    <varname>reseau</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_relation_reseau|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>L'association a-t-elle des adh&#233;rents personnes morales ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="relation_adherents">69</id>
+    <varname>relation_adherents</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Lesquels ?</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="adherents_personnes_morales">70</id>
+    <varname>adherents_personnes_morales</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_relation_adherents|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field>
+<field>
+    <label>L'association a-t-elle des conventions avec des collectivit&#233;s publiques ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="relation_conventions">71</id>
+    <varname>relation_conventions</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Lesquelles ? (Pr&#233;ciser le nom des institutions, la date de signature, la dur&#233;e de la convention et l'objet de la convention )</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="conventions">72</id>
+    <varname>conventions</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_relation_conventions|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_relations:info_support">73</id>
+    </field><field>
+    <label>Moyens humains au 31 d&#233;cembre de l'ann&#233;e &#233;coul&#233;e</label>
+    <type>page</type>
+    <id remote="page_moyens_humains">74</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    <post_conditions>
+    <post_condition>
+        <condition>
+          <type>django</type>
+          <value>not form_var_nombre_cdi|default_if_none:"none"|add:"0"|stringformat:"d"|default:"-10000000"|add:"0" > form_var_nombre_salaries|default_if_none:"none"|add:"0"|stringformat:"d"|default:"10000000"|add:"0"</value>
+        </condition>
+        <error_message>Erreur : Le nombre de CDI doit &#234;tre inf&#233;rieur ou &#233;gal au nombre total de salari&#233;&#183;e&#183;s</error_message>
+      </post_condition>
+    <post_condition>
+        <condition>
+          <type>django</type>
+          <value>not form_var_nombre_cdi_emplois_aides|default_if_none:"none"|add:"0"|stringformat:"d"|default:"-10000000"|add:"0" > form_var_nombre_cdi|default_if_none:"none"|add:"0"|stringformat:"d"|default:"10000000"|add:"0"</value>
+        </condition>
+        <error_message>Erreur : Le nombre de CDI aid&#233;s doit &#234;tre inf&#233;rieur ou &#233;gal au nombre de CDI</error_message>
+      </post_condition>
+    <post_condition>
+        <condition>
+          <type>django</type>
+          <value>not form_var_nombre_cdd|default_if_none:"none"|add:"0"|stringformat:"d"|default:"-10000000"|add:"0" > form_var_nombre_salaries|default_if_none:"none"|add:"0"|stringformat:"d"|default:"10000000"|add:"0"</value>
+        </condition>
+        <error_message>Erreur : Le nombre de CDD doit &#234;tre inf&#233;rieur ou &#233;gal au nombre total de salari&#233;&#183;e&#183;s</error_message>
+      </post_condition>
+    <post_condition>
+        <condition>
+          <type>django</type>
+          <value>not form_var_nombre_cdd_emplois_aides|default_if_none:"none"|add:"0"|stringformat:"d"|default:"-10000000"|add:"0" > form_var_nombre_cdd|default_if_none:"none"|add:"0"|stringformat:"d"|default:"10000000"|add:"0"</value>
+        </condition>
+        <error_message>Erreur : Le nombre de CDD aid&#233;s doit &#234;tre inf&#233;rieur ou &#233;gal au nombre de CDD</error_message>
+      </post_condition>
+    <post_condition>
+        <condition>
+          <type>django</type>
+          <value>not form_var_nombre_salaries_etpt|default_if_none:"none"|add:"0"|stringformat:"d"|default:"-10000000"|add:"0" > form_var_nombre_salaries|default_if_none:"none"|add:"0"|stringformat:"d"|default:"10000000"|add:"0"</value>
+        </condition>
+        <error_message>Erreur : Le nombre de ETP doit &#234;tre inf&#233;rieur ou &#233;gal au nombre total de salari&#233;&#183;e&#183;s</error_message>
+      </post_condition>
+    </post_conditions>
+    </field><field>
+    <label>&lt;h3&gt;Moyens humains au 31 d&amp;#233;cembre de l&#39;ann&amp;#233;e &amp;#233;coul&amp;#233;e&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_moyens_humains">75</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_moyens_humains:info_asterisque">76</id>
+    </field><field>
+    <label>Nombre d'adh&#233;rent&#183;e&#183;s</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_adherents">77</id>
+    <varname>nombre_adherents</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre de b&#233;n&#233;voles</label>
+    <type>string</type>
+    <required>True</required>
+    <hint>B&#233;n&#233;vole : personne contribuant r&#233;guli&#232;rement &#224; l'activit&#233; de l'association, de mani&#232;re non r&#233;mun&#233;r&#233;e.</hint>
+    <id remote="nombre_benevoles">78</id>
+    <varname>nombre_benevoles</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre de volontaires</label>
+    <type>string</type>
+    <required>True</required>
+    <hint>Volontaire : personne engag&#233;e pour une mission d'int&#233;r&#234;t g&#233;n&#233;ral par un contrat sp&#233;cifique (par ex : service civique).</hint>
+    <id remote="nombre_volontaires">79</id>
+    <varname>nombre_volontaires</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre total de salari&#233;&#183;e&#183;s</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_salaries">80</id>
+    <varname>nombre_salaries</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre de CDI</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_cdi">81</id>
+    <varname>nombre_cdi</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>dont nombre d'emplois aid&#233;s</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_cdi_emplois_aides">82</id>
+    <varname>nombre_cdi_emplois_aides</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre de CDD</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_cdd">83</id>
+    <varname>nombre_cdd</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>dont nombre d'emplois aid&#233;s</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_cdd_emplois_aides">84</id>
+    <varname>nombre_cdd_emplois_aides</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre de salari&#233;&#183;e&#183;s en &#233;quivalent temps plein travaill&#233; (ETP)</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_salaries_etpt">85</id>
+    <varname>nombre_salaries_etpt</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Nombre de personnels mis &#224; disposition ou d&#233;tach&#233;s par une autorit&#233; publique</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="nombre_detaches">86</id>
+    <varname>nombre_detaches</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_moyens_humains:info_support">87</id>
+    </field><field>
+    <label>Votre projet - objet de la demande</label>
+    <type>page</type>
+    <id remote="page_votre_projet">88</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Votre projet - objet de la demande&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_votre_projet">89</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_votre_projet:info_asterisque">90</id>
+    </field><field>
+    <label>Description succincte de votre projet artistique (arts plastiques)</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>2000 caract&#232;res maximum</hint>
+    <id remote="description">91</id>
+    <varname>description</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;h3&gt;Moyens techniques&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_moyens_techniques">92</id>
+    </field>
+<field>
+    <label>Votre structure dispose-t-elle d'un lieu permanent ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="lieu_permanent">93</id>
+    <varname>lieu_permanent</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Pr&#233;cisez pour quel type d'activit&#233;</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="lieu_type_activite">94</id>
+    <varname>lieu_type_activite</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_lieu_permanent|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>pour l'administration</item>
+    <item>pour la diffusion</item>
+    <item>pour les cr&#233;ations</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Programmation</label>
+    <type>page</type>
+    <id remote="page_programmation">95</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Programmation&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_programmation">96</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_programmation:info_asterisque">97</id>
+    </field>
+<field>
+    <label>Type de programmation</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="type_programmation">98</id>
+    <varname>type_programmation</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Programmation annuelle</item>
+    <item>Programmation &#233;v&#233;nementielle</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Liste des commissaires d'exposition (nom et qualit&#233;)</label>
+    <type>tablerows</type>
+    <required>False</required>
+    <id remote="liste_commissaires">99</id>
+    <varname>liste_commissaires</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+	<columns>
+		<column>Nom</column>
+		<column>Qualit&#233;</column>
+		</columns>
+	<total_row>False</total_row>
+</field><field>
+    <label>&lt;p&gt;&lt;strong&gt;Liste des actions faisant l&#39;objet de la demande (expos, r&amp;#233;sidences, autres) dans le d&amp;#233;partement et hors d&amp;#233;partement&lt;/strong&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="liste_actions">100</id>
+    </field><field>
+    <label>&lt;p&gt;&lt;em&gt;Indiquez pour chaque action le titre, le lieu, les dates et le ou les artiste(s) ainsi que leur provenance. Vous pouvez saisir jusqu&#39;&amp;#224; 10 actions, les champs n&amp;#233;cessaires appara&amp;#238;tront au fur et &amp;#224; mesure de votre saisie. Vous pouvez ajouter en compl&amp;#233;ment au dossier une fiche informative sur chacun des artistes.&lt;/em&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="aide_actions">101</id>
+    </field><field>
+    <label>Description de l'action 1</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="description_action1">102</id>
+    <varname>description_action1</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 2</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action2">103</id>
+    <varname>description_action2</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 3</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action3">104</id>
+    <varname>description_action3</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 4</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action4">105</id>
+    <varname>description_action4</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 5</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action5">106</id>
+    <varname>description_action5</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 6</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action6">107</id>
+    <varname>description_action6</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_action5|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 7</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action7">108</id>
+    <varname>description_action7</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_action6|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 8</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action8">109</id>
+    <varname>description_action8</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_action7|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 9</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action9">110</id>
+    <varname>description_action9</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_action8|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de l'action 10</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_action10">111</id>
+    <varname>description_action10</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_action9|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Remarques, observations ou faits marquants que vous jugez utiles de pr&#233;ciser (exemple, propri&#233;taire si lieu mis &#224; disposition...) </label>
+    <type>text</type>
+    <required>False</required>
+    <hint>2000 caract&#232;res maximum</hint>
+    <id remote="remarques_aide1">112</id>
+    <varname>remarques_aide1</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_programmation:info_support">113</id>
+    </field><field>
+    <label>Projet de r&#233;sidence</label>
+    <type>page</type>
+    <id remote="page_projet_residence">114</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Projet de r&amp;#233;sidence&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_projet_residence">115</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_projet_residence:info_asterisque">116</id>
+    </field><field>
+    <label>Modalit&#233;s de s&#233;lection des artistes invit&#233;.e.s</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>1500 caract&#232;res maximum</hint>
+    <id remote="modalites_selection_artistes">117</id>
+    <varname>modalites_selection_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;p&gt;&lt;strong&gt;Liste des r&amp;#233;sidences faisant l&#39;objet de la demande&lt;/strong&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="texte_residence">118</id>
+    </field><field>
+    <label>&lt;p&gt;&lt;em&gt;Indiquez pour chaque r&amp;#233;sidence le lieu, les dates et le ou les artiste(s) ainsi que leur provenance. Vous pouvez saisir jusqu&#39;&amp;#224; 10 r&amp;#233;sidences, les champs n&amp;#233;cessaires appara&amp;#238;tront au fur et &amp;#224; mesure de votre saisie. Vous pouvez ajouter en compl&amp;#233;ment au dossier une fiche informatique sur chacun des artistes.&lt;/em&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="aide_texte_residence">119</id>
+    </field><field>
+    <label>Description de la r&#233;sidence 1</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="description_residence1">120</id>
+    <varname>description_residence1</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 2</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence2">121</id>
+    <varname>description_residence2</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 3</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence3">122</id>
+    <varname>description_residence3</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 4</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence4">123</id>
+    <varname>description_residence4</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 5</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence5">124</id>
+    <varname>description_residence5</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 6</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence6">125</id>
+    <varname>description_residence6</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_residence5|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 7</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence7">126</id>
+    <varname>description_residence7</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_residence6|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 8</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence8">127</id>
+    <varname>description_residence8</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_residence7|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 9</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence9">128</id>
+    <varname>description_residence9</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_residence8|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la r&#233;sidence 10</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_residence10">129</id>
+    <varname>description_residence10</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_description_residence9|default_if_none:""|length == 0</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Remarques, observations ou faits marquants que vous jugez utiles de pr&#233;ciser (exemple, propri&#233;taire si lieu mis &#224; disposition...) </label>
+    <type>text</type>
+    <required>False</required>
+    <hint>2000 caract&#232;res maximum</hint>
+    <id remote="remarques_aide2">130</id>
+    <varname>remarques_aide2</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_projet_residence:info_support">131</id>
+    </field><field>
+    <label>Accompagnement des artistes</label>
+    <type>page</type>
+    <id remote="page_accompagnement">132</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    <post_conditions>
+    <post_condition>
+        <condition>
+          <type>django</type>
+          <value>not form_var_pourcentage_commission|default_if_none:""|add:"0" > 100</value>
+        </condition>
+        <error_message>Erreur de pourcentage</error_message>
+      </post_condition>
+    </post_conditions>
+    </field><field>
+    <label>&lt;h3&gt;Accompagnement que vous apportez aux artistes&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_accompagnement">133</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_accompagnement:info_asterisque">134</id>
+    </field>
+<field>
+    <label>Apport de locaux</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="apport_locaux">135</id>
+    <varname>apport_locaux</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Description des lieux d'accueil</label>
+    <type>text</type>
+    <required>False</required>
+    <id remote="description_lieux">136</id>
+    <varname>description_lieux</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_apport_locaux|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field>
+<field>
+    <label>Y a-t-il un logement ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="logement">137</id>
+    <varname>logement</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_apport_locaux|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="logement_detail">138</id>
+    <varname>logement_detail</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_apport_locaux|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_logement|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Est-ce que votre association est propri&#233;taire des lieux ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="proprietaire">139</id>
+    <varname>proprietaire</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_apport_locaux|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez les conditions de mise &#224; disposition</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="conditions_mise_a_dispo">140</id>
+    <varname>conditions_mise_a_dispo</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_apport_locaux|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Apport de mat&#233;riel</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="apport_materiel">141</id>
+    <varname>apport_materiel</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="materiel">142</id>
+    <varname>materiel</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_apport_materiel|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Apport de moyens humains</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="apport_moyens_humains">143</id>
+    <varname>apport_moyens_humains</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Pr&#233;cisez</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="moyens_humains">144</id>
+    <varname>moyens_humains</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_apport_moyens_humains|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Conseils artistiques</item>
+    <item>Conseils techniques</item>
+    <item>Main d'&#339;uvre</item>
+    <item>Autres</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Si &#34;Autres&#34;, pr&#233;cisez</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="moyens_humains_autres">145</id>
+    <varname>moyens_humains_autres</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_apport_moyens_humains|default_if_none:"" != "Oui"|default_if_none:"" and not "Autres"|default_if_none:""|stringformat:"s" not in form_var_moyens_humains|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Apport de moyens financiers de production</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="apport_moyens_financiers">146</id>
+    <varname>apport_moyens_financiers</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>D&#233;taillez le montant par artiste</label>
+    <type>tablerows</type>
+    <required>True</required>
+    <id remote="liste_montants_artistes">147</id>
+    <varname>liste_montants_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_apport_moyens_financiers|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+	<columns>
+		<column>Montant par artiste (&#8364;)</column>
+		<column>Nombre d'artistes</column>
+		</columns>
+	<total_row>False</total_row>
+</field><field>
+    <label>Autre type d'accompagnement propos&#233; aux artistes</label>
+    <type>text</type>
+    <required>False</required>
+    <hint>600 caract&#232;res maximum</hint>
+    <id remote="accompagnement">148</id>
+    <varname>accompagnement</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field>
+<field>
+    <label>R&#233;mun&#233;ration ou indemnisation des artistes</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="remuneration_artistes">149</id>
+    <varname>remuneration_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Exposition individuelle</label>
+    <type>item</type>
+    <required>False</required>
+    <id remote="exposition_individuelle">150</id>
+    <varname>exposition_individuelle</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez le montant moyen global</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="montant_moyen_global_individuel">151</id>
+    <varname>montant_moyen_global_individuel</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_exposition_individuelle|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field>
+<field>
+    <label>Exposition collective</label>
+    <type>item</type>
+    <required>False</required>
+    <id remote="exposition_collective">152</id>
+    <varname>exposition_collective</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez le montant moyen global</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="montant_moyen_global_collectif">153</id>
+    <varname>montant_moyen_global_collectif</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_exposition_collective|default_if_none:"" != "Oui"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Pr&#233;cisez le montant par artiste</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="montant_artiste">154</id>
+    <varname>montant_artiste</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field>
+<field>
+    <label>Y a-t-il une cotisation aux assurances sociales en tant que diffuseur ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="cotisation_assurances">155</id>
+    <varname>cotisation_assurances</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Y a-t-il des acquisitions d'&#339;uvres par l'association ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="acquisition_oeuvres">156</id>
+    <varname>acquisition_oeuvres</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Y a-t-il des ventes d'&#339;uvres ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="ventes_oeuvres">157</id>
+    <varname>ventes_oeuvres</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Y a-t-il une commission sur les ventes r&#233;alis&#233;es ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="commission_ventes_oeuvres">158</id>
+    <varname>commission_ventes_oeuvres</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_ventes_oeuvres|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Indiquez le pourcentage pris par la structure</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="pourcentage_commission">159</id>
+    <varname>pourcentage_commission</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_ventes_oeuvres|default_if_none:"" != "Oui"|default_if_none:"" and not form_var_commission_ventes_oeuvres|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_accompagnement:info_support">160</id>
+    </field><field>
+    <label>M&#233;diation avec les publics</label>
+    <type>page</type>
+    <id remote="page_mediation">161</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;M&amp;#233;diation avec les publics&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_mediation">162</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_mediation:info_asterisque">163</id>
+    </field><field>
+    <label>Ouverture au public</label>
+    <type>table</type>
+    <required>False</required>
+    <id remote="sur_ouverture_public">164</id>
+    <varname>sur_ouverture_public</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <rows>
+		<row>Lundi</row>
+		<row>Mardi</row>
+		<row>Mercredi</row>
+		<row>Jeudi</row>
+		<row>Vendredi</row>
+		<row>Samedi</row>
+		<row>Dimanche</row>
+		</rows>
+	<columns>
+		<column>Horaires d&#8217;ouverture (Exemple : de 10h &#224; 12h et de 14h &#224; 16h)</column>
+		</columns>
+</field>
+<field>
+    <label>Par qui sont assur&#233;s l'accueil et la m&#233;diation ?</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="personnel_accueil">165</id>
+    <varname>personnel_accueil</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>M&#233;diateurs professionnels</item>
+    <item>B&#233;n&#233;voles</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Est-ce qu'une exposition du travail de l'artiste est pr&#233;vue pendant la r&#233;sidence ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="exposition_pendant_residence">166</id>
+    <varname>exposition_pendant_residence</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez les lieux et les dates</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="exposition_details">167</id>
+    <varname>exposition_details</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_exposition_pendant_residence|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Est-ce que des temps de restitution du travail men&#233; pendant la r&#233;sidence sont pr&#233;vus ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="restitution">168</id>
+    <varname>restitution</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez les lieux et les dates</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="restitution_details">169</id>
+    <varname>restitution_details</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_restitution|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Des temps de rencontre et d&#8217;&#233;changes avec les publics sont-ils pr&#233;vus ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="rencontre_echange_public">170</id>
+    <varname>rencontre_echange_public</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Pr&#233;cisez</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="actions_public">171</id>
+    <varname>actions_public</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_rencontre_echange_public|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Conf&#233;rences</item>
+    <item>D&#233;bats</item>
+    <item>Ateliers</item>
+    <item>Workshops</item>
+    <item>Autres</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Si &#34;Autres&#34;, pr&#233;cisez</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="actions_public_autres">172</id>
+    <varname>actions_public_autres</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_rencontre_echange_public|default_if_none:"" != "Oui"|default_if_none:"" and not "Autres"|default_if_none:""|stringformat:"s" not in form_var_actions_public|default_if_none:""|stringformat:"s" </value>
+    </condition>
+    
+    <validation></validation>
+    <size></size>
+</field>
+<field>
+    <label>Des actions vers les publics scolaires sont-elles pr&#233;vues ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="actions_public_scolaire">173</id>
+    <varname>actions_public_scolaire</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Pr&#233;cisez les niveaux concern&#233;s</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="actions_public_scolaire_niveaux">174</id>
+    <varname>actions_public_scolaire_niveaux</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_actions_public_scolaire|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Maternelle</item>
+    <item>Primaire</item>
+    <item>Coll&#232;ge</item>
+    <item>Lyc&#233;e</item>
+    <item>Enseignement sup&#233;rieur</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Donnez quelques exemples d'actions (pr&#233;cisez au besoin les liens avec les partenaires locaux)</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="actions_public_scolaire_exemples">175</id>
+    <varname>actions_public_scolaire_exemples</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_actions_public_scolaire|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field>
+<field>
+    <label>Des actions vers le jeune public hors temps scolaire sont-elles pr&#233;vues ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="actions_jeune_public">176</id>
+    <varname>actions_jeune_public</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Donnez quelques exemples d'actions (pr&#233;cisez au besoin les liens avec les partenaires locaux)</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="actions_jeune_public_exemples">177</id>
+    <varname>actions_jeune_public_exemples</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_actions_jeune_public|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field>
+<field>
+    <label>Des actions vers les personnes &#233;loign&#233;es de l'offre culturelle sont-elles pr&#233;vues ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="actions_personnes_eloignees">178</id>
+    <varname>actions_personnes_eloignees</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field>
+<field>
+    <label>Pr&#233;cisez le type de public concern&#233;</label>
+    <type>items</type>
+    <required>True</required>
+    <id remote="actions_personnes_eloignees_public">179</id>
+    <varname>actions_personnes_eloignees_public</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_actions_personnes_eloignees|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <items>
+    <item>Personnes &#226;g&#233;es</item>
+    <item>Personnes en situation de handicap</item>
+    <item>Personnes en insertion</item>
+    <item>Famille - Enfance</item>
+    <item>Autres</item>
+    </items>
+    <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Donnez quelques exemples d'actions (pr&#233;cisez au besoin les liens avec les partenaires locaux)</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="actions_personnes_eloignees_exemples">180</id>
+    <varname>actions_personnes_eloignees_exemples</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_actions_personnes_eloignees|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_mediation:info_support">181</id>
+    </field><field>
+    <label>Bilan des activit&#233;s de l'ann&#233;e pr&#233;c&#233;dente</label>
+    <type>page</type>
+    <id remote="page_bilan_aide1">182</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Bilan des activit&amp;#233;s de l&#39;ann&amp;#233;e pr&amp;#233;c&amp;#233;dente&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_bilan_aide1">183</id>
+    </field><field>
+    <label>&lt;p&gt;Ce bilan concerne les activit&amp;#233;s men&amp;#233;es l&#39;ann&amp;#233;e derni&amp;#232;re sur le projet de diffusion incluant un apport d&amp;#233;di&amp;#233; &amp;#224; la r&amp;#233;alisation de nouvelles cr&amp;#233;ations. Il permet au  D&amp;#233;partement d&#39;&amp;#233;valuer la demande actuelle par rapport aux actions r&amp;#233;alis&amp;#233;es  l&#39;ann&amp;#233;e pr&amp;#233;c&amp;#233;dente. &lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="texte_bilan_aide1">184</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_bilan_aide1:info_asterisque">185</id>
+    </field>
+<field>
+    <label>Votre programme de l'ann&#233;e derni&#232;re a-t-il &#233;t&#233; men&#233; &#224; bien ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="bilan1_programme_positif">186</id>
+    <varname>bilan1_programme_positif</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Merci de pr&#233;ciser les &#233;carts</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="bilan1_ecarts">187</id>
+    <varname>bilan1_ecarts</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_bilan1_programme_positif|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;h3&gt;Accompagnement que vous avez apport&amp;#233; aux artistes&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_accompagnement_bilan1">188</id>
+    </field><field>
+    <label>Merci de pr&#233;ciser les accompagnements que vous avez propos&#233;s aux artistes</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>Mise &#224; disposition de locaux, de mat&#233;riel, de moyens humains, de moyens financiers de production (pr&#233;ciser dans ce cas les montants par artiste)</hint>
+    <id remote="bilan1_accompagnement">189</id>
+    <varname>bilan1_accompagnement</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;h3&gt;R&amp;#233;mun&amp;#233;ration ou indemnisation des artistes&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_remuneration_bilan1">190</id>
+    </field>
+<field>
+    <label>Avez-vous r&#233;mun&#233;r&#233; ou indemnis&#233; les artistes ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="bilan1_remuneration_artistes">191</id>
+    <varname>bilan1_remuneration_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez le montant moyen global pour les expositions individuelles</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="bilan1_montant_moyen_global_individuel">192</id>
+    <varname>bilan1_montant_moyen_global_individuel</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_bilan1_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>Pr&#233;cisez le montant moyen global pour les expositions collectives</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="bilan1_montant_moyen_global_collectif">193</id>
+    <varname>bilan1_montant_moyen_global_collectif</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_bilan1_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>&lt;h3&gt;M&amp;#233;diation avec le public&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_mediation_bilan1">194</id>
+    </field><field>
+    <label>Merci de lister les actions r&#233;alis&#233;es vers les diff&#233;rents publics et d&#8217;indiquer le nombre de participant&#183;e&#183;s par action</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>Actions vers les publics scolaires, vers les jeunes publics hors temps scolaire, vers les personnes &#233;loign&#233;es de l'offre culturelle</hint>
+    <id remote="bilan1_mediation">195</id>
+    <varname>bilan1_mediation</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Nombre total de visiteur&#183;euse&#183;s</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="bilan1_visiteurs">196</id>
+    <varname>bilan1_visiteurs</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_bilan_aide1:info_support">197</id>
+    </field><field>
+    <label>Bilan des activit&#233;s de l'ann&#233;e pr&#233;c&#233;dente</label>
+    <type>page</type>
+    <id remote="page_bilan_aide2">198</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "3"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;h3&gt;Bilan des activit&amp;#233;s de l&#39;ann&amp;#233;e pr&amp;#233;c&amp;#233;dente&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_bilan_aide2">199</id>
+    </field><field>
+    <label>&lt;p&gt;Ce bilan concerne les activit&amp;#233;s men&amp;#233;es l&#39;ann&amp;#233;e derni&amp;#232;re sur le projet de r&amp;#233;sidence mettant des moyens de production et de diffusion &amp;#224; disposition des artistes invit&amp;#233;s. Il permet au D&amp;#233;partement d&#39;&amp;#233;valuer la demande actuelle par rapport aux actions r&amp;#233;alis&amp;#233;es l&#39;ann&amp;#233;e pr&amp;#233;c&amp;#233;dente. &lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="texte_bilan_aide2">200</id>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_bilan_aide2:info_asterisque">201</id>
+    </field>
+<field>
+    <label>Votre projet de l'ann&#233;e derni&#232;re a-t-il &#233;t&#233; men&#233; &#224; bien ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="bilan2_programme_positif">202</id>
+    <varname>bilan2_programme_positif</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Merci de pr&#233;ciser les &#233;carts</label>
+    <type>text</type>
+    <required>True</required>
+    <id remote="bilan2_ecarts">203</id>
+    <varname>bilan2_ecarts</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_bilan2_programme_positif|default_if_none:"" != "Non"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;h3&gt;Accompagnement que vous avez apport&amp;#233; aux artistes&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_accompagnement_bilan2">204</id>
+    </field><field>
+    <label>Merci de pr&#233;ciser les accompagnements que vous avez propos&#233;s aux artistes</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>Mise &#224; disposition de locaux, de mat&#233;riel, de moyens humains, de moyens financiers de production (pr&#233;ciser dans ce cas les montants par artiste)</hint>
+    <id remote="bilan2_accompagnement">205</id>
+    <varname>bilan2_accompagnement</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;h3&gt;R&amp;#233;mun&amp;#233;ration ou indemnisation des artistes&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_remuneration_bilan2">206</id>
+    </field>
+<field>
+    <label>Avez-vous r&#233;mun&#233;r&#233; ou indemnis&#233; les artistes ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="bilan2_remuneration_artistes">207</id>
+    <varname>bilan2_remuneration_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez le montant moyen global vers&#233; aux artistes</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="bilan2_montant_moyen_global">208</id>
+    <varname>bilan2_montant_moyen_global</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_bilan2_remuneration_artistes|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>&lt;h3&gt;M&amp;#233;diation avec le public&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_mediation_bilan2">209</id>
+    </field><field>
+    <label>Merci de lister les actions r&#233;alis&#233;es vers les diff&#233;rents publics</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>Actions vers les publics scolaires, vers les jeunes publics hors temps scolaire, vers les personnes &#233;loign&#233;es de l'offre culturelle</hint>
+    <id remote="bilan2_mediation">210</id>
+    <varname>bilan2_mediation</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Nombre de participant&#183;e&#183;s</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="bilan2_participants">211</id>
+    <varname>bilan2_participants</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation>^[0-9]*$</validation>
+    <size></size>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_bilan_aide2:info_support">212</id>
+    </field><field>
+    <label>Mise en place d&#8217;ateliers</label>
+    <type>page</type>
+    <id remote="page_ateliers">213</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not "1"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not "2"|default_if_none:""|stringformat:"s" in form_var_type_aide|default_if_none:""|stringformat:"s"  and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_ateliers:info_asterisque">214</id>
+    </field><field>
+    <label>Description succincte du projet (objectifs, mode de fonctionnement)</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>2500 caract&#232;res maximum</hint>
+    <id remote="description_projet">215</id>
+    <varname>description_projet</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description du lieu (contexte, espaces de travail, espaces mutualis&#233;s, contraintes &#233;ventuelles, ...)</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>1500 caract&#232;res maximum</hint>
+    <id remote="description_lieu">216</id>
+    <varname>description_lieu</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Propri&#233;taire du lieu</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="proprietaire_lieu">217</id>
+    <varname>proprietaire_lieu</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Conditions de mise &#224; disposition du lieu</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>1000 caract&#232;res maximum</hint>
+    <id remote="conditions_lieu">218</id>
+    <varname>conditions_lieu</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Dur&#233;e de mise &#224; disposition</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="duree_mise_a_dispo">219</id>
+    <varname>duree_mise_a_dispo</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>&lt;h3&gt;Gestion du lieu&lt;/h3&gt;</label>
+    <type>comment</type>
+    <id remote="titre_gestion_lieu">220</id>
+    </field><field>
+    <label>Charg&#233;&#183;e de la coordination</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="charge_coordination">221</id>
+    <varname>charge_coordination</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Description de la d&#233;marche d'attribution des espaces</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>1500 caract&#232;res maximum</hint>
+    <id remote="demarche_attribution_espaces">222</id>
+    <varname>demarche_attribution_espaces</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Description de la d&#233;marche de renouvellement</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>1500 caract&#232;res maximum</hint>
+    <id remote="demarche_renouvellement">223</id>
+    <varname>demarche_renouvellement</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Tarifs de location des espaces de travail ou de participation aux frais par les artistes</label>
+    <type>string</type>
+    <required>True</required>
+    <id remote="tarif_location">224</id>
+    <varname>tarif_location</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Liste des artistes b&#233;n&#233;ficiant actuellement d'un atelier</label>
+    <type>tablerows</type>
+    <required>True</required>
+    <hint>Renseigner au minimum 8 lignes</hint>
+    <id remote="liste_artistes">225</id>
+    <varname>liste_artistes</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+	<columns>
+		<column>Nom de l'artiste</column>
+		<column>Depuis le</column>
+		</columns>
+	<total_row>False</total_row>
+</field>
+<field>
+    <label>Des temps de rencontre, d&#8217;&#233;changes ou de diffusion partag&#233;s entre les artistes sont-ils pr&#233;vus par l&#8217;association ?</label>
+    <type>item</type>
+    <required>True</required>
+    <id remote="temps_echange">226</id>
+    <varname>temps_echange</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <items>
+    <item>Oui</item>
+    <item>Non</item>
+    </items>
+    
+    <show_as_radio>True</show_as_radio>
+        <anonymise>False</anonymise>
+    <display_disabled_items>False</display_disabled_items>
+</field><field>
+    <label>Pr&#233;cisez</label>
+    <type>text</type>
+    <required>True</required>
+    <hint>Description, date(s), lieu(x), public(s)</hint>
+    <id remote="temps_echange_detail">227</id>
+    <varname>temps_echange_detail</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    <condition>
+        <type>django</type>
+        <value>not form_var_temps_echange|default_if_none:"" != "Oui"|default_if_none:""</value>
+    </condition>
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>Remarques, observations ou faits marquants que vous jugez utiles de partager avec le comit&#233; conseil</label>
+    <type>text</type>
+    <required>False</required>
+    <hint>2000 caract&#232;res maximum</hint>
+    <id remote="remarques_aide3">228</id>
+    <varname>remarques_aide3</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <cols>80</cols>
+    <rows>5</rows>
+    <maxlength></maxlength>
+</field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_ateliers:info_support">229</id>
+    </field><field>
+    <label>Pi&#232;ces &#224; joindre</label>
+    <type>page</type>
+    <id remote="page_pieces">230</id>
+    <condition>
+        <type>django</type>
+        <value>not form_var_date_creation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_competences_professionnelles|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_residences|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_diffusion_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_dates_residence_arretees|default_if_none:"" == "Non"|default_if_none:"" and not form_var_actions_mediation|default_if_none:"" == "Non"|default_if_none:"" and not form_var_allocation_moyens_production|default_if_none:"" == "Non"|default_if_none:"" and not form_var_nombre_artistes|default_if_none:"" == "Non"|default_if_none:"" and not form_var_duree_locaux|default_if_none:"" == "Non"|default_if_none:""</value>
+    </condition>
+    </field><field>
+    <label>&lt;p&gt;Les champs suivis d&amp;#8217;un ast&amp;#233;risque * sont obligatoires.&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="page_pieces:info_asterisque">231</id>
+    </field><field>
+    <label>Budget pr&#233;visionnel de l'association</label>
+    <type>string</type>
+    <required>True</required>
+    <hint>Format attendu : Uniquement un nombre entier</hint>
+    <id remote="budget_previsionnel">243</id>
+    <varname>budget_previsionnel</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <validation></validation>
+    <size></size>
+</field><field>
+    <label>Budget</label>
+    <type>file</type>
+    <required>True</required>
+    <hint>Remplir le mod&#232;le &#224; t&#233;l&#233;charger ci-dessous</hint>
+    <id remote="budget">232</id>
+    <varname>budget</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>&lt;p&gt;&lt;a href=&#34;lien a fournir&#34;&gt;T&amp;#233;l&amp;#233;charger le mod&amp;#232;le de budget attendu&lt;/a&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="modele_budget">233</id>
+    </field><field>
+    <label>RIB de banque</label>
+    <type>file</type>
+    <required>True</required>
+    <hint>Le RIB doit &#234;tre fourni par un &#233;tablissement bancaire.</hint>
+    <id remote="rib">234</id>
+    <varname>rib</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>Statuts de l&#8217;association</label>
+    <type>file</type>
+    <required>True</required>
+    <id remote="statut_asso">235</id>
+    <varname>statut_asso</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>Proc&#232;s-verbal de la derni&#232;re AG</label>
+    <type>file</type>
+    <required>True</required>
+    <id remote="pv_derniere_ag">236</id>
+    <varname>pv_derniere_ag</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>Rapport d&#8217;activit&#233; N-1</label>
+    <type>file</type>
+    <required>False</required>
+    <id remote="rapport_activite_annee_prec">237</id>
+    <varname>rapport_activite_annee_prec</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>Liste des membres du conseil d&#8217;administration et/ou du bureau</label>
+    <type>file</type>
+    <required>False</required>
+    <id remote="liste_membres">238</id>
+    <varname>liste_membres</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>Autres (tout document que vous jugez utile de communiquer : revue de presse&#8230;)</label>
+    <type>file</type>
+    <required>False</required>
+    <hint>Fournir un dossier compress&#233; ZIP de l'ensemble des pi&#232;ces s'il y en a plusieurs</hint>
+    <id remote="autres_fichiers">239</id>
+    <varname>autres_fichiers</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>Attestation sur l&#8217;honneur</label>
+    <type>file</type>
+    <required>True</required>
+    <id remote="attestation">240</id>
+    <varname>attestation</varname>
+    <in_listing>False</in_listing>
+    <in_filters>False</in_filters>
+    <prefill>
+    <type>none</type>
+    </prefill>
+    
+    
+    <allow_portfolio_picking>False</allow_portfolio_picking>
+</field><field>
+    <label>&lt;p&gt;&lt;a href=&#34;lien a fournir&#34;&gt;T&amp;#233;l&amp;#233;charger le mod&amp;#232;le de budget attendu&lt;/a&gt;&lt;/p&gt;</label>
+    <type>comment</type>
+    <id remote="modele_attestation">241</id>
+    </field><field>
+    <label>&lt;div id="cd44-contact"&gt;
+	&lt;p&gt;&lt;strong&gt;Une question, besoin d&#39;aide ?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute question technique, contactez le support par t&amp;#233;l&amp;#233;phone au 02 40 99 15 44 du lundi au vendredi, de 12h30 &amp;#224; 16h30&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par t&amp;#233;l&amp;#233;phone au {{ form_option_telephone }} ou par mail &amp;#224; &lt;a href=&#34;actionculturellepatrimoine@loire-atlantique.fr&#34;&gt;actionculturellepatrimoine@loire-atlantique.fr&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;</label>
+    <type>comment</type>
+    <id remote="page_pieces:info_support">242</id>
+    </field>
+  </fields>
+  <user-roles>
+    <role role_id="logged-users">logged-users</role>
+  </user-roles>
+  <backoffice-submission-roles>
+    <role role_id="46bbc453de8b4353ad2583849ba3ec2b">Test</role>
+  </backoffice-submission-roles>
+  <roles>
+    <role role_id="46bbc453de8b4353ad2583849ba3ec2b" role_key="_receiver">Test</role>
+  </roles>
+  <options>
+    <option varname="personne_a_contacter">Virginie Bourget</option>
+    <option varname="telephone">02 40 99 13 30</option>
+    <option varname="secteur_du_formulaire">art plastique</option>
+    </options>
+  <geolocations />
+</formdef>

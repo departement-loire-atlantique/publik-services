@@ -1,0 +1,709 @@
+formulaire "test-Julie-Aides aux arts plastiques_v5"
+
+	url "test-art-plastique-2020-01_v5"
+	description	metadata_description_aide_art_plastique
+	identifiant	metadata_internal_identifier_aide_art_plastique
+	
+	workflow workflow
+Le paramètre "secteur_du_formulaire" du workflow vaut "art plastique"
+Le paramètre "personne_a_contacter" du workflow vaut "Virginie Bourget"
+Le paramètre "telephone" du workflow vaut "02 40 99 13 30"
+	
+	category_id metadata_category_id
+	category_name metadata_category_name
+		
+	user_roles_id metadata_user_roles_id
+	user_roles_name metadata_user_roles_name
+	
+	backoffice_submission_roles_id metadata_backoffice_submission_roles_id
+	backoffice_submission_roles_name metadata_backoffice_submission_roles_name
+	
+	roles_id metadata_roles_id
+	roles_key metadata_roles_key
+	roles_name metadata_roles_name
+
+# -------------------------------------	
+# 1 - page preambule
+# -------------------------------------
+page page_preambule
+
+	texte introduction
+	
+	texte temps_saisi
+	
+# -------------------------------------
+# 2 - page test_eligibilite
+# -------------------------------------
+page page_test_eligibilite
+	
+	texte page_test_eligibilite:info_asterisque
+	
+	liste* date_creation
+		aide à la saisie aide_date_creation
+	
+	liste* type_aide
+		aide à la saisie aide_type_aide	
+
+	liste* competences_professionnelles
+	aide à la saisie aide_competences_professionnelles
+	#EXG02.01
+	si date_creation est différent de "Oui" alors masquer le champ competences_professionnelles 
+	si type_aide ne contient pas "1" et si type_aide ne contient pas "2" alors masquer le champ competences_professionnelles 
+	
+	liste* duree_residences
+	#EXG02.02
+	si date_creation est différent de "Oui" alors masquer le champ duree_residences
+	si type_aide ne contient pas "2" alors masquer le champ duree_residences
+	
+	liste* dates_diffusion_arretees
+	aide à la saisie aide_dates_diffusion_arretees
+	#EXG02.03
+	si date_creation est différent de "Oui" alors masquer le champ dates_diffusion_arretees
+	si type_aide ne contient pas "1" alors masquer le champ dates_diffusion_arretees
+	
+	liste* dates_residence_arretees
+	aide à la saisie aide_dates_residence_arretees
+	#EXG02.04
+	si date_creation est différent de "Oui" alors masquer le champ dates_residence_arretees
+	si type_aide ne contient pas "2" alors masquer le champ dates_residence_arretees
+	
+	liste* actions_mediation
+	aide à la saisie aide_actions_mediation
+	#EXG02.05
+	si date_creation est différent de "Oui" alors masquer le champ actions_mediation
+	si type_aide ne contient pas "1" et si type_aide ne contient pas "2" alors masquer le champ actions_mediation
+	
+	liste* allocations_moyens_production
+	#EXG02.06
+	aide à la saisie aide_allocations_moyens_production alors masquer le champ allocations_moyens_production
+	si date_creation est différent de "Oui" alors masquer le champ allocations_moyens_production
+	si type_aide ne contient pas "1" et si type_aide ne contient pas "2" alors masquer le champ allocations_moyens_production
+	
+	liste* nombre_artistes
+	#EXG02.07
+	si date_creation est différent de "Oui" alors masquer le champ nombre_artistes
+	si type_aide ne contient pas "3" alors masquer le champ nombre_artistes
+	
+	liste* duree_locaux
+	#EXG02.08
+	si date_creation est différent de "Oui" alors masquer le champ duree_locaux
+	si type_aide ne contient pas "3" alors masquer le champ duree_locaux
+	
+	liste_choix_multiple* declaration_tarifs_location
+	#EXG02.09
+	si date_creation est différent de "Oui"  alors masquer le champ declaration_tarifs_location
+	si type_aide ne contient pas "3" alors masquer le champ declaration_tarifs_location
+	
+	texte autres_criteres
+# -------------------------------------
+# 3 - page_eligibilite
+# -------------------------------------
+page page_eligibilite
+
+	texte non_eligible
+    #EXG03.01
+	si date_creation est différent de "Non" et competences_professionnelles est différent de "Non" et dates_residence_arretees est différent de "Non" et dates_diffusion_arretees est différent de "Non" et actions_mediation est différent de "Non" et allocations_moyens_production est différent de "Non" et duree_residences est différent de "Non" et dates_residence_arretees est différent de "Non" et duree_locaux est différent de "Non" alors masquer cette page
+	
+	texte critere_date_creation
+    #EXG03.04
+    si date_creation est différent de "Non" alors masquer le champ critere_date_creation
+	
+	texte critere_competences_professionnelles
+	#EXG03.05
+    si date_creation est différent de "Oui" alors masquer le champ critere_competences_professionnelles
+	si type_aide contient "3" alors masquer le champ critere_competences_professionnelles
+	si competences_professionnelles est différent de "Non" alors masquer le champ critere_competences_professionnelles
+
+	texte critere_duree_residences 
+	#EXG03.06
+    si date_creation est différent de "Oui" alors masquer le champ critere_duree_residences 
+	si type_aide contient "1" alors masquer le champ critere_duree_residences
+	si type_aide contient "3" alors masquer le champ critere_duree_residences
+	si duree_residences est différent de "Non" alors masquer le champ critere_duree_residences
+	
+	texte critere_dates_diffusion_arretees 
+	#EXG03.07
+    si date_creation est différent de "Oui" alors masquer le champ critere_dates_diffusion_arretees
+	si type_aide contient "2" alors masquer le champ critere_dates_diffusion_arretees
+	si type_aide contient "3" alors masquer le champ critere_dates_diffusion_arretees
+	si dates_diffusion_arretees est différent de "Non" alors masquer le champ critere_dates_diffusion_arretees
+
+	texte critere_dates_residence_arretees 
+	#EXG03.08
+    si date_creation est différent de "Oui" alors masquer le champ critere_dates_residence_arretees 
+	si type_aide contient "1" alors masquer le champ critere_dates_residence_arretees
+	si type_aide contient "3" alors masquer le champ critere_dates_residence_arretees
+	si dates_residence_arretees est différent de "Non" alors masquer le champ critere_dates_residence_arretees
+
+	texte critere_actions_mediation 
+	#EXG03.09
+    si date_creation est différent de "Oui" alors masquer le champ critere_actions_mediation 
+	si type_aide contient "3" alors masquer le champ critere_actions_mediation
+	si actions_mediation est différent de "Non" alors masquer le champ critere_actions_mediation
+
+	texte critere_allocation_moyens_production 
+	#EXG03.10
+    si date_creation est différent de "Oui" alors masquer le champ critere_allocation_moyens_production 
+	si type_aide contient "3" alors masquer le champ critere_allocation_moyens_production
+	si allocations_moyens_production est différent de "Non" alors masquer le champ critere_allocation_moyens_production
+
+	texte critere_nombre_artistes 
+	#EXG03.11
+    si date_creation est différent de "Oui" alors masquer le champ critere_nombre_artistes 
+	si type_aide contient "1" alors masquer le champ critere_nombre_artistes
+	si type_aide contient "2" alors masquer le champ critere_nombre_artistes
+	si nombre_artistes est différent de "Non" alors masquer le champ critere_nombre_artistes
+	
+	texte critere_duree_locaux 
+	#EXG03.12
+    si date_creation est différent de "Oui" alors masquer le champ critere_duree_locaux 
+	si type_aide contient "1" alors masquer le champ critere_duree_locaux
+	si type_aide contient "2" alors masquer le champ critere_duree_locaux
+	si duree_locaux est différent de "Non" alors masquer le champ critere_duree_locaux
+
+	texte page_eligibilite:info_recours 
+	texte_encadre page_eligibilite:info_support
+	
+# -------------------------------------
+# 4 - page_nature_demande
+# -------------------------------------
+page page_nature_demande
+#EXG04.01
+si date_creation est égal à "Non" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+
+	texte titre_page_nature_demande
+    
+    texte page_nature_demande:info_asterisque
+    
+    liste* frequence_demande
+    
+    texte_encadre page_nature_demande:info_support
+
+# -------------------------------------
+# 5 - page_identification_association
+# -------------------------------------
+page page_identification_association 
+
+#EXG05.01
+si date_creation est égal à "Non" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+
+	texte page_identification_association:info_asterisque
+	
+	texte titre_identification_association
+
+	champ_texte* frequence 
+	
+	siret* numero_siret
+	aide à la saisie aide_numero_siret
+	
+	rna* numero_rna
+	aide à la saisie aide_numero_rna
+	
+	adresse* adresse code_postal commune 
+	
+	liste* adresse_gestion_differente
+	
+	adresse* adresse_gestion code_postal_gestion commune_gestion
+	
+	#EXG05.04
+	si adresse_gestion_differente est différent de "Oui" alors masquer le champ adresse_gestion	
+	#EXG05.05
+	si adresse_gestion_differente est différent de "Oui" alors masquer le champ codepostal_gestion
+	#EXG05.06
+	si adresse_gestion_differente est différent de "Oui" alors masquer le champ commune_gestion
+
+	texte titre_representant_legal 
+	
+	nom_prenom* nom_representant prenom_representant 
+	champ_texte* fonction_representant 
+	telephone* telephone_representant 
+	courriel* courriel_representant 
+	liste* demandeur_different_representant 
+	
+	texte titre_charge_subvention
+
+	nom_prenom* nom_demandeur prenom_demandeur
+	champ_texte* fonction_demandeur 
+	telephone* telephone_demandeur 
+	courriel* courriel_demandeur 
+	
+	#EXG05.07.titre 
+	si demandeur_different_representant est différent de "Oui" alors masquer le champ titre_charge_subvention
+	#EXG05.07 
+	si demandeur_different_representant est différent de "Oui" alors masquer le champ nom_demandeur 
+	#EXG05.08 
+	si demandeur_different_representant est différent de "Oui" alors masquer le champ prenom_demandeur 
+	#EXG05.09 
+	si demandeur_different_representant est différent de "Oui" alors masquer le champ fonction_demandeur 
+	#EXG05.10 
+	si demandeur_different_representant est différent de "Oui" alors masquer le champ telephone_demandeur 
+	#EXG05.11 
+	si demandeur_different_representant est différent de "Oui" alors masquer le champ courriel_demandeur 
+
+	texte_encadre page_identification_association:info_support
+	
+# -------------------------------------
+# 6 - page_relations
+# -------------------------------------
+page page_relations
+#EXG06.01 
+si date_creation est égal à "Non" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+
+	texte titre_page_relations
+	texte page_relations:info_asterisque
+	
+	liste* relation_reseau
+	champ_texte* reseau 
+	liste* relation_adherents 
+	champ_texte_long* adherents_personnes_morales 
+	liste* relation_conventions 
+	champ_texte_long* conventions 
+	
+	#EXG06.02 
+	si relation_reseau est différent de "Oui" alors masquer le champ reseau 
+	#EXG06.03 
+	si relation_adherents est différent de "Oui" alors masquer le champ adherents_personnes_morales 
+	#EXG06.04 
+	si relation_conventions est différent de "Oui" alors masquer le champ conventions 
+	
+	texte_encadre page_relations:info_support
+
+# -------------------------------------
+# 7 - page_moyens_humains
+# -------------------------------------
+page page_moyens_humains
+
+#EXG07.01 
+si date_creation est égal à "Non" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+	
+	texte titre_moyens_humains
+	texte page_moyens_humains:info_asterisque
+	
+	nombre* nombre_adherents 
+	nombre* nombre_benevoles 
+	aide à la saisie aide_nombre_benevoles
+	
+	nombre* nombre_volontaires 
+	aide à la saisie aide_nombre_volontaires
+	
+	nombre* nombre_salaries 
+
+	nombre* nombre_cdi 
+	nombre* nombre_cdi_emplois_aides
+	si nombre_cdi est supérieur à nombre_salaries alors afficher le message erreur_nombre_cdi
+	si nombre_cdi_emplois_aides est supérieur à nombre_cdi alors afficher le message erreur_nombre_cdi_aides
+
+	nombre* nombre_cdd 
+	nombre* nombre_cdd_emplois_aides  
+	si nombre_cdd est supérieur à nombre_salaries alors afficher le message erreur_nombre_cdd
+	si nombre_cdd_emplois_aides est supérieur à nombre_cdd alors afficher le message erreur_nombre_cdd_aides
+
+	nombre* nombre_salaries_etpt
+	si nombre_salaries_etpt est supérieur à nombre_salaries alors afficher le message erreur_nombre_salaries_etpt 
+
+	nombre* nombre_detaches 
+	
+	texte_encadre page_moyens_humains:info_support
+	
+# -------------------------------------
+# 8 - page_votre_projet
+# -------------------------------------
+page page_votre_projet
+#EXG08.01 
+si date_creation est égal à "Non" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+
+	texte titre_votre_projet
+	texte page_votre_projet:info_asterisque
+
+	champ_texte_long* description 
+	aide à la saisie aide_description
+
+	texte titre_moyens_techniques 
+
+	liste* lieu_permanent 
+	liste_choix_multiple* lieu_type_activite 
+	
+	#EXG08.02 
+	si lieu_permanent est différent de "Oui" alors masquer le champ lieu_type_activite 
+
+# -------------------------------------
+# 9 - page_programmation
+# -------------------------------------
+page page_programmation
+#EXG09.01 
+si date_creation est égal à "Non" ou type_aide contient "2"ou type_aide contient "3"ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+	texte titre_programmation
+	texte page_programmation:info_asterisque
+	
+	liste* type_programmation 
+	tableau_libre liste_commissaires 
+	
+	texte liste_actions 
+	texte aide_actions
+
+	champ_texte_long* description_action1
+	champ_texte_long description_action2
+	champ_texte_long description_action3
+	champ_texte_long description_action4
+	champ_texte_long description_action5
+	champ_texte_long description_action6
+	champ_texte_long description_action7
+	champ_texte_long description_action8
+	champ_texte_long description_action9
+	champ_texte_long description_action10
+	
+	#EXG09.02
+	si description_action5 est vide alors masquer le champ description_action6
+	#EXG09.03
+	si description_action6 est vide alors masquer le champ description_action7
+	#EXG09.04
+	si description_action7 est vide alors masquer le champ description_action8
+	#EXG09.05
+	si description_action8 est vide alors masquer le champ description_action9
+	#EXG09.06
+	si description_action9 est vide alors masquer le champ description_action10
+	
+	
+	champ_texte_long remarques_aide1
+	aide à la saisie aide_remarques_aide1
+	
+	texte_encadre page_programmation:info_support
+	
+# -------------------------------------
+# 10 - page_projet_residence
+# -------------------------------------
+page page_projet_residence
+#EXG10.01
+si date_creation est égal à "Non" ou type_aide contient "1" ou type_aide contient "3" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page 
+
+	texte titre_projet_residence
+	texte page_projet_residence:info_asterisque
+
+	champ_texte_long* modalites_selection_artistes
+	aide à la saisie aide_modalites_selection_artistes
+	texte texte_residence
+	texte aide_texte_residence
+	
+	champ_texte_long* description_residence1
+	champ_texte_long description_residence2
+	champ_texte_long description_residence3
+	champ_texte_long description_residence4
+	champ_texte_long description_residence5
+	champ_texte_long description_residence6
+	champ_texte_long description_residence7
+	champ_texte_long description_residence8
+	champ_texte_long description_residence9
+	champ_texte_long description_residence10
+	
+	#EXG10.02
+	si description_residence5 est vide alors masquer le champ description_residence6
+	#EXG10.03
+	si description_residence6 est vide alors masquer le champ description_residence7
+	#EXG10.04
+	si description_residence7 est vide alors masquer le champ description_residence8
+	#EXG10.05
+	si description_residence8 est vide alors masquer le champ description_residence9
+	#EXG10.06
+	si description_residence9 est vide alors masquer le champ description_residence10
+		
+	champ_texte_long remarques_aide2
+	aide à la saisie aide_remarques_aide2
+	
+	texte_encadre page_projet_residence:info_support
+	
+# -------------------------------------
+# 11 - page_accompagnement
+# -------------------------------------
+page page_accompagnement
+#EXG11.01
+si date_creation est égal à "Non" ou type_aide contient "3" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page 
+
+
+	texte titre_accompagnement
+	texte page_accompagnement:info_asterisque
+	
+	liste* apport_locaux 
+	champ_texte_long description_lieux 
+	
+	liste* logement 
+	champ_texte* logement_detail 
+	
+	liste* proprietaire  
+	champ_texte* conditions_mise_a_dispo 
+	
+	#EXG11.02
+	si type_aide contient "1" alors masquer le champ description_lieux
+	si apport_locaux est différent de "Oui" alors masquer le champ description_lieux
+	#EXG11.03
+	si type_aide contient "1" alors masquer le champ logement
+	si apport_locaux est différent de "Oui" alors masquer le champ logement
+	#EXG11.04
+	si type_aide contient "1" alors masquer le champ logement_detail
+	si apport_locaux est différent de "Oui" alors masquer le champ logement_detail
+	si logement est différent de "Oui" alors masquer le champ logement_detail
+	#EXG11.05
+	si type_aide contient "1" alors masquer le champ proprietaire
+	si apport_locaux est différent de "Oui" alors masquer le champ proprietaire
+	#EXG11.06
+	si type_aide contient "1" alors masquer le champ conditions_mise_a_dispo
+	si apport_locaux est différent de "Oui" alors masquer le champ conditions_mise_a_dispo
+
+	liste* apport_materiel 
+	champ_texte* materiel 
+	liste* apport_moyens_humains 
+	liste_choix_multiple* moyens_humains 
+	champ_texte* moyens_humains_autres 
+	
+	#EXG11.07
+	si apport_materiel est différent de "Oui" alors masquer le champ materiel
+	#EXG11.08
+	si apport_moyens_humains est différent de "Oui" alors masquer le champ moyens_humains
+	#EXG11.09
+	si apport_moyens_humains est différent de "Oui" alors masquer le champ moyens_humains_autres
+	si moyens_humains ne contient pas "Autres" alors masquer le champ moyens_humains_autres
+	
+	liste* apport_moyens_financiers 
+	tableau_libre* liste_montants_artistes 
+	champ_texte_long accompagnement
+	aide à la saisie aide_accompagnement
+		
+	#EXG11.10
+	si apport_moyens_financiers est différent de "Oui" alors masquer le champ liste_montants_artistes
+
+	liste* remuneration_artistes 
+	liste exposition_individuelle 
+	nombre* montant_moyen_global_individuel 
+	liste exposition_collective 
+	nombre* montant_moyen_global_collectif 
+	nombre* montant_artiste 
+
+	#EXG11.11
+	si remuneration_artistes est différent de "Oui" alors masquer le champ exposition_individuelle
+	si type_aide contient "2" alors masquer le champ exposition_individuelle
+	#EXG11.12
+	si remuneration_artistes est différent de "Oui" alors masquer le champ montant_moyen_global_individuel 
+	si exposition_individuelle est différent de "Oui" alors masquer le champ montant_moyen_global_individuel 
+	si type_aide contient "2" alors masquer le champ montant_moyen_global_individuel 
+	#EXG11.13 
+	si remuneration_artistes est différent de "Oui" alors masquer le champ exposition_collective 
+	si type_aide contient "2" alors masquer le champ exposition_collective 
+	#EXG11.14 
+	si remuneration_artistes est différent de "Oui" alors masquer le champ montant_moyen_global_collectif 
+	si exposition_collective est différent de "Oui" alors masquer le champ montant_moyen_global_collectif  
+	si type_aide contient "2" alors masquer le champ montant_moyen_global_collectif 
+	#EXG11.15 
+	si remuneration_artistes est différent de "Oui" alors masquer le champ montant_artiste 
+	si type_aide contient "1" alors masquer le champ montant_artiste 
+
+	liste* cotisation_assurances 
+	liste* acquisition_oeuvres 
+	liste* ventes_oeuvres 
+	liste* commission_ventes_oeuvres 
+	nombre* pourcentage_commission 
+	#EXG11.16 
+	si ventes_oeuvres est différent de "Oui" alors masquer le champ commission_ventes_oeuvres 
+	#EXG11.17 
+	si ventes_oeuvres est différent de "Oui" alors masquer le champ pourcentage_commission 
+	si commission_ventes_oeuvres est différent de "Oui" alors masquer le champ pourcentage_commission 
+	si pourcentage_commission est supérieur à 100 alors afficher le message "Erreur de pourcentage"
+
+	texte_encadre page_accompagnement:info_support
+	
+# -------------------------------------
+# 12 - page_mediation
+# -------------------------------------
+page page_mediation
+#EXG12.01 
+si date_creation est égal à "Non" ou type_aide contient "3" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page
+
+	texte titre_mediation
+	texte page_mediation:info_asterisque
+	
+	tableau sur_ouverture_public 
+	liste_choix_multiple* personnel_accueil 
+	#EXG12.02 
+	si type_aide contient "2" alors masquer le champ sur_ouverture_public 
+	#EXG12.03 
+	si type_aide contient "2" alors masquer le champ personnel_accueil 
+	
+	liste* exposition_pendant_residence 
+	champ_texte* exposition_details 	
+	liste* restitution 
+	champ_texte* restitution_details 
+	#EXG12.04 
+	si type_aide contient "1" alors masquer le champ exposition_pendant_residence 
+	#EXG12.05 
+	si type_aide contient "1" alors masquer le champ exposition_details 
+	si exposition_pendant_residence est différent de "Oui" alors masquer le champ exposition_details 
+	#EXG12.06 
+	si type_aide contient "1" alors masquer le champ restitution 
+	#EXG12.07 
+	si type_aide contient "1" alors masquer le champ restitution_details 
+	si restitution est différent de "Oui" alors masquer le champ restitution_details 
+
+	liste* rencontre_echange_public 
+	liste_choix_multiple* actions_public 
+	champ_texte* actions_public_autres 
+	#EXG12.08 
+	si rencontre_echange_public est différent de "Oui" alors masquer le champ actions_public 
+	#EXG12.09 
+	si rencontre_echange_public est différent de "Oui" alors masquer le champ actions_public_autres 
+	si actions_public ne contient pas "Autres" alors masquer le champ actions_public_autres 
+
+	liste* actions_public_scolaire 	
+	liste_choix_multiple* actions_public_scolaire_niveaux 
+	champ_texte_long* actions_public_scolaire_exemples 
+	#EXG12.10 
+	si actions_public_scolaire est différent de "Oui" alors masquer le champ actions_public_scolaire_niveaux 
+	#EXG12.11 
+	si actions_public_scolaire est différent de "Oui" alors masquer le champ actions_public_scolaire_exemples 
+
+	liste* actions_jeune_public 
+	champ_texte_long* actions_jeune_public_exemples 
+	#EXG12.12 
+	si actions_jeune_public est différent de "Oui" alors masquer le champ actions_jeune_public_exemples 
+	
+	liste* actions_personnes_eloignees 
+	liste_choix_multiple* actions_personnes_eloignees_public 
+	champ_texte_long* actions_personnes_eloignees_exemples 
+	#EXG12.13 
+	si actions_personnes_eloignees est différent de "Oui" alors masquer le champ actions_personnes_eloignees_public 
+	#EXG12.14 
+	si actions_personnes_eloignees est différent de "Oui" alors masquer le champ actions_personnes_eloignees_exemples 
+
+	texte_encadre page_mediation:info_support
+
+# -------------------------------------
+# 13 - page_bilan_aide1
+# -------------------------------------
+page page_bilan_aide1
+#EXG13.01 
+si date_creation est égal à "Non" ou type_aide contient "2" ou type_aide contient "3" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page 
+
+	texte titre_bilan_aide1
+	texte texte_bilan_aide1
+	texte page_bilan_aide1:info_asterisque
+	
+	liste* bilan1_programme_positif 
+	champ_texte_long* bilan1_ecarts
+	#EXG13.02 
+	si bilan1_programme_positif est différent de "Non" alors masquer le champ bilan1_ecarts  
+
+	texte titre_accompagnement_bilan1
+	champ_texte_long* bilan1_accompagnement 
+	aide à la saisie aide_bilan1_accompagnement 
+	
+	texte titre_remuneration_bilan1
+	liste* bilan1_remuneration_artistes 
+	nombre* bilan1_montant_moyen_global_individuel 
+	nombre* bilan1_montant_moyen_global_collectif 
+	#EXG13.03 
+	si bilan1_remuneration_artistes est différent de "Oui" alors masquer le champ bilan1_montant_moyen_global_individuel 
+	#EXG13.04 
+	si bilan1_remuneration_artistes est différent de "Oui" alors masquer le champ bilan1_montant_moyen_global_collectif 
+	
+	texte titre_mediation_bilan1
+	champ_texte_long* bilan1_mediation
+	aide à la saisie aide_bilan1_mediation
+	nombre* bilan1_visiteurs 
+	
+	texte_encadre page_bilan_aide1:info_support
+
+# -------------------------------------
+# 14 - page_bilan_aide2
+# -------------------------------------
+page page_bilan_aide2 
+#EXG14.01 
+si date_creation est égal à "Non" ou type_aide contient "1" ou type_aide contient "3" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page 
+
+	texte titre_bilan_aide2
+	texte texte_bilan_aide2
+	texte page_bilan_aide2:info_asterisque
+	liste* bilan2_programme_positif 
+	champ_texte_long* bilan2_ecarts 
+	#EXG14.02 
+	si bilan2_programme_positif est différent de "Non" alors masquer le champ bilan2_ecarts  
+
+	texte titre_accompagnement_bilan2 
+	champ_texte_long* bilan2_accompagnement
+	aide à la saisie aide_bilan2_accompagnement
+
+	texte titre_remuneration_bilan2
+	liste* bilan2_remuneration_artistes 
+	nombre* bilan2_montant_moyen_global 
+	#EXG14.03 
+	si bilan2_remuneration_artistes est différent de "Oui" alors masquer le champ bilan2_montant_moyen_global 
+
+	texte titre_mediation_bilan2
+	champ_texte_long* bilan2_mediation
+	aide à la saisie aide_bilan2_mediation
+	nombre* bilan2_participants 
+
+	texte_encadre page_bilan_aide2:info_support
+# -------------------------------------
+# 15 - page_ateliers
+# -------------------------------------
+page page_ateliers 
+#EXG15.01 
+si date_creation est égal à "Non" ou type_aide contient "1" ou type_aide contient "2" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page 
+
+	texte page_ateliers:info_asterisque
+	champ_texte_long* description_projet 
+	aide à la saisie aide_description_projet
+	champ_texte_long* description_lieu 
+	aide à la saisie aide_description_lieu
+	champ_texte* proprietaire_lieu 
+	champ_texte_long* conditions_lieu 
+	aide à la saisie aide_conditions_lieu
+	champ_texte* duree_mise_a_dispo 
+	
+	texte titre_gestion_lieu
+
+	champ_texte* charge_coordination
+	champ_texte_long* demarche_attribution_espaces
+	aide à la saisie aide_demarche_attribution_espaces
+	champ_texte_long* demarche_renouvellement 
+	aide à la saisie aide_demarche_renouvellement 
+
+	champ_texte* tarif_location
+	tableau_libre* liste_artistes
+	aide à la saisie aide_liste_artistes
+	
+	liste* temps_echange
+	champ_texte_long* temps_echange_detail 
+	aide à la saisie aide_temps_echange_detail
+	champ_texte_long remarques_aide3 
+	aide à la saisie aide_remarques_aide3
+	
+	#EXG15.02 
+	si temps_echange est différent de "Oui" alors masquer le champ temps_echange_detail 
+
+	texte_encadre page_ateliers:info_support
+
+# -------------------------------------
+# 16 - page_pieces
+# -------------------------------------
+page page_pieces 
+#EXG16.01 
+si date_creation est égal à "Non" ou competences_professionnelles est égal à "Non" ou duree_residences est égal à "Non" ou dates_diffusion_arretees est égal à "Non" ou dates_residence_arretees est égal à "Non" ou actions_mediation est égal à "Non" ou allocation_moyens_production est égal à "Non" ou nombre_artistes est égal à "Non" ou duree_locaux est égal à "Non" alors masquer cette page 
+
+	texte page_pieces:info_asterisque
+	
+	champ_texte* budget_previsionnel
+	aide à la saisie format_attendu
+	fichier* budget
+	aide à la saisie aide_budget
+	texte modele_budget
+
+	fichier* rib
+	aide à la saisie aide_rib
+	fichier* statut_asso
+	fichier* pv_derniere_ag
+	fichier rapport_activite_annee_prec
+	fichier liste_membres
+	fichier autres_fichiers
+	aide à la saisie aide_autres_fichiers
+	fichier* attestation
+	texte modele_attestation
+
+	texte_encadre page_pieces:info_support
