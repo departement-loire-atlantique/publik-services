@@ -1,0 +1,709 @@
+# ---------------------------------------------------------------------------
+# libellés des champs et massages du document de spécifications
+# ---------------------------------------------------------------------------
+
+# Métadonnées
+# ---------------------------------------------------------------------------
+
+metadata_name_aide_art_plastique: test-Julie-Aides aux arts plastiques_v5
+metadata_url_aide_art_plastique: test-art-plastique-2020-06-v5
+metadata_description_aide_art_plastique: >
+    Le Département propose sous conditions une aide pour les arts plastiques ...
+metadata_internal_identifier_aide_art_plastique: aide-culture-2020-06
+
+workflow: WF-demo-culture
+
+metadata_category_id: "8"
+metadata_category_name: Test
+
+metadata_user_roles_id: logged-users
+metadata_user_roles_name: logged-users
+
+metadata_backoffice_submission_roles_id: 46bbc453de8b4353ad2583849ba3ec2b
+metadata_backoffice_submission_roles_name: Test
+
+metadata_roles_id: 46bbc453de8b4353ad2583849ba3ec2b
+metadata_roles_key: _receiver
+metadata_roles_name: Test
+
+# Libéllés généraux
+# -----------------------------------------------------------
+
+info_asterisque: Les champs suivis d’un astérisque * sont obligatoires.
+info_support: 
+   " **Une question, besoin d'aide ?** 
+    
+    
+    - Pour toute question technique, contactez le support par téléphone au 02 40 99 15 44 du lundi au vendredi, de 12h30 à 16h30
+
+
+    - Pour toute autre question, contactez {{ form_option_personne_a_contacter }} par téléphone au {{ form_option_telephone }} ou par mail à [actionculturellepatrimoine@loire-atlantique.fr](actionculturellepatrimoine@loire-atlantique.fr)"
+    
+MSG_ERR_CHAMP_OBLIGATOIRE: Vous devez renseigner le champ [NOM_DU_CHAMP]. #?#
+MSG_ERR_CHAMP_DATE: Le champ doit être au format JJ/MM/AAAA (par exemple 01/04/2020 pour le 1er avril 2020). 
+MSG_ERR_CHAMP_TELEPHONE: Le champ doit comporter 10 chiffres. 
+MSG_ERR_CHAMP_EMAIL: Le champ doit être au format xxx@xxx.xxx (par exemple abel.dupont@gmail.com) 
+
+
+# 5.2 Page 1 : "Préambule"
+# -----------------------------------------------------------
+
+page_preambule: Avant de commencer
+
+introduction: 
+    "Si vous devez interrompre la procédure, vous pouvez
+    revenir plus tard et reprendre votre saisie en entrant
+    le code de suivi qui s'affiche à gauche. Vous pouvez
+    vous le faire envoyer par mail en cliquant dessus. 
+    
+    
+    Si vous prenez vos documents en photo plutôt que de
+    les scanner, assurez-vous que la photo :
+    
+    
+        - Cadre tout le document, 
+        
+        
+        - Ne soit pas trop sombre (le document doit être lisible),
+        
+        
+        - Ait une bonne résolution (5 Millions de pixels minimum)."
+
+temps_saisi: "**Temps de saisie estimé : 60 minutes**"
+
+# 5.3 Page 2 : "Testez votre éligibilité"
+# -----------------------------------------------------------
+
+info_asterisque_2: Les champs suivis d’un astérisque * sont obligatoires.
+
+page_test_eligibilite: Testez votre éligibilité
+
+date_creation: 
+    Êtes-vous une association ou un établissement public implanté en Loire-Atlantique et créé depuis un an au moins ou une commune ou intercommunalité de Loire-Atlantique ?:
+        - Oui
+        - Non
+aide_date_creation: Il est nécessaire que l'association ait au moins 1 an pour pouvoir bénéficier d'une aide. 
+
+type_aide:
+    Quelle aide sollicitez-vous ? :
+      - "1 - Aide à un projet singulier de diffusion incluant un financement dédié à la réalisation de nouvelles créations (expositions, festival, ...)"
+      - "2 - Aide à un projet de résidence mettant des moyens de production et de diffusion à disposition d’artistes invités"
+      - "3 - Aide à un projet de mise en place d’ateliers de travail et de production collectifs pour les artistes plasticiens"
+
+aide_type_aide: 
+    Une seule demande peut être faite par association et par an. 
+
+competences_professionnelles: 
+    "Votre structure dispose-t-elle de compétences professionnelles : artistes et/ou commissaires d’expositions et/ou médiateurs proposant des actions de sensibilisation et de formation aux publics jeunes et adultes ?": 
+      - Oui
+      - Non
+aide_competences_professionnelles: Il est nécessaire d'avoir des compétences professionnelles reconnues. 
+
+duree_residences:
+    Les résidences que vous proposez aux artistes sont-elles de plus de 3 semaines ?: 
+        - Oui
+        - Non
+
+dates_diffusion_arretees:
+    Avez-vous des dates de diffusion arrêtées sur le territoire départemental ?: 
+        - Oui
+        - Non
+aide_dates_diffusion_arretees: Il est nécessaire d'avoir des dates de diffusion en Loire-Atlantique pour pouvoir bénéficier d'une aide. 
+
+dates_residence_arretees:
+    Avez-vous des dates de résidence arrêtées sur le territoire départemental ?: 
+        - Oui
+        - Non
+aide_dates_residence_arretees: Il est nécessaire d'avoir des dates de résidence en Loire-Atlantique pour pouvoir bénéficier d'une aide. 
+
+
+actions_mediation:
+    Prévoyez-vous mener des actions de médiation en direction des publics dans le cadre de votre action ?:
+        - Oui
+        - Non
+aide_actions_mediation: Il est nécessaire d'avoir des actions de médiation envers les publics de Loire-Atlantique pour pouvoir bénéficier d'une aide. 
+
+
+allocations_moyens_production:
+    Allouez-vous aux artistes accueillis des moyens de production et/ou une rémunération ?:
+        - Oui
+        - Non
+aide_allocations_moyens_production: Il est nécessaire d'allouer des moyens aux artistes accueillis pour pouvoir bénéficier d'une aide. 
+
+
+nombre_artistes:
+    Votre lieu permet-il d’accueillir le travail d’un minimum de 8 artistes-plasticiens professionnels (ateliers individuels ou collectifs), dont les deux tiers minimum proviennent de Loire-Atlantique ?: 
+        - Oui
+        - Non
+        
+
+duree_locaux:
+    Les locaux sont-ils occupés pour une durée supérieure à deux ans ?: 
+        - Oui
+        - Non
+
+
+declaration_tarifs_location:
+    Communications des tarifs:
+        - Je déclare pratiquer et communiquer clairement des tarifs de location ou de participation aux frais par les artistes-plasticiens en dessous du marché.
+
+
+autres_criteres: 
+    "Votre association doit également : 
+    
+    
+        - être reconnue dans le secteur des arts plastiques; 
+        
+        
+        - avoir une activité régulière."
+		
+# 5.4 Page 3 : "Eligibilité"
+# -----------------------------------------------------------
+page_eligibilite: Eligibilité 
+
+non_eligible: "Vous n'êtes pas éligible pour les raisons suivantes :" 
+
+critere_date_creation: "  * Vous êtes une association ou un établissement public implanté en Loire-Atlantique 
+  et créé depuis moins d'un an."
+
+critere_competences_professionnelles: "  * Votre structure ne dispose pas de compétences professionnelles : artistes 
+ et/ou commissaires d’expositions et/ou médiateurs proposant des actions de
+ sensibilisation et de formation aux publics jeunes et adultes."
+critere_duree_residences: "  * Les résidences que vous proposez aux artistes ne sont pas de plus de 3 semaines"
+
+critere_dates_diffusion_arretees: "  * Vous n'avez pas de date de diffusion arrêtée sur le territoire départemental."
+
+critere_dates_residence_arretees: "  * Vous n'avez pas de date de résidence arrêtée sur le territoire départemental."
+
+critere_actions_mediation: "  * Vous n'avez pas prévu de mener des actions de médiation en direction des publics dans le cadre de votre action."
+
+critere_allocation_moyens_production: "* Vous n'allouez pas aux artistes accueillis de moyens de production et/ou une rémunération."
+
+critere_nombre_artistes: "  * Votre lieu ne permet pas d’accueillir le travail d’un minimum de 8 
+ artistes-plasticiens professionnels (ateliers individuels ou collectifs), 
+ dont les deux tiers minimum proviennent de Loire-Atlantique."
+
+critere_duree_locaux: "  * Les locaux ne sont pas occupés pour une durée supérieure à deux ans."
+
+info_recours: "Néanmoins merci de cliquer sur le bouton 'Suivant' puis de valider le formulaire pour avoir
+   la possibilité de faire un recours (en envoyant un courrier papier à l'Hôtel du département)."
+
+# 5.5 Page 4 : "Nature de la demande"
+# -----------------------------------------------------------
+
+page_nature_demande: Nature de la demande
+titre_page_nature_demande: >
+    ### Nature de la demande
+
+frequence_demande: 
+    "Fréquence/récurrence": 
+        - Première demande
+        - Renouvellement
+        
+# 5.6 Page 5 : "Identification de l'association"
+# -----------------------------------------------------------
+
+page_identification_association: Identification de l’association 
+titre_identification_association: >
+    ### Identification de l’association 
+
+frequence: Nom - Dénomination 
+numero_siret: Numéro Siret 
+aide_numero_siret: Composé de 14 chiffres 
+numero_rna: Numéro RNA ou à défaut celui du récépissé en préfecture 
+aide_numero_rna: Composé d'un W suivi de 9 chiffres 
+
+adresse: Adresse du siège social 
+code_postal: Code postal 
+commune: Commune 
+adresse_gestion_differente:
+    Avez-vous une adresse de gestion ou de correspondance différente de celle du siège social de l'association ?: 
+        - Oui
+        - Non
+adresse_gestion: Adresse de gestion ou de correspondance 
+code_postal_gestion: Code postal 
+commune_gestion: Commune 
+
+titre_representant_legal: >    
+    ### Représentant·e légal·e (personne désignée par les statuts) 
+
+nom_representant: Nom 
+prenom_representant: Prénom 
+fonction_representant: Fonction 
+telephone_representant: Téléphone 
+courriel_representant: Courriel 
+demandeur_different_representant: 
+    La personne chargée de la présente demande est-elle différente du représentant légal ?: 
+        - Oui
+        - Non
+
+titre_charge_subvention: >
+    ### Personne chargée de la présente demande de subvention 
+
+nom_demandeur: Nom 
+prenom_demandeur: Prénom 
+fonction_demandeur: Fonction 
+telephone_demandeur: Téléphone 
+courriel_demandeur: Courriel 
+
+
+MSG_ERR_CHAMP_SIRET: Le champ Numéro de Siret doit contenir 14 caractères numériques. 
+MSG_ERR_CHAMP_RNA: Le champ Numéro RNA doit contenir un W suivi de 9 caractères numériques. 
+
+# 5.7 Page 6 : "Relations avec d'autres associations ou collectivités"
+# -----------------------------------------------------------
+page_relations: Relations avec d'autres associations ou collectivités 
+titre_page_relations: >
+    ### Relations avec d'autres associations ou collectivités
+
+relation_reseau: 
+    Êtes-vous affilié à un réseau, union ou fédération ?: 
+        - Oui
+        - Non
+
+reseau: Lequel ? (Indiquer le nom complet, ne pas utiliser de sigle)
+
+relation_adherents: 
+    L'association a-t-elle des adhérents personnes morales ?: 
+        - Oui
+        - Non
+
+adherents_personnes_morales: Lesquels ? 
+
+relation_conventions: 
+    L'association a-t-elle des conventions avec des collectivités publiques ?: 
+        - Oui
+        - Non
+
+conventions: Lesquelles ? (Préciser le nom des institutions, la date de signature, la durée de la convention
+    et l'objet de la convention )
+    
+# 5.8 Page 7 : "Moyens humains"
+# -----------------------------------------------------------
+
+page_moyens_humains: Moyens humains au 31 décembre de l'année écoulée 
+titre_moyens_humains: >
+    ### Moyens humains au 31 décembre de l'année écoulée 
+
+nombre_adherents: Nombre d'adhérent·e·s 
+nombre_benevoles: Nombre de bénévoles 
+aide_nombre_benevoles: "Bénévole : personne contribuant régulièrement à l'activité de l'association, de manière non rémunérée." 
+
+nombre_volontaires: Nombre de volontaires 
+aide_nombre_volontaires: "Volontaire : personne engagée pour une mission d'intérêt général par un contrat spécifique (par ex : service civique)."
+
+nombre_salaries: Nombre total de salarié·e·s 
+
+nombre_cdi: Nombre de CDI 
+nombre_cdi_emplois_aides: dont nombre d'emplois aidés 
+erreur_nombre_cdi: "Erreur : Le nombre de CDI doit être inférieur ou égal au nombre total de salarié·e·s"
+erreur_nombre_cdi_aides: "Erreur : Le nombre de CDI aidés doit être inférieur ou égal au nombre de CDI"
+
+nombre_cdd: Nombre de CDD 
+nombre_cdd_emplois_aides: dont nombre d'emplois aidés 
+erreur_nombre_cdd: "Erreur : Le nombre de CDD doit être inférieur ou égal au nombre total de salarié·e·s"
+erreur_nombre_cdd_aides: "Erreur : Le nombre de CDD aidés doit être inférieur ou égal au nombre de CDD"
+
+nombre_salaries_etpt: Nombre de salarié·e·s en équivalent temps plein travaillé (ETP) 
+erreur_nombre_salaries_etpt: "Erreur : Le nombre de ETP doit être inférieur ou égal au nombre total de salarié·e·s"
+nombre_detaches: Nombre de personnels mis à disposition ou détachés par une autorité publique 
+
+# 5.9 Page 8 : "Votre projet"
+# -----------------------------------------------------------
+page_votre_projet: Votre projet - objet de la demande 
+titre_votre_projet: >
+    ### Votre projet - objet de la demande 
+
+description: Description succincte de votre projet artistique (arts plastiques) 
+aide_description: 2000 caractères maximum 
+
+titre_moyens_techniques: >
+    ### Moyens techniques 
+
+lieu_permanent: 
+    Votre structure dispose-t-elle d'un lieu permanent ?: 
+        - Oui
+        - Non
+
+lieu_type_activite: 
+    Précisez pour quel type d'activité :
+        - pour l'administration
+        - pour la diffusion
+        - pour les créations
+ 
+# 2.9 Page 9 : "Programmation"
+# -----------------------------------------------------------
+page_programmation: Programmation 
+titre_programmation: >
+    ### Programmation
+
+type_programmation: 
+    Type de programmation: 
+    - Programmation annuelle 
+    - Programmation événementielle 
+
+liste_commissaires: 
+    "Liste des commissaires d'exposition (nom et qualité)": 
+    - Nom
+    - Qualité
+
+liste_actions: >
+    **Liste des actions faisant l'objet de la demande (expos, résidences, autres) dans le département et hors département**
+aide_actions: >
+    *Indiquez pour chaque action le titre, le lieu, les dates et le ou les artiste(s) ainsi que leur provenance.
+    Vous pouvez saisir jusqu'à 10 actions, les champs nécessaires apparaîtront au fur et à mesure de votre saisie.
+    Vous pouvez ajouter en complément au dossier une fiche informative sur chacun des artistes.*
+
+description_action1: Description de l'action 1
+description_action2: Description de l'action 2
+description_action3: Description de l'action 3
+description_action4: Description de l'action 4
+description_action5: Description de l'action 5
+description_action6: Description de l'action 6
+description_action7: Description de l'action 7
+description_action8: Description de l'action 8
+description_action9: Description de l'action 9
+description_action10: Description de l'action 10
+
+remarques_aide1: > 
+    Remarques, observations ou faits marquants que vous jugez utiles de préciser
+    (exemple, propriétaire si lieu mis à disposition...) 
+aide_remarques_aide1: 2000 caractères maximum 
+
+# 5.11 Page 10 : "Projet de résidence"
+# -----------------------------------------------------------
+page_projet_residence: Projet de résidence
+titre_projet_residence: >
+    ### Projet de résidence
+
+modalites_selection_artistes: Modalités de sélection des artistes invité.e.s
+aide_modalites_selection_artistes: 1500 caractères maximum
+
+texte_residence: >
+    **Liste des résidences faisant l'objet de la demande**
+aide_texte_residence: >
+    *Indiquez pour chaque résidence le lieu, les dates et le ou les artiste(s) ainsi que leur provenance.
+    Vous pouvez saisir jusqu'à 10 résidences, les champs nécessaires apparaîtront au fur et à mesure de votre saisie.
+    Vous pouvez ajouter en complément au dossier une fiche informatique sur chacun des artistes.*
+
+description_residence1: Description de la résidence 1
+description_residence2: Description de la résidence 2
+description_residence3: Description de la résidence 3
+description_residence4: Description de la résidence 4
+description_residence5: Description de la résidence 5
+description_residence6: Description de la résidence 6
+description_residence7: Description de la résidence 7
+description_residence8: Description de la résidence 8
+description_residence9: Description de la résidence 9
+description_residence10: Description de la résidence 10
+
+remarques_aide2: > 
+    Remarques, observations ou faits marquants que vous jugez utiles de préciser
+    (exemple, propriétaire si lieu mis à disposition...) 
+aide_remarques_aide2: 2000 caractères maximum 
+
+# 5.12 Page 11 : "Accompagnement des artistes"
+# -----------------------------------------------------------
+page_accompagnement: Accompagnement des artistes 
+titre_accompagnement: >
+    ### Accompagnement que vous apportez aux artistes
+
+apport_locaux: 
+    Apport de locaux: 
+    - Oui 
+    - Non 
+description_lieux: Description des lieux d'accueil 
+logement: 
+    Y a-t-il un logement ?:
+    - Oui 
+    - Non 
+logement_detail: Précisez
+proprietaire: 
+    Est-ce que votre association est propriétaire des lieux ?:
+    - Oui 
+    - Non 
+conditions_mise_a_dispo: Précisez les conditions de mise à disposition 
+
+
+apport_materiel: 
+    Apport de matériel:
+    - Oui 
+    - Non 
+materiel: Précisez 
+apport_moyens_humains: 
+    Apport de moyens humains:
+    - Oui 
+    - Non  
+moyens_humains: 
+    Précisez:
+    - Conseils artistiques 
+    - Conseils techniques 
+    - Main d'œuvre 
+    - Autres 
+moyens_humains_autres: Si "Autres", précisez 
+ 
+
+apport_moyens_financiers: 
+    Apport de moyens financiers de production:
+    - Oui 
+    - Non 
+liste_montants_artistes: 
+    Détaillez le montant par artiste:
+    - Montant par artiste (€)
+    - Nombre d'artistes 
+accompagnement: Autre type d'accompagnement proposé aux artistes 
+aide_accompagnement: 600 caractères maximum 
+
+remuneration_artistes: 
+    Rémunération ou indemnisation des artistes:
+    - Oui 
+    - Non 
+exposition_individuelle: 
+    Exposition individuelle: 
+    - Oui
+    - Non
+montant_moyen_global_individuel: Précisez le montant moyen global 
+exposition_collective: 
+    Exposition collective: 
+    - Oui
+    - Non
+montant_moyen_global_collectif: Précisez le montant moyen global 
+montant_artiste: Précisez le montant par artiste 
+
+cotisation_assurances: 
+    Y a-t-il une cotisation aux assurances sociales en tant que diffuseur ?:
+    - Oui 
+    - Non 
+acquisition_oeuvres: 
+    Y a-t-il des acquisitions d'œuvres par l'association ?: 
+    - Oui 
+    - Non 
+ventes_oeuvres: 
+    Y a-t-il des ventes d'œuvres ?: 
+    - Oui 
+    - Non 
+commission_ventes_oeuvres: 
+    Y a-t-il une commission sur les ventes réalisées ?:
+    - Oui 
+    - Non 
+pourcentage_commission: Indiquez le pourcentage pris par la structure 
+
+# 5.13 Page 12 : "Médiation avec les publics"
+# -----------------------------------------------------------
+page_mediation: Médiation avec les publics
+titre_mediation: >
+    ### Médiation avec les publics
+
+sur_ouverture_public:
+    Ouverture au public:
+        lignes:
+            - Lundi 
+            - Mardi
+            - Mercredi 
+            - Jeudi 
+            - Vendredi 
+            - Samedi 
+            - Dimanche
+        colonnes:
+            - "Horaires d’ouverture (Exemple : de 10h à 12h et de 14h à 16h)"
+personnel_accueil: 
+    Par qui sont assurés l'accueil et la médiation ?: 
+    - Médiateurs professionnels 
+    - Bénévoles 
+
+exposition_pendant_residence: 
+    Est-ce qu'une exposition du travail de l'artiste est prévue pendant la résidence ?:
+    - Oui 
+    - Non 
+exposition_details: Précisez les lieux et les dates
+restitution: 
+    Est-ce que des temps de restitution du travail mené pendant la résidence sont prévus ?:
+    - Oui 
+    - Non 
+restitution_details: Précisez les lieux et les dates 
+
+rencontre_echange_public: 
+    Des temps de rencontre et d’échanges avec les publics sont-ils prévus ?:
+    - Oui 
+    - Non 
+actions_public: 
+    Précisez:
+    - Conférences 
+    - Débats 
+    - Ateliers 
+    - Workshops 
+    - Autres 
+actions_public_autres: Si "Autres", précisez 
+
+actions_public_scolaire: 
+    Des actions vers les publics scolaires sont-elles prévues ?:
+    - Oui 
+    - Non 
+actions_public_scolaire_niveaux: 
+    Précisez les niveaux concernés: 
+    - Maternelle 
+    - Primaire 
+    - Collège 
+    - Lycée 
+    - Enseignement supérieur 
+actions_public_scolaire_exemples: Donnez quelques exemples d'actions (précisez au besoin les liens avec les partenaires locaux) 
+
+actions_jeune_public: 
+    Des actions vers le jeune public hors temps scolaire sont-elles prévues ?:
+    - Oui 
+    - Non 
+actions_jeune_public_exemples: Donnez quelques exemples d'actions (précisez au besoin les liens avec les partenaires locaux) 
+
+actions_personnes_eloignees: 
+    Des actions vers les personnes éloignées de l'offre culturelle sont-elles prévues ?:
+    - Oui
+    - Non 
+actions_personnes_eloignees_public: 
+    Précisez le type de public concerné: 
+    - Personnes âgées 
+    - Personnes en situation de handicap 
+    - Personnes en insertion 
+    - Famille - Enfance 
+    - Autres 
+actions_personnes_eloignees_exemples: Donnez quelques exemples d'actions (précisez au besoin les liens avec les partenaires locaux)
+
+# 5.14 Page 13 : "Bilan - Projet de diffusion"
+# -----------------------------------------------------------
+page_bilan_aide1: Bilan des activités de l'année précédente 
+
+titre_bilan_aide1: >
+    ### Bilan des activités de l'année précédente 
+texte_bilan_aide1 : >
+    Ce bilan concerne les activités menées l'année dernière sur le projet de diffusion
+    incluant un apport dédié à la réalisation de nouvelles créations. Il permet au 
+    Département d'évaluer la demande actuelle par rapport aux actions réalisées 
+    l'année précédente. 
+    
+    
+    
+bilan1_programme_positif: 
+    Votre programme de l'année dernière a-t-il été mené à bien ?:
+    - Oui 
+    - Non 
+bilan1_ecarts: Merci de préciser les écarts 
+
+ 
+titre_accompagnement_bilan1: >
+    ### Accompagnement que vous avez apporté aux artistes 
+bilan1_accompagnement: Merci de préciser les accompagnements que vous avez proposés aux artistes 
+aide_bilan1_accompagnement: Mise à disposition de locaux, de matériel, de moyens humains, de moyens financiers de production (préciser dans ce cas les montants par artiste) 
+
+
+titre_remuneration_bilan1: >
+    ### Rémunération ou indemnisation des artistes 
+bilan1_remuneration_artistes: 
+    Avez-vous rémunéré ou indemnisé les artistes ?:
+    - Oui 
+    - Non 
+bilan1_montant_moyen_global_individuel: Précisez le montant moyen global pour les expositions individuelles 
+bilan1_montant_moyen_global_collectif: Précisez le montant moyen global pour les expositions collectives 
+
+
+titre_mediation_bilan1: >
+    ### Médiation avec le public 
+bilan1_mediation: Merci de lister les actions réalisées vers les différents publics et d’indiquer le nombre de participant·e·s par action 
+aide_bilan1_mediation: Actions vers les publics scolaires, vers les jeunes publics hors temps scolaire, vers les personnes éloignées de l'offre culturelle 
+bilan1_visiteurs: Nombre total de visiteur·euse·s
+
+# 5.15 Page 14 : "Bilan des activités de l'année précédente"
+# -----------------------------------------------------------
+page_bilan_aide2: Bilan des activités de l'année précédente 
+
+titre_bilan_aide2: >
+    ### Bilan des activités de l'année précédente
+texte_bilan_aide2: >
+    Ce bilan concerne les activités menées l'année dernière sur le projet de résidence
+    mettant des moyens de production et de diffusion à disposition des artistes invités.
+    Il permet au Département d'évaluer la demande actuelle par rapport aux actions
+    réalisées l'année précédente. 
+bilan2_programme_positif: 
+    Votre projet de l'année dernière a-t-il été mené à bien ?:
+    - Oui 
+    - Non 
+bilan2_ecarts: Merci de préciser les écarts 
+
+ 
+titre_accompagnement_bilan2: >
+    ### Accompagnement que vous avez apporté aux artistes 
+bilan2_accompagnement: Merci de préciser les accompagnements que vous avez proposés aux artistes 
+aide_bilan2_accompagnement : Mise à disposition de locaux, de matériel, de moyens humains, de moyens financiers de production (préciser dans ce cas les montants par artiste) 
+
+ 
+titre_remuneration_bilan2: >
+    ### Rémunération ou indemnisation des artistes 
+bilan2_remuneration_artistes: 
+    Avez-vous rémunéré ou indemnisé les artistes ?:
+    - Oui 
+    - Non 
+bilan2_montant_moyen_global: Précisez le montant moyen global versé aux artistes 
+
+titre_mediation_bilan2: >
+    ### Médiation avec le public 
+bilan2_mediation: Merci de lister les actions réalisées vers les différents publics 
+aide_bilan2_mediation: Actions vers les publics scolaires, vers les jeunes publics hors temps scolaire, vers les personnes éloignées de l'offre culturelle 
+bilan2_participants: Nombre de participant·e·s 
+
+# 5.16 Page 15 : "Mise en place d'ateliers"
+# -----------------------------------------------------------
+page_ateliers: Mise en place d’ateliers 
+
+description_projet: Description succincte du projet (objectifs, mode de fonctionnement) 
+aide_description_projet: 2500 caractères maximum 
+description_lieu: Description du lieu (contexte, espaces de travail, espaces mutualisés, contraintes éventuelles, ...) 
+aide_description_lieu: 1500 caractères maximum 
+proprietaire_lieu: Propriétaire du lieu 
+conditions_lieu: Conditions de mise à disposition du lieu 
+aide_conditions_lieu: 1000 caractères maximum 
+duree_mise_a_dispo: Durée de mise à disposition 
+
+titre_gestion_lieu: >
+    ### Gestion du lieu 
+
+charge_coordination: Chargé·e de la coordination 
+demarche_attribution_espaces: Description de la démarche d'attribution des espaces 
+aide_demarche_attribution_espaces: 1500 caractères maximum 
+demarche_renouvellement: Description de la démarche de renouvellement 
+aide_demarche_renouvellement: 1500 caractères maximum 
+
+tarif_location: Tarifs de location des espaces de travail ou de participation aux frais par les artistes 
+liste_artistes: 
+    Liste des artistes bénéficiant actuellement d'un atelier: 
+    - Nom de l'artiste
+    - Depuis le 
+aide_liste_artistes: Renseigner au minimum 8 lignes 
+
+temps_echange: 
+    Des temps de rencontre, d’échanges ou de diffusion partagés entre les artistes sont-ils prévus par l’association ?:
+    - Oui 
+    - Non 
+temps_echange_detail: Précisez 
+aide_temps_echange_detail: Description, date(s), lieu(x), public(s) 
+remarques_aide3: Remarques, observations ou faits marquants que vous jugez utiles de partager avec le comité conseil 
+aide_remarques_aide3: 2000 caractères maximum 
+
+# 5.17 Page 16 : "Pièces à joindre"
+# -----------------------------------------------------------
+page_pieces: Pièces à joindre 
+
+budget_previsionnel: Budget prévisionnel de l'association
+format_attendu: "Format attendu : Uniquement un nombre entier"
+budget: Budget
+aide_budget: Remplir le modèle à télécharger ci-dessous
+modele_budget: "[Télécharger le modèle de budget attendu](lien a fournir)" 
+
+rib: RIB de banque
+aide_rib: Le RIB doit être fourni par un établissement bancaire.
+statut_asso: Statuts de l’association 
+pv_derniere_ag: Procès-verbal de la dernière AG
+rapport_activite_annee_prec: Rapport d’activité N-1
+liste_membres: Liste des membres du conseil d’administration et/ou du bureau
+autres_fichiers: "Autres (tout document que vous jugez utile de communiquer : revue de presse…)"
+aide_autres_fichiers: Fournir un dossier compressé ZIP de l'ensemble des pièces s'il y en a plusieurs
+    
+attestation: Attestation sur l’honneur
+modele_attestation: "[Télécharger le modèle de budget attendu](lien a fournir)" 
